@@ -1,0 +1,27 @@
+.row
+  .col-md-4
+    %ul.nav.nav-pills.nav-stacked.left-admin-menu{style: "max-width: 300px;"}
+      %li.categories-link
+        %a{href: "#categories"} Категории
+      %li.brands-link
+        %a{href: "#brands"} Бренды
+      %li.products-link
+        %a{href: "#products"} Продукты
+      %li.dealers-link
+        %a{href: "#dealers"} Дилеры
+      %li.pages-link
+        %a{href: "#pages"} Страницы
+      %li.settings-link
+        %a{href: "#settings"} Настройки
+  .col-md-8  
+    #container
+
+#admin-modal-dialog.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "label", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+      .modal-body
+        #modal-body-content
+        .clearfix
+        %br
+

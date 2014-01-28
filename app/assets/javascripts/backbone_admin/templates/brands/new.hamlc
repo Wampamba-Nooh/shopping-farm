@@ -1,0 +1,7 @@
+%form#brand{role: "form"}
+  .form-group
+    %label Название
+    %input.form-control{id: "brand_name", name: "brand_name", placeholder: "например, Audi", type: "text"}
+    %span.help-block.hidden
+
+  %button.btn.btn-default{type: "submit"} Создать

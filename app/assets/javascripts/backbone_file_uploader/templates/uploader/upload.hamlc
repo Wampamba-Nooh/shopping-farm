@@ -1,0 +1,11 @@
+%br
+.file{id: "#{@cid}"}
+  %small.label-in.pull-left.success= @uploaded_file_name
+  %span.picture
+  %small.label.pull-right#status
+    %a{href: "#"}
+      %span.glyphicon.glyphicon-remove
+  .clearfix
+%br
+
+

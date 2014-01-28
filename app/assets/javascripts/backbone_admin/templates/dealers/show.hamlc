@@ -1,0 +1,9 @@
+%label ID
+  = @id
+%span= @dealer_name
+%span= @created_at
+
+%br
+.clearfix
+%button.btn.btn-success.btn-sm{id: "send-authorization", type: "submit"} Отправить доступ на email
+

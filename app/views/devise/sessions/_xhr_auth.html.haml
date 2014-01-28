@@ -1,0 +1,13 @@
+#auth-dialog.modal.fade.lg{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+      .modal-body
+        %h2.top Вход для клиентов
+        #modal-sign-in-form
+
+:javascript
+  $(function() {
+    var modal_sign_in_view = new Cartender.Front.Views.User.ModalSessionsView();
+    $("#modal-sign-in-form").html(modal_sign_in_view.render().el);
+  });

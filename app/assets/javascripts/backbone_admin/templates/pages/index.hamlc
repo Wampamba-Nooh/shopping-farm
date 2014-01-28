@@ -1,0 +1,9 @@
+%h1.top Страницы
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th Название
+      %th 
+  %tbody
+ 

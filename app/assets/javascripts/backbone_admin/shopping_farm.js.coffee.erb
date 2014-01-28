@@ -1,0 +1,59 @@
+#= require_self
+#= require hamlcoffee
+#= require_tree ./templates
+#= require_tree ./models
+#= require_tree ./views
+#= require_tree ./routers
+#= require backbone_datalink
+#= require backbone_rails_sync
+
+window.ShoppingFarm =
+  Admin:
+    Models: {}
+    Collections: {}
+    Routers: {}
+    Views: {}
+
+  init_admin: () ->
+    window.ShoppingFarm.Admin.admin_menu_toggle_active = (item_class) ->
+      $(".left-admin-menu").children().each( (i, e) -> 
+        $(e).removeClass('active')
+      )
+      $(".left-admin-menu ." + item_class + "-link").addClass('active')
+
+    window.ShoppingFarm.Admin.DestroyPromptDialog = (callback_fn) ->
+      bootbox.dialog({
+        message: "Вы действительно хотите удалить?"
+        title: "Удаление"
+        buttons: {
+          danger: {
+            label: "Удалить"
+            className: "btn-danger"
+            callback: () ->
+              callback_fn()
+          },
+          success: {
+            label: "Отмена"
+            className: "btn-success"
+          }
+        }
+      })
+    
+    window.ShoppingFarm.Admin.Routers.CategoriesRouter = new ShoppingFarm.Admin.Routers.CategoriesRouter()
+    window.ShoppingFarm.Admin.Routers.BrandsRouter = new ShoppingFarm.Admin.Routers.BrandsRouter()
+    window.ShoppingFarm.Admin.Routers.ProductsRouter = new ShoppingFarm.Admin.Routers.ProductsRouter()
+    window.ShoppingFarm.Admin.Routers.DealersRouter = new ShoppingFarm.Admin.Routers.DealersRouter()
+    window.ShoppingFarm.Admin.Routers.PagesRouter = new ShoppingFarm.Admin.Routers.PagesRouter()
+    window.ShoppingFarm.Admin.Routers.SettingsRouter = new ShoppingFarm.Admin.Routers.SettingsRouter()
+    Backbone.history.start()
+    
+$( () ->
+  try
+    window.ShoppingFarm.init_admin()
+  catch err
+    <% if Rails.env != 'development' %>
+    window.error_handler.mail_error(err, 'dealer')
+    <% else %>
+    throw err
+    <% end %>
+)

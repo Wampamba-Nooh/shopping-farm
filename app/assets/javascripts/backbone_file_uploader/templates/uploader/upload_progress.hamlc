@@ -1,0 +1,7 @@
+%br
+.file{id: "#{@cid}"}
+  %small.label-in.pull-left= @uploaded_file_name
+  %span.picture
+  %small.label.pull-right#status 0%
+  .clearfix
+%br

@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Cartender
+    = stylesheet_link_tag    "application_admin_manifest", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application_manifest", "data-turbolinks-track" => true
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"
+    = csrf_meta_tags
+    :css
+      .modal{
+        z-index: 20;
+      }
+      .modal-backdrop{
+        z-index: 10;
+      }
+  %body
+    = render 'layouts/header_admin'
+    .container
+      = yield
+    .clearfix
+    
+    = render 'layouts/footer'
+    = javascript_include_tag "application_admin_manifest"

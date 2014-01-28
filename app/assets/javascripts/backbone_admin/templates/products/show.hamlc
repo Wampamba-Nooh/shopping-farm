@@ -1,0 +1,6 @@
+%label ID
+  = @id
+%span= @product_name
+%span= @created_at
+
+

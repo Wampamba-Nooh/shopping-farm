@@ -1,0 +1,8 @@
+%p 
+  = @email
+
+%p Вы подали заявку 
+
+
+%p
+  = link_to 'Подтвердить email', confirmation_url(@resource, :confirmation_token => @token)

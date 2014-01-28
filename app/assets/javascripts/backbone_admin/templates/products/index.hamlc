@@ -1,0 +1,15 @@
+%h1.top Продукты
+%a.new-product{href: "#", class: "btn btn-success"}
+  Создать
+%br
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th{style: "width: 30px;"} #
+      %th Название
+      %th Бренд
+      %th Дата
+      %th 
+  %tbody
+ 

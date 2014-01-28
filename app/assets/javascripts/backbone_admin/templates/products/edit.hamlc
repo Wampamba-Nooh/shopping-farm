@@ -1,0 +1,22 @@
+%form#product{role: "form"}
+  .row
+    .col-md-5
+      .form-group
+        %label Бренд
+        .clearfix
+        %input{id: "brand_id", name: "brand_id"}
+        %span.help-block.hidden
+
+      .form-group
+        %label Название
+        %input.form-control{id: "product_name", name: "product_name", placeholder: "например, Q7 2014", type: "text"}
+        %span.help-block.hidden
+      .form-group
+        %label Фотографии
+        #product-pictures
+    .col-md-7
+      .form-group
+        %label Бренд
+        .clearfix
+        %textarea{id: 'content', name: 'content'}
+  %button.btn.btn-default{type: "submit"} Сохранить

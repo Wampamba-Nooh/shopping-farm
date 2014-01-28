@@ -1,0 +1,41 @@
+%form#dealer{role: "form"}
+  .form-group
+    %label Название
+    %input.form-control{id: "dealer_name", name: "dealer_name", placeholder: "", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Статус
+    %br
+    %input.select-style{id: "status", name: "status"}
+    %span.help-block.hidden
+  .form-group
+    %label Город
+    %input.form-control{id: "city", name: "city", type: "text", placeholder: ""}
+    %span.help-block.hidden
+  .form-group
+    %label Бренды
+    %br
+    %input.select-style{id: "brand_ids", name: "brand_ids"}
+    %span.help-block.hidden
+  .checkbox
+    %label
+      %input{id: "access_concurrent_proposition", name: "access_concurrent_proposition", type: "checkbox"}
+      Доступ к конкурирующим заявкам
+  .form-group
+    %label Контакты
+    %textarea.form-control{id: "contacts", name: "contacts", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Контактное лицо
+    %textarea.form-control{id: "person_contacts", name: "person_contacts", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Email
+    %input.form-control{id: "email", name: "email", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Номер телефона
+    %input.form-control{id: "phone_number", name: "phone_number", type: "text"}
+    %span.help-block.hidden
+
+  %button.btn.btn-default{type: "submit"} Создать

@@ -1,0 +1,14 @@
+%h1.top Бренды
+%a.new-brand{href: "#", class: "btn btn-success"}
+  Создать Бренд
+%br
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th{style: "width: 30px;"} #
+      %th Название
+      %th Дата
+      %th 
+  %tbody
+ 

@@ -1,0 +1,12 @@
+.alert.alert-success.accent
+  .progress-box.text-left 
+    #uploads-table
+  .clearfix
+
+  %form#upload-btn-bottom{role: 'form'}
+    %span.fileinput-button.btn.btn-success.btn-sm
+      %span.glyphicon.glyphicon-plus
+        %strong Добавить
+      %input{class: "fileupload", type: "file", name: "upload[picture]", "data-url" => "/uploads/product_picture"}
+    .clearfix
+    %br

@@ -1,0 +1,7 @@
+%form#page{role: "form"}
+  .form-group
+    %textarea.form-control{id: "content", name: "content"}
+      = @content
+    %span.help-block.hidden
+
+  %button.btn.btn-default{id: "save", type: "submit"} Сохранить

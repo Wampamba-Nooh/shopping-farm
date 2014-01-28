@@ -1,0 +1,17 @@
+%td= @id
+%td
+  %a{href: "#", class: "link accent preview"}
+    = @dealer_name
+%td= @city
+%td
+  - for brand in @brands
+    %span.label.label-info= brand.brand_name
+    %br
+
+%td= @status
+%td= @created_at
+%td
+  .btn-group.pull-right
+    %button.btn.btn-primary.btn-xs.edit{type: "button"} Редактировать
+    %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
+    .clearfix

@@ -1,0 +1,39 @@
+%h2 Настройки
+
+%form#settings{role: "form"}
+  %label Курсы валют
+  .alert.alert-success
+    .row
+      .col-md-3
+        .form-group
+          %label USD $
+          %input.form-control{id: "usd_exchange_rate", name: "usd_exchange_rate", placeholder: "", type: "text"}
+          %span.help-block.hidden  
+      .col-md-3
+        .form-group
+          %label EUR €
+          %input.form-control{id: "eur_exchange_rate", name: "eur_exchange_rate", placeholder: "", type: "text"}
+          %span.help-block.hidden  
+  .clearfix
+  .form-group
+    .row
+      .col-md-3
+        %label
+          Шаг торгов 
+          %span (%)
+        %input.form-control{id: "trading_step", name: "trading_step", placeholder: "", type: "text"}
+        %span.help-block.hidden
+  .form-group
+    %label Email для обратной связи.
+    %input.form-control{id: "feedback_email", name: "feedback_email", placeholder: "", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Email для финансового лизинга.
+    %input.form-control{id: "financial_leasing_email", name: "financial_leasing_email", placeholder: "", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Email для уведомлений «модератора».
+    %input.form-control{id: "moderator_email", name: "moderator_email", placeholder: "", type: "text"}
+    %span.help-block.hidden
+
+  %button.btn.btn-default{id: "save", type: "submit"} Сохранить

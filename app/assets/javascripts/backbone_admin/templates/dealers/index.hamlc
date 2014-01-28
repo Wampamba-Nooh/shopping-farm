@@ -1,0 +1,17 @@
+%h1.top Дилеры
+%a.new-dealer{href: "#", class: "btn btn-success"}
+  Создать
+%br
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th{style: "width: 30px;"} #
+      %th Название
+      %th Город
+      %th Бренды
+      %th Статус
+      %th Дата
+      %th 
+  %tbody
+ 
