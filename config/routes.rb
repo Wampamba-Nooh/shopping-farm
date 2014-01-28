@@ -28,6 +28,10 @@ ShoppingFarm::Application.routes.draw do
 
   root 'front/home#index'
 
+  get "pages/news"
+  get "pages/distributors"
+  get "pages/products"
+
   ##################################################
   get "pages/:name", to: "pages#page_by_name", as: :page_by_name
   post :mail_js_error, to: "errors#mail_js_error"
