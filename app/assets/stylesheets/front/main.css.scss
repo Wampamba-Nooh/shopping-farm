@@ -78,7 +78,7 @@ $font-family-verdana:  "Verdana", Helvetica, Arial, sans-serif !default;
 $font-family-custom:  'Open Sans', Myriad Pro, Helvetica, Arial, sans-serif !default;
 $font-family-base:        $font-family-custom !default;
 
-$font-size-base:          17px !default;
+$font-size-base:          15px !default;
 $font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
 $font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
 
@@ -679,11 +679,11 @@ body{
 
 .wrapper-sprite-list {
   background-image: url(/img/landing/wash/sprite2.png);
-  background-position: 0 0;
+  background-position: -2px 0;
   background-repeat: no-repeat;
   height: 40px;
   margin-bottom: 35px;
-  background-size: 60%;
+  background-size: 100%;
   display: block;
 }
 
@@ -894,10 +894,10 @@ label{
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
   h1 {
     padding-top: 0px;
-    font-size: 40px;
+    font-size: 30px;
   }
   p {
-    font-size: 25px;
+    font-size: 18px;
   }
 }
 
@@ -929,15 +929,7 @@ label{
     color: #333;
   }
   a.footer-brend{
-    /*display: inline-block;
-    text-indent: -10000px;
-    width: 119px;
-    height: 100px;
-    margin: 0 auto;
-    background-image: url(/img/landing/kalina-sm.png);
-    background-position: center center;
-    background-repeat: no-repeat;*/
-    font-size: 20px;
+    font-size: 15px;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
     color: #333;
   }
@@ -1016,8 +1008,20 @@ label{
 .products-list{
   .thumbnail{
     padding: 10px;
+    text-decoration: none;
     img{
       max-height: 220px;
+    }
+  }
+}
+
+.nav.nav-pills.nav-stacked{
+  li{ 
+    a{
+      color: #525252;
+    }
+    &.active a{
+      color: #fff;
     }
   }
 }
