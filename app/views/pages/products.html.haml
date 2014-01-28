@@ -10,7 +10,37 @@
 #products.white
   .container
     .row
-      .col-lg-12
+      .col-lg-3
+        %ul.nav.nav-pills.nav-stacked{style: "margin-top: 100px;"}
+          %li
+            %a{href: "#"} Зубная паста
+          %li
+            %a{href: "#"} Все для детей
+          %li
+            %a{href: "#"} Гель для душа
+          %li
+            %a{href: "#"} Зубная щетка
+          %li
+            %a{href: "#"} Косметика
+          %li
+            %a{href: "#"} Мыло
+          %li
+            %a{href: "#"} Ополаскиватели
+          %li
+            %a{href: "#"} Освежители воздуха
+          %li
+            %a{href: "#"} Пятновыводитель
+          %li
+            %a{href: "#"} Средства для бритья
+          %li.active
+            %a{href: "#"} Средства для посуды
+          %li
+            %a{href: "#"} Стиральный порошок
+          %li
+            %a{href: "#"} Хозяйственные принадлежности
+          %li
+            %a{href: "#"} Шампунь  
+      .col-lg-9
         %br
         %h1.text-center Наша продукция
         %hr
@@ -21,50 +51,56 @@
         .clearfix
         %br
         %br
-        #carousel-example-generic.carousel.slide.carousel-products{"data-ride" => "carousel"}
-          / Indicators
-          %ol.carousel-indicators
-            %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-            %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-          / Wrapper for slides
-          .carousel-inner
-            .item.active
-              .row
-                .col-sm-4.callout.text-center
-                  %img{src: "/img/landing/product1.jpg"}
-                  %h2 SCALA Bucato a mano Freschezza blù
-                  %p Жидкое средство для ручной стирки. Действует уже при низких температурах, удаляет загрязнения, защищает цветные ткани.
-                .col-sm-4.callout.text-center
-                  %img{src: "/img/landing/product2.jpg"}
-                  %h2 SCALA Lana e delicati Soffio di Gardenia
-                  %p Жидкое средство для стирки. Средство используется для стирки деликатных вещей, из шерсти и шелка. Сохраняет яркость цвета одежды.
-                .col-sm-4.callout.text-center
-                  %img{src: "/img/landing/product3.jpg"}
-                  %h2 SCALA Lana e delicati Carezza di seta
-                  %p Формула геля для стирки «5 в 1» делает возможным частое использование для самых тонких и деликатных тканей.
-              .clearfix
-              %br
-            .item
-              .row
-                .col-sm-4.callout.text-center
-                  %img{src: "/img/landing/product4.jpg"}
-                  %h2 SCALA LANA e delicati Nero Assoluto
-                  %p Жидкое средство для стирки. Средство используется для стирки деликатных вещей, из шерсти и шелка. Сохраняет яркость цвета темной и черной одежды.
-                .col-sm-4.callout.text-center
-                  %img{src: "/img/landing/product5.jpg"}
-                  %h2 SCALA Detersivo per stoviglie a mano agrumi
-                  %p Жидкость для мытья посуды. Высокопродуктивная формула геля позволяет отмыть даже самую сильно загрязненную посуду.
-                .col-sm-4.callout.text-center
-                  %img{src: "/img/landing/product6.jpg"}
-                  %h2 Жидкость для мытья посуды
-                  %p Высокопродуктивная формула геля позволяет отмыть даже самую сильно загрязненную посуду.
-              .clearfix
-              %br
-          / Controls
-          %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic"}
-            %span.glyphicon.glyphicon-chevron-left
-          %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic"}
-            %span.glyphicon.glyphicon-chevron-right
+        
+        .row.products-list
+          .col-sm-4
+            .thumbnail
+              %img{src: "/img/landing/product1.jpg"}
+              .caption
+                %h3 SCALA Bucato a mano Freschezza blù
+                %p
+                  %a.btn.btn-primary.btn-block{href: "/pages/show", role: "button"} Просмотр
+          //
+          .col-sm-4
+            .thumbnail
+              %img{src: "/img/landing/product2.jpg"}
+              .caption
+                %h3 SCALA Lana e delicati Soffio di Gardenia
+                %p
+                  %a.btn.btn-primary.btn-block{href: "/pages/show", role: "button"} Просмотр
+          //
+          .col-sm-4
+            .thumbnail
+              %img{src: "/img/landing/product3.jpg"}
+              .caption
+                %h3 SCALA Lana e delicati Carezza di seta
+                %p
+                  %a.btn.btn-primary.btn-block{href: "/pages/show", role: "button"} Просмотр
+          //
+          .col-sm-4
+            .thumbnail
+              %img{src: "/img/landing/product1.jpg"}
+              .caption
+                %h3 SCALA Bucato a mano Freschezza blù
+                %p
+                  %a.btn.btn-primary.btn-block{href: "/pages/show", role: "button"} Просмотр
+          //
+          .col-sm-4
+            .thumbnail
+              %img{src: "/img/landing/product2.jpg"}
+              .caption
+                %h3 SCALA Lana e delicati Soffio di Gardenia
+                %p
+                  %a.btn.btn-primary.btn-block{href: "/pages/show", role: "button"} Просмотр
+          //
+          .col-sm-4
+            .thumbnail
+              %img{src: "/img/landing/product3.jpg"}
+              .caption
+                %h3 SCALA Lana e delicati Carezza di seta
+                %p
+                  %a.btn.btn-primary.btn-block{href: "/pages/show", role: "button"} Просмотр
+          //
 //
 %br
 %br
