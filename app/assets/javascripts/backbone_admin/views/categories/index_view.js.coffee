@@ -30,16 +30,16 @@ class ShoppingFarm.Admin.Views.Categories.IndexView extends Backbone.View
   render: =>
     $(@el).html(@template())
     
-    @$('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch')
+    @$('.tree li:has(ul)').addClass('parent_li')
     
     @$('.tree li.parent_li > span').on('click', (e) ->
-      children = $(this).parent('li.parent_li').find(' > ul > li')
+      children = $(@).parent('li.parent_li').find(' > ul > li')
       if (children.is(":visible")) 
         children.hide('fast')
-        $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+        $(@).addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign')
       else
         children.show('fast')
-        $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign')
+        $(@).addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign')
       
       e.stopPropagation()
     )
