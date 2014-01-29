@@ -1,8 +1,10 @@
 %td
-  %a{href: "#pages/#{@id}", class: "link accent preview"}
-    = @title
+  /%a{href: "#pages/#{@id}", class: "link accent preview"}
+  = @identificator
 %td
   .btn-group.pull-right
     %a.btn.btn-primary.btn-xs{href: "#pages/edit/#{@id}"} 
       Редактировать
+    %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
+
     .clearfix

@@ -45,7 +45,7 @@ module Admin
       end
 
       def category_params
-        params.require(:category).permit(:identificator, :parent_id)
+        params.require(:category).permit(:identificator, :parent_id, :title)
       end
   end
 

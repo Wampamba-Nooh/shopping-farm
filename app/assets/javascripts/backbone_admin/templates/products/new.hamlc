@@ -4,13 +4,28 @@
     .clearfix
     %input{id: "brand_id", name: "brand_id"}
     %span.help-block.hidden
-
   .form-group
     %label Identificator
     %input.form-control{id: "identificator", name: "identificator", placeholder: "например, Q7 2014", type: "text"}
     %span.help-block.hidden
   .form-group
+    %label Категории
+    %br
+    %input.select-style{id: "category_ids", name: "category_ids"}
+    %span.help-block.hidden
+  .form-group
     %label Фотографии
     #product-pictures
-
-  %button.btn.btn-default{type: "submit"} Создать
+  .form-group
+    %label Заголовок
+    .clearfix
+    %input.form-control{id: 'title', name: 'title'}
+  .form-group
+    %label Короткое описание
+    .clearfix
+    %textarea{id: 'short_description', name: 'short_description'}
+  .form-group
+    %label Полное описание
+    .clearfix
+    %textarea{id: 'full_description', name: 'full_description'}
+  %button.btn.btn-default{type: "submit"} Сохранить

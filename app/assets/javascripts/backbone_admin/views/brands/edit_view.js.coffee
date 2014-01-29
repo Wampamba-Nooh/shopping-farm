@@ -1,24 +1,45 @@
 ShoppingFarm.Admin.Views.Brands ||= {}
 
 class ShoppingFarm.Admin.Views.Brands.EditView extends Backbone.View
-  #template : JST["backbone_manager/templates/customer_proposals/edit"]
+  template : JST["backbone_admin/templates/brands/edit"]
 
-  #events :
-  #  "submit #edit-customer_proposal" : "update"
+  events :
+    "submit #brand" : "update"
+  
+  bindings:
+   '[name=identificator]': 
+      observe: 'identificator'
+      setOptions:
+        validate: true
+    '[name=title]': 
+      observe: 'title'
+    '[name=short_description]': 
+      observe: 'short_description'
+    '[name=full_description]': 
+      observe: 'full_description'
+      
+  constructor: (options) ->
+    super(options)
 
-  #update : (e) ->
-  #  e.preventDefault()
-  #  e.stopPropagation()
+    @picture_uploader = new ShoppingFarmFileUploader.Views.Uploader.IndexView({collection: @model.brand_pictures_collection})
+    @model.fetch_brand_pictures()
+    
+    Backbone.Validation.bind(this)
 
-  #  @model.save(null,
-  #    success : (customer_proposal) =>
-  #      @model = customer_proposal
-  #      window.location.hash = "/#{@model.id}"
-  #  )
+  update : (e) ->
+    e.preventDefault()
+    e.stopPropagation()
 
-  #render : ->
-  #  $(@el).html(@template(@model.toJSON() ))
+    if @model.isValid(true)
+      @model.save(null,
+        success : (customer_proposal) =>
+          @model.update_pictures_with_brand_id()
+          $('#admin-modal-dialog').modal('hide')
+      )
 
-  #  this.$("form").backboneLink(@model)
+  render : ->
+    $(@el).html(@template(@model.toJSON() ))
+    @$("#product-pictures").html(@picture_uploader.render().el)
+    @stickit()
 
-  #  return this
+    return this

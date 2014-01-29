@@ -1,5 +1,5 @@
 %h1.top Продукты
-%a.new-product{href: "#", class: "btn btn-success"}
+%a.new-product{href: "#products/new", class: "btn btn-success"}
   Создать
 %br
 %br

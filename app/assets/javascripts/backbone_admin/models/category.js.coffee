@@ -3,6 +3,7 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
   
   defaults:
     identificator: null
+    title: null
 
   idAttribute: 'id'
   
@@ -20,10 +21,13 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
     identificator: 
       required: true
       msg: 'Ошибка'
+    title: 
+      required: true
+      msg: 'Ошибка'
 
   urlRoot: '/admin/categories'
+
 
 class ShoppingFarm.Admin.Collections.CategoriesCollection extends Backbone.Collection
   model: ShoppingFarm.Admin.Models.Category
   url: '/admin/categories'
-

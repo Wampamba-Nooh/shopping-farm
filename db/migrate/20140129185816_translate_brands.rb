@@ -1,6 +1,6 @@
-class TranslateProducts < ActiveRecord::Migration
+class TranslateBrands < ActiveRecord::Migration
   def self.up
-    Product.create_translation_table!({
+    Brand.create_translation_table!({
       :short_description => :text, 
       :full_description => :text,
       :title => :text
@@ -10,6 +10,6 @@ class TranslateProducts < ActiveRecord::Migration
   end
 
   def self.down
-    Product.drop_translation_table! :migrate_data => true
+    Brand.drop_translation_table! :migrate_data => true
   end
 end

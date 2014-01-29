@@ -17,7 +17,13 @@ class ShoppingFarm.Admin.Views.Brands.IndexView extends Backbone.View
 
   addOne: (brand) =>
     view = new ShoppingFarm.Admin.Views.Brands.BrandView({model : brand})
+    view.on('edit', @edit_brand)
     @$("tbody").append(view.render().el)
+
+  edit_brand: (m) ->
+    edit_view = new ShoppingFarm.Admin.Views.Brands.EditView({model: m})
+    $("#modal-body-content").html(edit_view.render().el)
+    $('#admin-modal-dialog').modal('show')    
 
   new_brand: (e) ->
     e.preventDefault()

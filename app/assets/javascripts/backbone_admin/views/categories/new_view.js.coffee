@@ -6,11 +6,15 @@ class ShoppingFarm.Admin.Views.Categories.NewView extends Backbone.View
   events: "submit #category" : "save"
   
   bindings:
-   '[name=identificator]': 
+    '[name=identificator]': 
       observe: 'identificator'
       setOptions:
         validate: true
-
+    '[name=title]': 
+      observe: 'title'
+      setOptions:
+        validate: true
+        
   constructor: (options) ->
     super(options)
     

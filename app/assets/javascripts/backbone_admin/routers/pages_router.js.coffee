@@ -1,14 +1,20 @@
 class ShoppingFarm.Admin.Routers.PagesRouter extends Backbone.Router
   initialize: (options) ->
     @pages_collection = new ShoppingFarm.Admin.Collections.PagesCollection()
+    @categories_collection = new ShoppingFarm.Admin.Collections.CategoriesCollection()
 
   routes:
     "pages" : "pages"
+    "pages/new" : "new_page"
     "pages/edit/:id" : "edit"
     "pages/:id" : "show"
 
+  new_page: ->
+    @new_view = new ShoppingFarm.Admin.Views.Pages.NewView({collection: @pages_collection, categories_collection: @categories_collection})
+    $("#container").html(@new_view.render().el)
+    @categories_collection.fetch()
+
   show: (id) ->    
-    $("#top-admin-menu").empty()
     window.ShoppingFarm.Admin.admin_menu_toggle_active('pages')
 
     @model = new @pages_collection.model({id: id})
@@ -18,20 +24,18 @@ class ShoppingFarm.Admin.Routers.PagesRouter extends Backbone.Router
         $("#container").html(@show_view.render().el)
 
   edit: (id) ->
-    $("#top-admin-menu").empty()
     window.ShoppingFarm.Admin.admin_menu_toggle_active('pages')
 
     @model = new @pages_collection.model({id: id})
     @model.fetch(
       complete: =>  
-        @edit_view = new ShoppingFarm.Admin.Views.Pages.EditView({model: @model})
+        @edit_view = new ShoppingFarm.Admin.Views.Pages.EditView({model: @model, categories_collection: @categories_collection})
         $("#container").html(@edit_view.render().el)
-        CKEDITOR.replace($('#content')[0])
+        @categories_collection.fetch()        
     )
 
     
   pages: ->
-    $("#top-admin-menu").empty()
     window.ShoppingFarm.Admin.admin_menu_toggle_active('pages')
 
     @index_view = new ShoppingFarm.Admin.Views.Pages.IndexView({collection: @pages_collection})

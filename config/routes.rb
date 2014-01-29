@@ -13,7 +13,11 @@ ShoppingFarm::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :brands, only: [:show, :index, :create, :update, :destroy]
+    resources :brands, only: [:show, :index, :create, :update, :destroy] do 
+      member do
+        get :pictures
+      end
+    end
     resources :products, only: [:show, :index, :create, :update, :destroy] do 
       member do
         get :pictures
@@ -21,7 +25,7 @@ ShoppingFarm::Application.routes.draw do
     end
     resources :dealer_profiles, only: [:show, :update, :index, :create, :destroy]
     resources :categories
-    resources :pages, only: [:index, :show, :update, :destroy]
+    resources :pages, only: [:index, :show, :create, :update, :destroy]
   end
 
   resources :uploads, :path => 'uploads/:resource_model'

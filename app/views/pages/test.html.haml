@@ -1,126 +1,410 @@
-.container
-  .row
-    .big-heading
-      %h1{style: "font-family: Allan;"} ЯКІСНИЙ ПРОДУКТ ПЛЮС!
-      .slogan
-        %h4{style: "font-family: Allan;"}
-          Наша компания является официальным представителем итальянских торговых марок в Украине. Весь товар сертифицирован. Возможны доставки по всей Украине.
-.clear
-.container
-  .row
-    / Place somewhere in the <body> of your page
-    #video_wrapper
-      .video_pattern
-      %video.video_background{autoplay: "true", loop: "loop", preload: "auto", volume: "0", muted: ""}
-        %source{src: "/videos/video.webm", type: "video/webm"}
-        %source{src: "/img/landing/video.mp4", type: "video/mp4"} 
-        Video not supported
-.clear
-%br
-%br
-%br
-.container.clearfix
-  .row
-    .service-block.span3
-      .style
-        %a.stylish{href: "http://unolution.com/en/#"}
-          %span.globe
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} WEBSITE DESIGN
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.span3
-      .style
-        %a.stylish{href: "http://unolution.com/en/#"}
-          %span.setting
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} DEVELOPMENT
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.span3
-      .style
-        %a.stylish{href: "http://unolution.com/en/#"}
-          %span.video
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} VIDEO MAKING
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.span3
-      .style
-        %a.stylish{href: "http://unolution.com/en/#"}
-          %span.development
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} SUPPORT
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-.clear
-.container
-  .row
-    .center-heading
-      .text
-        %span Бренды
-.clear
-.container
-  .row
-    .recent-work
-      %ul#da-thumbs.da-thumbs
-        %li
-          .main
-            %a{href: "http://unolution.com/en/#"}
-              %img{alt: "", src: "/img/wash/logo1.png"}/
-            %div
-              %h4{style: "font-family: Allan;"} Project title
-              %p{style: "font-family: Allan;"}
-                Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
-              %a.icon-arrow-right.read.fancy{href: "/img/img1.jpg"}
-        %li
-          .main
-            %img{alt: "", src: "/img/wash/logo2.png"}/
-            %div
-              %h4{style: "font-family: Allan;"} Project title
-              %p{style: "font-family: Allan;"}
-                Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
-              %a.icon-arrow-right.read.fancy{href: "/img/img2.jpg"}
-        %li
-          .main
-            %img{alt: "", src: "/img/wash/logo3.png"}/
-            %div
-              %h4{style: "font-family: Allan;"} Project title
-              %p{style: "font-family: Allan;"}
-                Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
-              %a.icon-arrow-right.read.fancy{href: "/img/img3.jpg"}
-        %li
-          .main
-            %img{alt: "", src: "/img/wash/logo4.png"}/
-            %div
-              %h4{style: "font-family: Allan;"} Project title
-              %p{style: "font-family: Allan;"}
-                Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
-              %a.icon-arrow-right.read.fancy{href: "/img/img4.jpg"}
-        %li
-          .main
-            %img{alt: "", src: "/img/wash/logo5.png"}/
-            %div
-              %h4{style: "font-family: Allan;"} Project title
-              %p{style: "font-family: Allan;"}
-                Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
-              %a.icon-arrow-right.read.fancy{href: "/img/img5.jpg"}
-        %li
-          .main
-            %img{alt: "", src: "/img/wash/logo6.png"}/
-            %div
-              %h4{style: "font-family: Allan;"} Project title
-              %p{style: "font-family: Allan;"}
-                Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
-              %a.icon-arrow-right.read.fancy{href: "/img/img6.jpg"}
-.clear
-.container
-  .row
-    .span6
-      .left-heading
-        .text
-          %span Последнии новости
-      .clear
-      .recent-blog
-        .post
-          .comment-cout
-            %h5.date{style: "font-family: Allan;"} 20
+!!!
+%html.js.csstransitions
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %title enFORCE HTML5 Theme
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %link{href: "http://unolution.com/en/css/bootstrap.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/bootstrap-responsive.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/style.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/flexslider.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/jquery.bxslider.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/menu.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/font-awesome.min.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/colorpicker.css", rel: "stylesheet"}/
+    %link{href: "http://unolution.com/en/css/jquery.fancybox.css", rel: "stylesheet"}/
+    %link{href: "./enFORCE HTML5 Theme_files/css", rel: "stylesheet", type: "text/css"}/
+    %link#hfonts{href: "./enFORCE HTML5 Theme_files/css(1)", rel: "stylesheet", type: "text/css"}/
+    %link#bodyfonts{href: "./enFORCE HTML5 Theme_files/css", rel: "stylesheet", type: "text/css"}/
+    %link#menu-b{href: "http://unolution.com/en/css/menu-b.css", rel: "stylesheet"}/
+    %link#lfonts{href: "http://unolution.com/en/css/blank.css", rel: "stylesheet"}/
+    %link#skin{href: "http://unolution.com/en/css/green.css", rel: "stylesheet"}/
+    %style#pattern{type: "text/css"}
+    %style#fontsize{type: "text/css"}
+    = stylesheet_link_tag    "application_front_manifest", media: "all", "data-turbolinks-track" => true
+
+    %script{src: "./enFORCE HTML5 Theme_files/modernizr.custom.97074.js"}
+  %body{style: "background-image: url(http://unolution.com/en/img/pat/pat26.jpg); font-family: Allan; background-position: initial initial; background-repeat: initial initial;"}
+    %header#header.clearfix.scroll
+      .container
+        .row
+          .span5
+            %h3{style: "font-family: Allan;"}
+              %a.logo{href: "http://unolution.com/en/index.html"} ЯКІСНИЙ ПРОДУКТ ПЛЮС
+
+            /%span.slogan Welcome to our website!
+          %section.span7
+            %nav
+              %ul.sf-menu.l_tinynav1.sf-js-enabled.sf-shadow
+                %li
+                  %a{href: "http://unolution.com/en/index.html"} Home
+                %li
+                  %a{href: "http://unolution.com/en/about.html"} about
+                / <li><a href="service.html">Services</a></li>
+                %li
+                  %a{href: "http://unolution.com/en/#"} Features
+                  %ul{style: "display: none; visibility: hidden;"}
+                    %li
+                      %a{href: "http://unolution.com/en/index2.html"}
+                        Full Width Slider
+                      %span.icon
+                        %span.icon-globe
+                    %li
+                      %a{href: "http://unolution.com/en/index3.html"} content Slider
+                      %span.icon
+                        %span.icon-wrench
+                    %li
+                      %a{href: "http://unolution.com/en/service.html"} Services
+                      %span.icon
+                        %span.icon-bar-chart
+                    %li
+                      %a{href: "http://unolution.com/en/work.html"} Grid portfolio
+                      %span.icon
+                        %span.icon-facetime-video
+                    %li
+                      %a{href: "http://unolution.com/en/full-work.html"} Full Portfolio
+                      %span.icon
+                        %span.icon-camera-retro
+                    %li
+                      %a{href: "http://unolution.com/en/shortcodes.html"} Shortcodes
+                      %span.icon
+                        %span.icon-wrench
+                    %li
+                      %a{href: "http://unolution.com/en/typography.html"} Typography
+                      %span.icon
+                        %span.icon-bar-chart
+                    %li
+                      %a{href: "http://unolution.com/en/single-blog.html"} Full Post Page
+                      %span.icon
+                        %span.icon-cogs
+                %li
+                  %a{href: "http://unolution.com/en/shortcodes.html"} Shortcodes
+                %li
+                  %a{href: "http://unolution.com/en/blog.html"} blog
+                  %ul{style: "display: none; visibility: hidden;"}
+                    %li
+                      %a{href: "http://unolution.com/en/single-blog.html"} Full Post Page
+                      %span.icon
+                        %span.icon-cogs
+                %li
+                  %a{href: "http://unolution.com/en/contact.html"} contact
+              %select.tinynav.tinynav1
+                %option{value: "index.html"} Home
+                %option{value: "about.html"} about
+                %option{value: "#"} Features
+                %option{value: "index2.html"}
+                  Full Width Slider
+                %option{value: "index3.html"} content Slider
+                %option{value: "service.html"} Services
+                %option{value: "work.html"} Grid portfolio
+                %option{value: "full-work.html"} Full Portfolio
+                %option{value: "shortcodes.html"} Shortcodes
+                %option{value: "typography.html"} Typography
+                %option{value: "single-blog.html"} Full Post Page
+                %option{value: "shortcodes.html"} Shortcodes
+                %option{value: "blog.html"} blog
+                %option{value: "single-blog.html"} Full Post Page
+                %option{selected: "selected", value: "contact.html"} contact
+        .row
+          .container
+            .wrapper-sprite-list        
+    .clear
+    .container
+      %section.row
+        .span12.socialpack
+          %section.social
+            %ul
+              %li
+                %a.facebook{href: "http://unolution.com/en/#"}
+                  %span.icon-facebook
+              %li
+                %a.twitter{href: "http://unolution.com/en/#"}
+                  %span.icon-twitter
+              %li
+                %a.google-plus{href: "http://unolution.com/en/#"}
+                  %span.icon-google-plus
+    .clear
+    .container
+      .row
+        .big-heading
+          %h1{style: "font-family: Allan;"} A PROMISE OF WEB EXCELLENCE!
+          .slogan
+            %h4{style: "font-family: Allan;"}
+              Designmonstr is a design house, with a new vision in graphic & web designing, dedicated to
+              creating distinctive, modern & innovative graphic & web designs.
+    .clear
+    .container
+      .row
+        / Place somewhere in the <body> of your page
+        .flexslider
+          .flex-viewport{style: "overflow: hidden; position: relative;"}
+            %ul.slides{style: "width: 1000%; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(-1936px, 0, 0);"}
+              %li.clone{style: "width: 968px; float: left; display: block;"}
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/slide3.jpg"}/
+                .flex-caption.left
+                  .textp
+                    %h2{style: "font-family: Allan;"}
+                      Bootstrap
+                      %span.small v2.30.0
+                    %p{style: "font-family: Allan;"} Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                  .clear
+                  .btton
+                    %a.btcolor{href: "http://unolution.com/en/#"} Learn more!
+                    %a.btdark{href: "http://unolution.com/en/#"} Buy Now!
+              %li{style: "width: 968px; float: left; display: block;"}
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/slide1.jpg"}/
+                .flex-caption.bottom
+                  %p.textp{style: "font-family: Allan;"} This is Simple text
+                  .right
+                    %a.btcolor{href: "http://unolution.com/en/#"} Learn more!
+                    %a.btdark{href: "http://unolution.com/en/#"} Buy Now!
+              %li.flex-active-slide{style: "width: 968px; float: left; display: block;"}
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/slide2.jpg"}/
+                .flex-caption.bottom
+                  %p.textp{style: "font-family: Allan;"} This is text just for example
+                  .right
+                    %a.btcolor{href: "http://unolution.com/en/#"} Learn more!
+                    %a.btdark{href: "http://unolution.com/en/#"} Buy Now!
+              %li{style: "width: 968px; float: left; display: block;"}
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/slide3.jpg"}/
+                .flex-caption.left
+                  .textp
+                    %h2{style: "font-family: Allan;"}
+                      Bootstrap
+                      %span.small v2.30.0
+                    %p{style: "font-family: Allan;"} Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                  .clear
+                  .btton
+                    %a.btcolor{href: "http://unolution.com/en/#"} Learn more!
+                    %a.btdark{href: "http://unolution.com/en/#"} Buy Now!
+              %li.clone{style: "width: 968px; float: left; display: block;"}
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/slide1.jpg"}/
+                .flex-caption.bottom
+                  %p.textp{style: "font-family: Allan;"} This is Simple text
+                  .right
+                    %a.btcolor{href: "http://unolution.com/en/#"} Learn more!
+                    %a.btdark{href: "http://unolution.com/en/#"} Buy Now!
+          %ol.flex-control-nav.flex-control-paging
+            %li
+              %a 1
+            %li
+              %a.flex-active 2
+            %li
+              %a 3
+    .clear
+    .container.clearfix
+      .row
+        .service-block.span3
+          .style
+            %a.stylish{href: "http://unolution.com/en/#"}
+              %span.globe
+            %a.halfCircleBottom
+          %h4{style: "font-family: Allan;"} WEBSITE DESIGN
+          %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+        .service-block.span3
+          .style
+            %a.stylish{href: "http://unolution.com/en/#"}
+              %span.setting
+            %a.halfCircleBottom
+          %h4{style: "font-family: Allan;"} DEVELOPMENT
+          %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+        .service-block.span3
+          .style
+            %a.stylish{href: "http://unolution.com/en/#"}
+              %span.video
+            %a.halfCircleBottom
+          %h4{style: "font-family: Allan;"} VIDEO MAKING
+          %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+        .service-block.span3
+          .style
+            %a.stylish{href: "http://unolution.com/en/#"}
+              %span.development
+            %a.halfCircleBottom
+          %h4{style: "font-family: Allan;"} SUPPORT
+          %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    .clear
+    .container
+      .row
+        .center-heading
+          .text
+            %span RECENTLY COMPLETE WORK
+    .clear
+    .container
+      .row
+        .recent-work
+          %ul#da-thumbs.da-thumbs
+            %li
+              .main
+                %a{href: "http://unolution.com/en/#"}
+                  %img{alt: "", src: "./enFORCE HTML5 Theme_files/img1.jpg"}/
+                %div
+                  %h4{style: "font-family: Allan;"} Project title
+                  %p{style: "font-family: Allan;"}
+                    Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
+                  %a.icon-arrow-right.read.fancy{href: "./enFORCE HTML5 Theme_files/img1.jpg"}
+            %li
+              .main
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/img2.jpg"}/
+                %div
+                  %h4{style: "font-family: Allan;"} Project title
+                  %p{style: "font-family: Allan;"}
+                    Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
+                  %a.icon-arrow-right.read.fancy{href: "./enFORCE HTML5 Theme_files/img2.jpg"}
+            %li
+              .main
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/img3.jpg"}/
+                %div
+                  %h4{style: "font-family: Allan;"} Project title
+                  %p{style: "font-family: Allan;"}
+                    Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
+                  %a.icon-arrow-right.read.fancy{href: "./enFORCE HTML5 Theme_files/img3.jpg"}
+            %li
+              .main
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/img4.jpg"}/
+                %div
+                  %h4{style: "font-family: Allan;"} Project title
+                  %p{style: "font-family: Allan;"}
+                    Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
+                  %a.icon-arrow-right.read.fancy{href: "./enFORCE HTML5 Theme_files/img4.jpg"}
+            %li
+              .main
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/img5.jpg"}/
+                %div
+                  %h4{style: "font-family: Allan;"} Project title
+                  %p{style: "font-family: Allan;"}
+                    Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
+                  %a.icon-arrow-right.read.fancy{href: "./enFORCE HTML5 Theme_files/img5.jpg"}
+            %li
+              .main
+                %img{alt: "", src: "./enFORCE HTML5 Theme_files/img6.jpg"}/
+                %div
+                  %h4{style: "font-family: Allan;"} Project title
+                  %p{style: "font-family: Allan;"}
+                    Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec.
+                  %a.icon-arrow-right.read.fancy{href: "./enFORCE HTML5 Theme_files/img6.jpg"}
+    .clear
+    .container
+      .row
+        .span6
+          .left-heading
+            .text
+              %span Recent blog
+          .clear
+          .recent-blog
+            .post
+              .comment-cout
+                %h5.date{style: "font-family: Allan;"} 20
+                .clear
+                %h6.month{style: "font-family: Allan;"} June
+              .halfCircleright
+              .containt
+                %h4{style: "font-family: Allan;"} Aliquam lorem lacus, auctor quis.
+                %p{style: "font-family: Allan;"} Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+                %a.icon-arrow-right.read{href: "http://unolution.com/en/#"}
+            .post
+              .comment-cout
+                %h5.date{style: "font-family: Allan;"} 20
+                .clear
+                %h6.month{style: "font-family: Allan;"} June
+              .halfCircleright
+              .containt
+                %h4{style: "font-family: Allan;"} Aliquam lorem lacus, auctor quis.
+                %p{style: "font-family: Allan;"} Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+                %a.icon-arrow-right.read{href: "http://unolution.com/en/#"}
+            .post
+              .comment-cout
+                %h5.date{style: "font-family: Allan;"} 20
+                .clear
+                %h6.month{style: "font-family: Allan;"} June
+              .halfCircleright
+              .containt
+                %h4{style: "font-family: Allan;"} Aliquam lorem lacus, auctor quis.
+                %p{style: "font-family: Allan;"} Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+                %a.icon-arrow-right.read{href: "http://unolution.com/en/#"}
+        .span6.testimonial
+          #bx-pager
+            %a.active{"data-slide-index" => "0", href: ""}
+              %img{alt: "", src: "./enFORCE HTML5 Theme_files/thumb1.png"}/
+            %a{"data-slide-index" => "1", href: ""}
+              %img{alt: "", src: "./enFORCE HTML5 Theme_files/thumb2.png"}/
+            %a{"data-slide-index" => "2", href: ""}
+              %img{alt: "", src: "./enFORCE HTML5 Theme_files/thumb3.png"}/
+            %a{"data-slide-index" => "3", href: ""}
+              %img{alt: "", src: "./enFORCE HTML5 Theme_files/thumb4.png"}/
+            %a{"data-slide-index" => "4", href: ""}
+              %img{alt: "", src: "./enFORCE HTML5 Theme_files/thumb5.png"}/
+            %a{"data-slide-index" => "5", href: ""}
+              %img{alt: "", src: "./enFORCE HTML5 Theme_files/thumb6.png"}/
+          .bx-wrapper
+            .bx-viewport{style: "width: 100%; overflow: hidden; position: relative; height: 290px;"}
+              %ul.bxslider{style: "width: 1290%; position: relative; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(-460px, 0, 0);"}
+                %li.bx-clone{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time "
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time"
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time"
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time"
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time"
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time "
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time "
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+                %li.bx-clone{style: "float: left; list-style: none; position: relative; width: 460px;"}
+                  %p{style: "font-family: Allan;"}
+                    " Working with FxPartern is always a wonderful Experience as they always try their best to come up with something really professional and diffrent at the same time"
+                  %a.info{href: "http://unolution.com/en/#"}
+                    John Smith
+                    %span July 28, 2013
+            .bx-controls.bx-has-controls-direction
+              .bx-controls-direction
+                %a.bx-prev{href: ""} Prev
+                %a.bx-next{href: ""} Next
+      .contact-box
+        .arrow-circle
+        .circleright
+        %h4{style: "font-family: Allan;"} Want to find out whats happening at DesignMonstr.com
+        %a.buttonred{href: "http://eepurl.com/vGsWT"} Subscribe to our newsletter
+    %br/
+    %br/
+    %br/
+    %footer#footer
+      .container
+        .row
+          .footer-widget.span2
+            %h4{style: "font-family: Allan;"} Pages
+>>>>>>> 0367939c5f34bbe9bb8698f9c0d4f4f1027dbbce
             .clear
             %h6.month{style: "font-family: Allan;"} June
           .halfCircleright

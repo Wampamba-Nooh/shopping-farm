@@ -6,7 +6,11 @@ class ShoppingFarm.Admin.Views.Brands.BrandView extends Backbone.View
   
   events:
     "click .destroy" : "destroy"
+    "click .edit" : "edit"
 
+  edit: () ->
+    @trigger('edit', @model)
+    
   destroy: () ->
     window.ShoppingFarm.Admin.DestroyPromptDialog( => 
       @model.destroy()
