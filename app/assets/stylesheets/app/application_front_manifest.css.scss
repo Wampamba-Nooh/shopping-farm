@@ -10,12 +10,21 @@
 }
 
 .sub-head{
-  text-align: center;
-  margin-top: 30px;
+  text-align: left;
+  top: -15px;
+  position: relative;
   .span1 {
-    width: 60px;
+    width: 35px;
     display: inline-block;
-    float: none!important;
+    float: none !important;
+    margin: 0px 5px;
+    img{
+      max-width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.0);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.0);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.0);
+    }
   }
 }
 
