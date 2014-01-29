@@ -2,10 +2,22 @@ module Admin
 
   class BrandsController < Admin::AdminApplicationController
 
-    before_action :set_brand, only: [:show, :update, :destroy]
+    before_action :set_brand, only: [:show, :update, :destroy, :pictures]
 
     def index
       @brands = Brand.all
+    end
+
+    def pictures
+      @brand_pictures = @brand.brand_pictures
+      
+      uploads_json = Jbuilder.new do |json|
+        json.array! @brand_pictures.collect { |upload| upload.to_builder.attributes! }
+      end
+
+      respond_to do |format|
+        format.json { render json: uploads_json.target! }
+      end
     end
 
     def show
@@ -47,7 +59,12 @@ module Admin
       end
 
       def brand_params
-        params.require(:brand).permit(:identificator)
+        params.require(:brand).permit(
+          :identificator,
+          :title, 
+          :short_description, 
+          :full_description
+        )
       end
   end
 

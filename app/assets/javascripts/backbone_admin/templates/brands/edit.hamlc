@@ -20,4 +20,4 @@
     .clearfix
     %textarea{id: 'full_description', name: 'full_description'}
 
-  %button.btn.btn-default{type: "submit"} Создать
+  %button.btn.btn-default{type: "submit"} Сохранить

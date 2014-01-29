@@ -13,7 +13,11 @@ ShoppingFarm::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :brands, only: [:show, :index, :create, :update, :destroy]
+    resources :brands, only: [:show, :index, :create, :update, :destroy] do 
+      member do
+        get :pictures
+      end
+    end
     resources :products, only: [:show, :index, :create, :update, :destroy] do 
       member do
         get :pictures

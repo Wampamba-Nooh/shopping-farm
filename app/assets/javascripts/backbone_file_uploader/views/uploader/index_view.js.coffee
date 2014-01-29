@@ -33,6 +33,7 @@ class ShoppingFarmFileUploader.Views.Uploader.IndexView extends Backbone.View
     @addAll()
     @$('input.fileupload').fileupload({
       dataType: 'json'
+      url: @collection.url
       done: (e, data) =>
         if data.context
           data.context.find('.label-in').addClass("success")

@@ -1,9 +1,11 @@
 - if @children.length > 0
   %span.glyphicon.glyphicon-minus-sign
-    = @identificator
+    = "(#{@identificator})"
+    = @title
 - else
   %span
-    = @identificator
+    = "(#{@identificator})"
+    = @title
 
 %a.new{href: ""} add 
 %a.edit{href: ""} edit

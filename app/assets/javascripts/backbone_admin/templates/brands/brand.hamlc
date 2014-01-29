@@ -4,5 +4,7 @@
     = @identificator
 %td= @created_at
 %td
-  %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
-  .clearfix
+  .btn-group.pull-right
+    %button.btn.btn-primary.btn-xs.pull-right.edit{type: "button"} Редактировать
+    %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
+    .clearfix

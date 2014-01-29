@@ -7,9 +7,4 @@ class ShoppingFarm.Admin.Collections.ProductPicturesCollection extends Backbone.
   model: ShoppingFarm.Admin.Models.ProductPicture
   url: '/uploads/product_picture'
 
-  #initialize: () ->
-  #  @bind('destroy', (e) -> 
-  #    @trigger( "change" )
-  #    this
-  #  )
     

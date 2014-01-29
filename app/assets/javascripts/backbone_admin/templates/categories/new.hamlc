@@ -3,5 +3,10 @@
     %label Identificator
     %input.form-control{id: "identificator", name: "identificator", type: "text"}
     %span.help-block.hidden
-
+  .form-group
+    %label Заголовок
+    .clearfix
+    %input.form-control{id: 'title', name: 'title'}
+    %span.help-block.hidden
+    
   %button.btn.btn-default{type: "submit"} Создать

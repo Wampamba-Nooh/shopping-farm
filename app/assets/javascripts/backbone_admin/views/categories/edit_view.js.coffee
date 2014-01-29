@@ -7,8 +7,12 @@ class ShoppingFarm.Admin.Views.Categories.EditView extends Backbone.View
     "submit #category" : "update"
   
   bindings:
-   '[name=identificator]': 
+    '[name=identificator]': 
       observe: 'identificator'
+      setOptions:
+        validate: true   
+    '[name=title]': 
+      observe: 'title'
       setOptions:
         validate: true
 
@@ -20,14 +24,12 @@ class ShoppingFarm.Admin.Views.Categories.EditView extends Backbone.View
   update : (e) ->
     e.preventDefault()
     e.stopPropagation()
-
-    @model.save(null,
-      success : (customer_proposal) =>
-        $('#admin-modal-dialog').modal('hide')
-        #@model = customer_proposal
-
-        #window.location.hash = "/#{@model.id}"
-    )
+  
+    if @model.isValid(true)
+      @model.save(null,
+        success : (customer_proposal) =>
+          $('#admin-modal-dialog').modal('hide')
+      )
 
   render : ->
     $(@el).html(@template(@model.toJSON() ))

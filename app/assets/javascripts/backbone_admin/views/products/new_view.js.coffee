@@ -37,8 +37,7 @@ class ShoppingFarm.Admin.Views.Products.NewView extends Backbone.View
     @model = new @collection.model()
     
     @picture_uploader = new ShoppingFarmFileUploader.Views.Uploader.IndexView({collection: @model.product_pictures_collection})
-    #@model.fetch_product_pictures()
-    
+        
     @options.categories_collection.off('sync')
     @options.categories_collection.on('sync', @init_categories_select2)
   

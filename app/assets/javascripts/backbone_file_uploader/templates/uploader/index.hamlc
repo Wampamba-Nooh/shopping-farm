@@ -7,6 +7,6 @@
     %span.fileinput-button.btn.btn-success.btn-sm
       %span.glyphicon.glyphicon-plus
         %strong Добавить
-      %input{class: "fileupload", type: "file", name: "upload[picture]", "data-url" => "/uploads/product_picture"}
+      %input{class: "fileupload", type: "file", name: "upload[picture]"}
     .clearfix
     %br

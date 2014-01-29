@@ -11,13 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129153348) do
+ActiveRecord::Schema.define(version: 20140129190717) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "brand_pictures", force: true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "brand_translations", force: true do |t|
+    t.integer  "brand_id",          null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "short_description"
+    t.text     "full_description"
+    t.text     "title"
+  end
+
+  add_index "brand_translations", ["brand_id"], name: "index_brand_translations_on_brand_id", using: :btree
+  add_index "brand_translations", ["locale"], name: "index_brand_translations_on_locale", using: :btree
 
   create_table "brands", force: true do |t|
     t.string   "identificator", null: false
@@ -39,6 +62,17 @@ ActiveRecord::Schema.define(version: 20140129153348) do
 
   add_index "categories_products", ["category_id"], name: "index_categories_products_on_category_id", using: :btree
   add_index "categories_products", ["product_id"], name: "index_categories_products_on_product_id", using: :btree
+
+  create_table "category_translations", force: true do |t|
+    t.integer  "category_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "title"
+  end
+
+  add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id", using: :btree
+  add_index "category_translations", ["locale"], name: "index_category_translations_on_locale", using: :btree
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false

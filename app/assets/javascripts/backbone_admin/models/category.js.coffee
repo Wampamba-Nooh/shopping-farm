@@ -3,6 +3,7 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
   
   defaults:
     identificator: null
+    title: null
 
   idAttribute: 'id'
   
@@ -18,6 +19,9 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
 
   validation: 
     identificator: 
+      required: true
+      msg: 'Ошибка'
+    title: 
       required: true
       msg: 'Ошибка'
 
