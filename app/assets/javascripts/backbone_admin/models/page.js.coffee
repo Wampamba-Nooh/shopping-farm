@@ -5,12 +5,10 @@ class ShoppingFarm.Admin.Models.Page extends Backbone.Model
     super(options)
    
   defaults:
-    content: null
-
-  validation: 
-    content: 
-      required: true
-      msg: 'Ошибка'
+    identificator: null
+    title: null
+    short_content: null
+    full_content: null
 
   urlRoot: '/admin/pages'
 

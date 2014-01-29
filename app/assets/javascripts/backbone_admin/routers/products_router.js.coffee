@@ -6,11 +6,11 @@ class ShoppingFarm.Admin.Routers.ProductsRouter extends Backbone.Router
 
   routes:
     "products" : "index"
-    "products/new" : "new"
+    "products/new" : "new_product"
     "products/edit/:id" : "edit"
     "products/:id" : "show"
 
-  new: ->
+  new_product: ->
     @brands_collection.fetch(
       complete: =>
         if @brands_collection.length == 0

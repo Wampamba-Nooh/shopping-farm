@@ -1,4 +1,7 @@
 %h1.top Страницы
+%a.new-dealer{href: "#pages/new", class: "btn btn-success"}
+  Создать
+%br
 %br
 %table.table.table-striped
   %thead

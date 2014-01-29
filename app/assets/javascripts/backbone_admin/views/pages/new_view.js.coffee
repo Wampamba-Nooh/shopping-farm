@@ -1,7 +1,7 @@
 ShoppingFarm.Admin.Views.Pages ||= {}
 
-class ShoppingFarm.Admin.Views.Pages.EditView extends Backbone.View
-  template: JST["backbone_admin/templates/pages/edit"]
+class ShoppingFarm.Admin.Views.Pages.NewView extends Backbone.View
+  template: JST["backbone_admin/templates/pages/new"]
   
   events: "submit #page" : "save"
   
@@ -17,6 +17,7 @@ class ShoppingFarm.Admin.Views.Pages.EditView extends Backbone.View
 
   constructor: (options) ->
     super(options)
+    @model = new @collection.model()
     Backbone.Validation.bind(this)
   
   save: (e) ->
@@ -36,11 +37,11 @@ class ShoppingFarm.Admin.Views.Pages.EditView extends Backbone.View
           @model.trigger('validated', false, @model, errors)
           @model.trigger('validated:invalid', @model, errors)
       )
-    
-  
+
   render: =>
     $(@el).html(@template(@model.toJSON()))
     CKEDITOR.replace(@$('#full_content')[0])
     CKEDITOR.replace(@$('#short_content')[0])
     @stickit()
+
     return this

@@ -25,7 +25,7 @@ ShoppingFarm::Application.routes.draw do
     end
     resources :dealer_profiles, only: [:show, :update, :index, :create, :destroy]
     resources :categories
-    resources :pages, only: [:index, :show, :update, :destroy]
+    resources :pages, only: [:index, :show, :create, :update, :destroy]
   end
 
   resources :uploads, :path => 'uploads/:resource_model'
