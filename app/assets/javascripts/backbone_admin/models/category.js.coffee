@@ -2,21 +2,22 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
   paramRoot: 'category'
   
   defaults:
-    name: null
+    identificator: null
 
   idAttribute: 'id'
+  
   relations: [{
     type: Backbone.HasMany
     key: 'children'
     relatedModel: 'ShoppingFarm.Admin.Models.Category'
-    reverseRelation: {
-      key: 'parent_id'
-      includeInJSON: 'parent_id'
-    }
+    #reverseRelation: {
+    #  key: 'parent_id'
+    #  includeInJSON: 'parent_id'
+    #}
   }]
 
   validation: 
-    name: 
+    identificator: 
       required: true
       msg: 'Ошибка'
 

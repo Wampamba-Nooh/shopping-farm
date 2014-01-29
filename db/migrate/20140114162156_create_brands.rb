@@ -1,7 +1,7 @@
 class CreateBrands < ActiveRecord::Migration
   def change
     create_table :brands do |t|
-      t.string :brand_name, null: false
+      t.string :identificator, null: false
 
       t.timestamps
     end

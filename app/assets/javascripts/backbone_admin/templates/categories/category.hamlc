@@ -1,0 +1,12 @@
+- if @children.length > 0
+  %span.glyphicon.glyphicon-minus-sign
+    = @identificator
+- else
+  %span
+    = @identificator
+
+%a.new{href: ""} add 
+%a.edit{href: ""} edit
+%a.destroy{href: ""} destroy
+
+%ul{id: "node-#{@id}"}

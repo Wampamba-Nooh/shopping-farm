@@ -8,22 +8,22 @@ class ShoppingFarm.Admin.Views.Dealers.IndexView extends Backbone.View
  
   constructor: (options) ->
     super(options)
-    @collection.bind('reset', @addAll)
-    #@collection.bind('change', @addAll)
+    @collection.off('reset', @addAll)
+    @collection.on('sync', @addAll)
   
   addAll: () =>
     @$("tbody").empty()
     @collection.each(@addOne)
 
   addOne: (dealer) =>
-    view = new ShoppingFarm.Admin.Views.Dealers.DealerView({model : dealer, brands_collection: @options.brands_collection, collection: @collection})
+    view = new ShoppingFarm.Admin.Views.Dealers.DealerView({model : dealer, collection: @collection})
     @$("tbody").append(view.render().el)
 
   new_dealer: (e) ->
     e.preventDefault()
     e.stopPropagation()
 
-    new_view = new ShoppingFarm.Admin.Views.Dealers.NewView({collection: @collection, brands_collection: @options.brands_collection})
+    new_view = new ShoppingFarm.Admin.Views.Dealers.NewView({collection: @collection})
     $("#modal-body-content").html(new_view.render().el)
     $('#admin-modal-dialog').modal('show')
 

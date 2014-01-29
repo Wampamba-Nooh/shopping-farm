@@ -1,13 +1,8 @@
 %td= @id
 %td
   %a{href: "#", class: "link accent preview"}
-    = @dealer_name
+    = @identificator
 %td= @city
-%td
-  - for brand in @brands
-    %span.label.label-info= brand.brand_name
-    %br
-
 %td= @status
 %td= @created_at
 %td

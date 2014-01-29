@@ -6,8 +6,8 @@ class ShoppingFarm.Admin.Views.Products.NewView extends Backbone.View
   events: "submit #product" : "save"
   
   bindings:
-   '[name=product_name]': 
-      observe: 'product_name'
+   '[name=identificator]': 
+      observe: 'identificator'
       setOptions:
         validate: true
    '[name=brand_id]': 

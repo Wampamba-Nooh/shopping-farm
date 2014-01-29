@@ -1,6 +1,6 @@
 %label ID
   = @id
-%span= @dealer_name
+%span= @identificator
 %span= @created_at
 
 %br

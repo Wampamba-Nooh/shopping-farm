@@ -9,4 +9,7 @@ class Category < ActiveRecord::Base
     #return false
   end
 
+  scope :root, lambda {
+    where("parent_id is null")
+  }
 end

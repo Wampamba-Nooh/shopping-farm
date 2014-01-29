@@ -6,8 +6,8 @@ class ShoppingFarm.Admin.Views.Brands.NewView extends Backbone.View
   events: "submit #brand" : "save"
   
   bindings:
-   '[name=brand_name]': 
-      observe: 'brand_name'
+   '[name=identificator]': 
+      observe: 'identificator'
       setOptions:
         validate: true
 
@@ -29,7 +29,6 @@ class ShoppingFarm.Admin.Views.Brands.NewView extends Backbone.View
           console.log(brand)
           @model = brand
           $('#admin-modal-dialog').modal('hide')
-          @collection.trigger('reset')
         error: (customer_proposal, jqXHR) =>
           @model.set({errors: $.parseJSON(jqXHR.responseText)})
       )

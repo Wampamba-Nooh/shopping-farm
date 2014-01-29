@@ -1,29 +1,7 @@
+%h1.top Категории
+%a.new-category{href: "#", class: "btn btn-success"}
+  Создать
+%br
+%br
 .tree.well
-  %ul
-    %li
-      %span.glyphicon.glyphicon-minus-sign
-        Parent
-      %a{href: ""} Goes somewhere
-      %ul
-        %li
-          %span.glyphicon.glyphicon-minus-sign
-            Child
-          %a{href: ""} Goes somewhere
-          %ul
-            %li
-              %span.glyphicon.glyphicon-leaf
-                Grand Child
-              %a{href: ""} Goes somewhere
-        %li
-          %span.glyphicon.glyphicon-minus-sign
-            Child
-          %a{href: ""} Goes somewhere
-          %ul
-            %li
-              %span.glyphicon.glyphicon-leaf
-                Grand Child
-              %a{href: ""} Goes somewhere
-            %li
-              %span.glyphicon.glyphicon-leaf
-                Grand Child
-              %a{href: ""} Goes somewhere
+  %ul#tree

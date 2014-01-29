@@ -6,11 +6,19 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
   events: "submit #product" : "update"
   
   bindings:
-   '[name=product_name]': 
-      observe: 'product_name'
+    '[name=identificator]': 
+      observe: 'identificator'
+      setOptions:
+        validate: true   
+    '[name=short_description]': 
+      observe: 'short_description'
+      setOptions:
+        validate: true   
+    '[name=full_description]': 
+      observe: 'full_description'
       setOptions:
         validate: true
-   '[name=brand_id]': 
+    '[name=brand_id]': 
       observe: 'brand_id'
       setOptions:
         validate: true
@@ -29,7 +37,6 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
       data: @options.brands_collection.select2_data()
       placeholder: "Выберите бренд"
     })
-
     @$("#brand_id").select2('val', @model.get('brand_id'))
 
   update : (e) ->
@@ -37,15 +44,15 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
     e.stopPropagation()
 
     @model.unset("errors")
+
+    @model.set({short_description: CKEDITOR.instances['short_description'].getData()})
+    @model.set({full_description: CKEDITOR.instances['full_description'].getData()})
     
     if @model.isValid(true)
       @model.save(null,
         success : () =>
           @model.update_pictures_with_product_id()
-          $('#admin-modal-dialog').modal('hide')
-          @model.fetch
-            complete: =>
-              @collection.trigger('reset')
+          Backbone.history.navigate('products', true);
         error: (product, jqXHR) =>
           @model.set({errors: $.parseJSON(jqXHR.responseText)})
       )
@@ -53,7 +60,10 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
   render : ->
     $(@el).html(@template(@model.toJSON() ))
     @$("#product-pictures").html(@picture_uploader.render().el)
-    CKEDITOR.replace(@$('#content')[0])
+
+    CKEDITOR.replace(@$('#short_description')[0])
+    CKEDITOR.replace(@$('#full_description')[0])
+
     @stickit()
     @init_brand_select2()
     return this

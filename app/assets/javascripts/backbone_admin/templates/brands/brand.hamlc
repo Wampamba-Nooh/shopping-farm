@@ -1,7 +1,7 @@
 %td= @id
 %td
   %a{href: "#", class: "link accent"}
-    = @brand_name
+    = @identificator
 %td= @created_at
 %td
   %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить

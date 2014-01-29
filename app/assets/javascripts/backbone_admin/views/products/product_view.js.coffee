@@ -9,18 +9,12 @@ class ShoppingFarm.Admin.Views.Products.ProductView extends Backbone.View
     
   events:
     "click .destroy" : "destroy"
-    "click .edit" : "edit"
     "click .preview" : "show"
 
   show: (e) ->
     e.preventDefault()
     e.stopPropagation()
     @trigger('show', @model)  
-
-  edit: (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-    @trigger('edit', @model)
 
   destroy: () ->
     window.ShoppingFarm.Admin.DestroyPromptDialog( => 

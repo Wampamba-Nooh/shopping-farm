@@ -7,7 +7,7 @@
   %thead
     %tr
       %th{style: "width: 30px;"} #
-      %th Название
+      %th Identificator
       %th Бренд
       %th Дата
       %th 

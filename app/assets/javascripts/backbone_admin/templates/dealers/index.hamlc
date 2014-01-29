@@ -7,9 +7,8 @@
   %thead
     %tr
       %th{style: "width: 30px;"} #
-      %th Название
+      %th identificator
       %th Город
-      %th Бренды
       %th Статус
       %th Дата
       %th 

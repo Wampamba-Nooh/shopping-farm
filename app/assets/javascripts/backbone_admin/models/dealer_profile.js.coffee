@@ -5,22 +5,18 @@ class ShoppingFarm.Admin.Models.DealerProfile extends Backbone.Model
     super(options)
 
   defaults:
-    dealer_name: null
+    identificator: null
     city: null
     contacts: null
     person_contacts: null
     email: null
     phone_number: '+380'
-    brand_ids: null
 
   validation: 
-    dealer_name: 
+    identificator: 
       required: true
       msg: 'необходимо ввести'
     status: 
-      required: true
-      msg: 'необходимо выбрать'
-    brand_ids: 
       required: true
       msg: 'необходимо выбрать'
     city: 

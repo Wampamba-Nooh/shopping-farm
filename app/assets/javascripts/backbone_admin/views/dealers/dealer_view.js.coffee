@@ -13,7 +13,7 @@ class ShoppingFarm.Admin.Views.Dealers.DealerView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    show_view = new ShoppingFarm.Admin.Views.Dealers.ShowView({model: @model, brands_collection: @options.brands_collection})
+    show_view = new ShoppingFarm.Admin.Views.Dealers.ShowView({model: @model})
     $("#modal-body-content").html(show_view.render().el)
     $('#admin-modal-dialog').modal('show')
   
@@ -22,7 +22,7 @@ class ShoppingFarm.Admin.Views.Dealers.DealerView extends Backbone.View
     e.stopPropagation()
     @model.fetch
       complete: =>
-        edit_view = new ShoppingFarm.Admin.Views.Dealers.EditView({model: @model, brands_collection: @options.brands_collection, collection: @collection})
+        edit_view = new ShoppingFarm.Admin.Views.Dealers.EditView({model: @model, collection: @collection})
         $("#modal-body-content").html(edit_view.render().el)
         $('#admin-modal-dialog').modal('show')
     

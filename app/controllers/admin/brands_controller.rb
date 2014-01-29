@@ -47,7 +47,7 @@ module Admin
       end
 
       def brand_params
-        params.require(:brand).permit(:brand_name)
+        params.require(:brand).permit(:identificator)
       end
   end
 

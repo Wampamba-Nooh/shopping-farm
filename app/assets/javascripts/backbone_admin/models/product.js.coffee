@@ -6,11 +6,19 @@ class ShoppingFarm.Admin.Models.Product extends Backbone.Model
     @product_pictures_collection = new ShoppingFarm.Admin.Collections.ProductPicturesCollection()
     
   defaults:
-    product_name: null
+    identificator: null
     brand_id: null
-
+    short_description: null
+    full_description: null
+    
   validation: 
-    product_name: 
+    identificator: 
+      required: true
+      msg: 'Ошибка'
+    short_description: 
+      required: true
+      msg: 'Ошибка'
+    full_description: 
       required: true
       msg: 'Ошибка'
     brand_id: 

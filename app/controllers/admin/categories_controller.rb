@@ -4,7 +4,7 @@ module Admin
     before_action :set_category, only: [:show, :update, :destroy]
 
     def index
-      @categories = Category.all
+      @categories = Category.root
     end
 
     def show
@@ -45,7 +45,7 @@ module Admin
       end
 
       def category_params
-        params.require(:category).permit(:name, :parent_id)
+        params.require(:category).permit(:identificator, :parent_id)
       end
   end
 

@@ -58,7 +58,7 @@ module Admin
       end
 
       def product_params
-        params.require(:product).permit(:product_name, :brand_id)
+        params.require(:product).permit(:identificator, :brand_id, :short_description, :full_description)
       end
   end
 

@@ -6,8 +6,8 @@
     %span.help-block.hidden
 
   .form-group
-    %label Название
-    %input.form-control{id: "product_name", name: "product_name", placeholder: "например, Q7 2014", type: "text"}
+    %label Identificator
+    %input.form-control{id: "identificator", name: "identificator", placeholder: "например, Q7 2014", type: "text"}
     %span.help-block.hidden
   .form-group
     %label Фотографии

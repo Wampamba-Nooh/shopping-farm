@@ -5,6 +5,7 @@ ShoppingFarm::Application.routes.draw do
     :registrations => "auth/registrations", :confirmations => "auth/confirmations" }
   
   namespace :front do
+    resources :dealer_profiles, only: [:index, :show]
     devise_scope :user do
       post :auth, to: "auth/registrations#create"
       post '/auth/sign_in', to: "auth/sessions#create"
@@ -18,6 +19,7 @@ ShoppingFarm::Application.routes.draw do
         get :pictures
       end
     end
+    resources :dealer_profiles, only: [:show, :update, :index, :create, :destroy]
     resources :categories
     resources :pages, only: [:index, :show, :update, :destroy]
   end

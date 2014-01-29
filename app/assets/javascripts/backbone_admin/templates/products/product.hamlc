@@ -1,12 +1,12 @@
 %td= @id
 %td
   %a.preview{href: "#", class: "link accent"}
-    = @product_name
+    = @identificator
 %td
-  = @brand.brand_name
+  = @brand.identificator
 %td= @created_at
 %td
   .btn-group.pull-right
-    %button.btn.btn-primary.btn-xs.edit{type: "button"} Редактировать
+    %a.button.btn.btn-primary.btn-xs.edit{href: "#products/edit/#{@id}"} Редактировать
     %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
     .clearfix

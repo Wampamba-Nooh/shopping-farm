@@ -6,16 +6,12 @@ class ShoppingFarm.Admin.Views.Dealers.NewView extends Backbone.View
   events: "submit #dealer" : "save"
   
   bindings:
-    '[name=dealer_name]': 
-       observe: 'dealer_name'
+    '[name=identificator]': 
+       observe: 'identificator'
        setOptions:
          validate: true
     '[name=status]': 
        observe: 'status'
-       setOptions:
-         validate: true
-    '[name=brand_ids]': 
-       observe: 'brand_ids'
        setOptions:
          validate: true
     '[name=city]': 
@@ -38,8 +34,6 @@ class ShoppingFarm.Admin.Views.Dealers.NewView extends Backbone.View
        observe: 'phone_number'
        setOptions:
          validate: true
-    '[name=access_concurrent_proposition]':
-       observe: 'access_concurrent_proposition'
 
   constructor: (options) ->
     super(options)
@@ -51,11 +45,9 @@ class ShoppingFarm.Admin.Views.Dealers.NewView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
     if @model.isValid(true)
-      @model.set('brand_ids', @$("#brand_ids").select2('val'))
       @model.save(null, 
         success: (dealer) =>
           @collection.add(@model)
-          @collection.trigger('reset')
           $('#admin-modal-dialog').modal('hide')
         error: (dealer, jqXHR) =>
           errors = JSON.parse(jqXHR.responseText)
@@ -84,16 +76,8 @@ class ShoppingFarm.Admin.Views.Dealers.NewView extends Backbone.View
       minimumResultsForSearch: -1
     })
 
-  init_brand_select2: () =>
-    @$("#brand_ids").select2({
-      data: @options.brands_collection.select2_data()
-      placeholder: "Выберите бренды"
-      multiple: true
-    })
-
   render: =>
     $(@el).html(@template())
-    @init_brand_select2()
     @init_dealer_status_select2()
     @init_city_autocomplete()
     @stickit()

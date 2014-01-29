@@ -45,7 +45,7 @@ module Admin
       end
 
       def page_params
-        params.require(:page).permit(:name, :content)
+        params.require(:page).permit(:identificator, :content)
       end
   end
 end

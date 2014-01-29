@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127235554) do
+ActiveRecord::Schema.define(version: 20140129132513) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 20140127235554) do
   end
 
   create_table "brands", force: true do |t|
-    t.string   "brand_name", null: false
+    t.string   "identificator", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "categories", force: true do |t|
-    t.string   "name"
+    t.string   "identificator", null: false
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,10 +48,33 @@ ActiveRecord::Schema.define(version: 20140127235554) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
+  create_table "dealer_profile_translations", force: true do |t|
+    t.integer  "dealer_profile_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "contacts"
+    t.text     "person_contacts"
+  end
+
+  add_index "dealer_profile_translations", ["dealer_profile_id"], name: "index_dealer_profile_translations_on_dealer_profile_id", using: :btree
+  add_index "dealer_profile_translations", ["locale"], name: "index_dealer_profile_translations_on_locale", using: :btree
+
+  create_table "dealer_profiles", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "city_latitude"
+    t.float    "city_longitude"
+    t.string   "identificator",  null: false
+    t.string   "status",         null: false
+    t.string   "city",           null: false
+    t.string   "phone_number",   null: false
+    t.string   "email",          null: false
+  end
+
   create_table "pages", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "title",      null: false
-    t.text     "content",    null: false
+    t.string   "identificator", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,9 +89,21 @@ ActiveRecord::Schema.define(version: 20140127235554) do
     t.datetime "updated_at"
   end
 
+  create_table "product_translations", force: true do |t|
+    t.integer  "product_id",        null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "short_description"
+    t.text     "full_description"
+  end
+
+  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
+  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id", using: :btree
+
   create_table "products", force: true do |t|
-    t.string   "brand_id",     null: false
-    t.string   "product_name", null: false
+    t.string   "brand_id",      null: false
+    t.string   "identificator", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

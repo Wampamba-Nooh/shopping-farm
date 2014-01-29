@@ -1,22 +1,22 @@
 %form#product{role: "form"}
-  .row
-    .col-md-5
-      .form-group
-        %label Бренд
-        .clearfix
-        %input{id: "brand_id", name: "brand_id"}
-        %span.help-block.hidden
-
-      .form-group
-        %label Название
-        %input.form-control{id: "product_name", name: "product_name", placeholder: "например, Q7 2014", type: "text"}
-        %span.help-block.hidden
-      .form-group
-        %label Фотографии
-        #product-pictures
-    .col-md-7
-      .form-group
-        %label Бренд
-        .clearfix
-        %textarea{id: 'content', name: 'content'}
+  .form-group
+    %label Бренд
+    .clearfix
+    %input{id: "brand_id", name: "brand_id"}
+    %span.help-block.hidden
+  .form-group
+    %label Identificator
+    %input.form-control{id: "identificator", name: "identificator", placeholder: "например, Q7 2014", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Фотографии
+    #product-pictures
+  .form-group
+    %label Короткое описание
+    .clearfix
+    %textarea{id: 'short_description', name: 'short_description'}
+  .form-group
+    %label Полное описание
+    .clearfix
+    %textarea{id: 'full_description', name: 'full_description'}
   %button.btn.btn-default{type: "submit"} Сохранить

@@ -1,0 +1,7 @@
+%form#category{role: "form"}
+  .form-group
+    %label Identificator
+    %input.form-control{id: "identificator", name: "identificator", type: "text"}
+    %span.help-block.hidden
+
+  %button.btn.btn-default{type: "submit"} Создать

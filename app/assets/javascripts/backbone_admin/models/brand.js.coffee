@@ -2,10 +2,10 @@ class ShoppingFarm.Admin.Models.Brand extends Backbone.Model
   paramRoot: 'brand'
   
   defaults:
-    brand_name: null
+    identificator: null
 
   validation: 
-    brand_name: 
+    identificator: 
       required: true
       msg: 'Ошибка'
 
@@ -17,6 +17,6 @@ class ShoppingFarm.Admin.Collections.BrandsCollection extends Backbone.Collectio
 
   select2_data: () =>
     @map( (brand) ->
-      {id: brand.id, text: brand.get("brand_name")}
+      {id: brand.id, text: brand.get("identificator")}
     )
 
