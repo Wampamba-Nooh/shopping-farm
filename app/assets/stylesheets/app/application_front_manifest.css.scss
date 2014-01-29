@@ -9,6 +9,16 @@
   max-width: 100%;
 }
 
+.sub-head{
+  text-align: center;
+  margin-top: 30px;
+  .span1 {
+    width: 60px;
+    display: inline-block;
+    float: none!important;
+  }
+}
+
 //pattern
 #video_wrapper{
   width: 100%;
