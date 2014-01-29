@@ -2,7 +2,8 @@ class TranslateProducts < ActiveRecord::Migration
   def self.up
     Product.create_translation_table!({
       :short_description => :text, 
-      :full_description => :text
+      :full_description => :text,
+      :title => :text
     }, {
       :migrate_data => true
     })

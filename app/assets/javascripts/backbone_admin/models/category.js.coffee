@@ -23,7 +23,7 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
 
   urlRoot: '/admin/categories'
 
+
 class ShoppingFarm.Admin.Collections.CategoriesCollection extends Backbone.Collection
   model: ShoppingFarm.Admin.Models.Category
   url: '/admin/categories'
-

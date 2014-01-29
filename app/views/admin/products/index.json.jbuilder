@@ -1,9 +1,11 @@
 json.array!(@products) do |product|
-  json.extract! product, :id, :identificator, :brand_id, :short_description, :full_description
+  json.extract! product, :id, :identificator, :brand_id, :short_description, :full_description, :title
   
   json.created_at product.created_at.to_date
   json.updated_at product.updated_at.to_date
-
+  
+  json.category_ids product.categories.map{|c| c.id}
+  
   json.brand do |json|
     json.id product.brand.id
     json.identificator product.brand.identificator

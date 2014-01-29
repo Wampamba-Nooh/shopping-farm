@@ -10,6 +10,10 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
       observe: 'identificator'
       setOptions:
         validate: true   
+    '[name=title]': 
+      observe: 'title'
+      setOptions:
+        validate: true      
     '[name=short_description]': 
       observe: 'short_description'
       setOptions:
@@ -22,6 +26,8 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
       observe: 'brand_id'
       setOptions:
         validate: true
+    '[name=category_ids]':
+       observe: 'category_ids'
 
   constructor: (options) ->
     super(options)
@@ -29,15 +35,32 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
     
     @picture_uploader = new ShoppingFarmFileUploader.Views.Uploader.IndexView({collection: @model.product_pictures_collection})
     @model.fetch_product_pictures()
-
+    
+    @options.categories_collection.off('sync')
+    @options.categories_collection.on('sync', @init_categories_select2)
+    
     Backbone.Validation.bind(this)
- 
+  
   init_brand_select2: () =>
     @$("#brand_id").select2({
       data: @options.brands_collection.select2_data()
       placeholder: "Выберите бренд"
-    })
+    }) 
     @$("#brand_id").select2('val', @model.get('brand_id'))
+
+
+  init_categories_select2: () =>
+    @$("#category_ids").select2({
+      data: @options.categories_collection.toJSON()
+      placeholder: "Выберите категории"
+      multiple: true
+      width: 300
+      formatResult: (item) ->
+        return item.identificator
+      formatSelection: (item) ->
+        return item.identificator
+    })
+    @$("#category_ids").select2('val', @model.get('category_ids'))
 
   update : (e) ->
     e.preventDefault()
@@ -47,7 +70,8 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
 
     @model.set({short_description: CKEDITOR.instances['short_description'].getData()})
     @model.set({full_description: CKEDITOR.instances['full_description'].getData()})
-    
+    @model.set('category_ids', @$("#category_ids").select2('val'))
+
     if @model.isValid(true)
       @model.save(null,
         success : () =>
@@ -63,7 +87,6 @@ class ShoppingFarm.Admin.Views.Products.EditView extends Backbone.View
 
     CKEDITOR.replace(@$('#short_description')[0])
     CKEDITOR.replace(@$('#full_description')[0])
-
-    @stickit()
     @init_brand_select2()
+    @stickit()
     return this

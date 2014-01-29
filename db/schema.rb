@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129132513) do
+ActiveRecord::Schema.define(version: 20140129153348) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 20140129132513) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories_products", id: false, force: true do |t|
+    t.integer "product_id"
+    t.integer "category_id"
+  end
+
+  add_index "categories_products", ["category_id"], name: "index_categories_products_on_category_id", using: :btree
+  add_index "categories_products", ["product_id"], name: "index_categories_products_on_product_id", using: :btree
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -96,6 +104,7 @@ ActiveRecord::Schema.define(version: 20140129132513) do
     t.datetime "updated_at"
     t.text     "short_description"
     t.text     "full_description"
+    t.text     "title"
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree

@@ -22,16 +22,19 @@
     %link#skin{href: "http://unolution.com/en/css/green.css", rel: "stylesheet"}/
     %style#pattern{type: "text/css"}
     %style#fontsize{type: "text/css"}
+    = stylesheet_link_tag    "application_front_manifest", media: "all", "data-turbolinks-track" => true
+
     %script{src: "./enFORCE HTML5 Theme_files/modernizr.custom.97074.js"}
   %body{style: "background-image: url(http://unolution.com/en/img/pat/pat26.jpg); font-family: Allan; background-position: initial initial; background-repeat: initial initial;"}
     %header#header.clearfix.scroll
       .container
         .row
-          .span4
+          .span5
             %h3{style: "font-family: Allan;"}
-              %a.logo{href: "http://unolution.com/en/index.html"} enforce
-            %span.slogan Welcome to our website!
-          %section.span8
+              %a.logo{href: "http://unolution.com/en/index.html"} ЯКІСНИЙ ПРОДУКТ ПЛЮС
+
+            /%span.slogan Welcome to our website!
+          %section.span7
             %nav
               %ul.sf-menu.l_tinynav1.sf-js-enabled.sf-shadow
                 %li
@@ -103,6 +106,9 @@
                 %option{value: "blog.html"} blog
                 %option{value: "single-blog.html"} Full Post Page
                 %option{selected: "selected", value: "contact.html"} contact
+        .row
+          .container
+            .wrapper-sprite-list        
     .clear
     .container
       %section.row

@@ -9,16 +9,12 @@ class ShoppingFarm.Admin.Models.Product extends Backbone.Model
     identificator: null
     brand_id: null
     short_description: null
+    title: null
     full_description: null
+    category_ids: null
     
   validation: 
     identificator: 
-      required: true
-      msg: 'Ошибка'
-    short_description: 
-      required: true
-      msg: 'Ошибка'
-    full_description: 
       required: true
       msg: 'Ошибка'
     brand_id: 

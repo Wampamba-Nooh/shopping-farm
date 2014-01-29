@@ -9,8 +9,17 @@
     %input.form-control{id: "identificator", name: "identificator", placeholder: "например, Q7 2014", type: "text"}
     %span.help-block.hidden
   .form-group
+    %label Категории
+    %br
+    %input.select-style{id: "category_ids", name: "category_ids"}
+    %span.help-block.hidden
+  .form-group
     %label Фотографии
     #product-pictures
+  .form-group
+    %label Заголовок
+    .clearfix
+    %input.form-control{id: 'title', name: 'title'}
   .form-group
     %label Короткое описание
     .clearfix
