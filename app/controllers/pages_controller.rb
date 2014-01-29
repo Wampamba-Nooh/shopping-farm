@@ -7,8 +7,13 @@ class PagesController < ApplicationController
   end
   def show
   end
+  def about
+  end
+  def contacts
+    render layout: "contacts"
+  end
   def test
-    render layout: false
+    #render layout: false
   end
 
 end

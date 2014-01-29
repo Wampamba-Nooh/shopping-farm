@@ -1,6 +1,78 @@
-%footer
-  %br
+%br/
+%br/
+%br/
+%footer#footer
   .container
     .row
-      .col-md-8
+      .footer-widget.span2
+        %h4{style: "font-family: Allan;"} Pages
+        .clear
+        %ul.list
+          %li
+            = link_to "Главная", "/"
+          %li
+            = link_to "О компании", "/#about"
+          %li
+            = link_to "Новости", "/pages/news#news"
+          %li.active
+            = link_to "Продукция", "/pages/products#products"
+          %li
+            = link_to "Дистрибьюторы", "/pages/distributors#distributors"
+          %li
+            = link_to "Контакты", "/#contacts"
+      .footer-widget.span6.flicker
+        %h4{style: "font-family: Allan;"} Вы можете связаться с нами
+        .clear
+        Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару, мы всегда готовы предоставить любую информацию, которая поможет сделать покупку. Получить консультацию можно по телефону или через форму обратной связи.
         //
+        %address
+          %strong Twitter, Inc.
+          %br/
+          795 Folsom Ave, Suite 600
+          %br/
+          San Francisco, CA 94107
+          %br/
+          %abbr{title: "Phone"} P:
+          (123) 456-7890
+        %address
+          %strong Full Name
+          %br/
+          %a{href: "mailto:#"} first.last@example.com
+          
+      .footer-widget.span4.contact-widget
+        %h4{style: "font-family: Allan;"} Задайте нам вопрос
+        .clear
+        %p{style: "font-family: Allan;"} Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
+        %form#footermsg{action: "http://unolution.com/en/js/send.php"}
+          %textarea#footmessage{name: "message"} Написать...
+          .clear
+          %a#send{href: "http://unolution.com/en/#"} Отправить
+        #mail_s
+          %span Email has been sent Successfully
+        #mail_f
+          %span Server Error Try again
+%section.bottom-footer
+  .container
+    .row
+      .link-list
+        %a{href: "http://unolution.com/en/#"} Terms of Services
+        %a{href: "http://unolution.com/en/#"} Privacy Policy
+        %a{href: "http://unolution.com/en/#"} FAQs
+        %a{href: "http://unolution.com/en/#"} Customer services
+.container
+  .row.socialpack
+    %section.social
+      %ul
+        %li
+          %a.facebook{href: "http://unolution.com/en/#"}
+            %span.icon-facebook
+        %li
+          %a.twitter{href: "http://unolution.com/en/#"}
+            %span.icon-twitter
+        %li
+          %a.google-plus{href: "http://unolution.com/en/#"}
+            %span.icon-google-plus
+    %p.copywrite{style: "font-family: Allan;"}
+      © 2013 Якісний продукт плюс , All rights reserved.
+%br
+%br

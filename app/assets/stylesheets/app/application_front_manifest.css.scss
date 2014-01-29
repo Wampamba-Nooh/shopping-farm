@@ -1,0 +1,49 @@
+@import "app/bootstrap";
+@import "app/bootstrap-responsive";
+@import "app/style";
+@import "app/flexslider";
+@import "app/menu";
+@import "app/th";
+
+#Layer_1{
+  max-width: 100%;
+}
+
+//pattern
+#video_wrapper{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: url(/img/landing/cover.jpg) no-repeat center top;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .video_background{ 
+    position: absolute; 
+    bottom: 0px; 
+    right: 0px; 
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto; 
+    /*z-index: -1000;*/
+    overflow: hidden; 
+  }
+  .video_pattern {
+    background-image: url(/img/landing/pattern.png);
+    position: absolute;
+    opacity: 0.9;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+

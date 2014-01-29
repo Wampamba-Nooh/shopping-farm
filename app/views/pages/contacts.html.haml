@@ -1,8 +1,48 @@
-- provide(:title, 'Контакты')
 .container
-  .col-md-12
-    %h1 Контакты
-    %p
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    %br
-    %br
+  .row
+    .inner-heading
+      .txt
+        %h1 Контакты
+    %section.blog.span8
+      .clearfix
+      %h4{style: "font-family: Allan;"} Вы можете связаться с нами
+      .clear
+      Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару, мы всегда готовы предоставить любую информацию, которая поможет сделать покупку. Получить консультацию можно по телефону или через форму обратной связи.
+      //
+      %address
+        %strong Twitter, Inc.
+        %br/
+        795 Folsom Ave, Suite 600
+        %br/
+        San Francisco, CA 94107
+        %br/
+        %abbr{title: "Phone"} P:
+        (123) 456-7890
+      %address
+        %strong Full Name
+        %br/
+        %a{href: "mailto:#"} first.last@example.com
+      .clear
+      %br
+      %h4{style: "font-family: Allan;"} Задайте нам вопрос
+      .clear
+      %p{style: "font-family: Allan;"} Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
+      %form#footermsg{action: "http://unolution.com/en/js/send.php"}
+        %textarea#footmessage{name: "message"} Написать...
+        .clear
+        %a#send{href: "http://unolution.com/en/#"} Отправить
+      #mail_s
+        %span Email has been sent Successfully
+      #mail_f
+        %span Server Error Try again
+    %aside#sidebar.span4
+      .sidebar-widget
+        %div 
+
+//
+.clearfix
+%br
+%br
+%br
+%br
+%br

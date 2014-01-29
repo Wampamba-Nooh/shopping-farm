@@ -1,0 +1,40 @@
+//.scroll
+%header#header.clearfix.bg
+  .container
+    .row
+      .span4
+        %h3{style: "font-family: Allan;"}
+          %a.logo{href: "http://unolution.com/en/index.html"} Якісний продукт плюс
+        %span.slogan 
+          Добро пожаловать!
+      %section.span8
+        %nav
+          %ul.sf-menu.l_tinynav1.sf-js-enabled.sf-shadow
+            //%li
+            //  = link_to "Главная", "/"
+            %li
+              = link_to "О компании", "/pages/about"
+            %li
+              = link_to "Новости", "/pages/news#news"
+            %li.active
+              = link_to "Продукция", "/pages/products#products"
+            %li
+              = link_to "Дистрибьюторы", "/pages/distributors#distributors"
+            %li
+              = link_to "Контакты", "/pages/contacts"
+.clear
+.container
+  %section.row
+    .span12.socialpack
+      %section.social
+        %ul
+          %li
+            %a.facebook{href: "http://unolution.com/en/#"}
+              %span.icon-facebook
+          %li
+            %a.twitter{href: "http://unolution.com/en/#"}
+              %span.icon-twitter
+          %li
+            %a.google-plus{href: "http://unolution.com/en/#"}
+              %span.icon-google-plus
+.clear
