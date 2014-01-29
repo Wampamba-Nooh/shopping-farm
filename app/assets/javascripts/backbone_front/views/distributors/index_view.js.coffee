@@ -3,6 +3,14 @@ ShoppingFarm.Front.Views.Distributors ||= {}
 class ShoppingFarm.Front.Views.Distributors.IndexView extends Backbone.View
   template: JST["backbone_front/templates/distributors/index"]
   
+  events:
+    "click .city-wrapper" : "show_distributor"
+
+  show_distributor: (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    alert('@@@')
+
   initialize: () ->
   
   constructor: (options) ->
