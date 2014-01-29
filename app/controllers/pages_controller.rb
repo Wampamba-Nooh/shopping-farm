@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   end
   def show
   end
+  def test
+    render layout: false
+  end
+
 end

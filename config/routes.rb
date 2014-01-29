@@ -34,6 +34,7 @@ ShoppingFarm::Application.routes.draw do
   get "pages/distributors"
   get "pages/products"
   get "pages/show"
+  get "pages/test"
 
   ##################################################
   get "pages/:name", to: "pages#page_by_name", as: :page_by_name

@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Allan';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Allan'), local('Allan-Regular'), url(http://themes.googleusercontent.com/static/fonts/allan/v5/5aqh4PlcZKVdCD6zaeSMnQ.woff) format('woff');
+}
