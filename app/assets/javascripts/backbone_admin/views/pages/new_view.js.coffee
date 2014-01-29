@@ -17,15 +17,24 @@ class ShoppingFarm.Admin.Views.Pages.NewView extends Backbone.View
 
   constructor: (options) ->
     super(options)
+    @options = options
+
     @model = new @collection.model()
+    
+    @options.categories_collection.off('sync')
+    @options.categories_collection.on('sync', @init_categories_select2)
+
     Backbone.Validation.bind(this)
   
   save: (e) ->
     e.preventDefault()
     e.stopPropagation()
+
+    @model.set({full_content: CKEDITOR.instances['full_content'].getData()})
+    @model.set({short_content: CKEDITOR.instances['short_content'].getData()})
+    @model.set('category_ids', @$("#category_ids").select2('val'))
+
     if @model.isValid(true)
-      @model.set({full_content: CKEDITOR.instances['full_content'].getData()})
-      @model.set({short_content: CKEDITOR.instances['short_content'].getData()})
       @model.save(null,
         success: (dealer) =>
           Backbone.history.navigate('pages', true)
@@ -37,6 +46,19 @@ class ShoppingFarm.Admin.Views.Pages.NewView extends Backbone.View
           @model.trigger('validated', false, @model, errors)
           @model.trigger('validated:invalid', @model, errors)
       )
+  
+  init_categories_select2: () =>
+    @$("#category_ids").select2({
+      data: @options.categories_collection.toJSON()
+      placeholder: "Выберите категории"
+      multiple: true
+      width: 300
+      formatResult: (item) ->
+        return item.identificator
+      formatSelection: (item) ->
+        return item.identificator
+    })
+    @$("#category_ids").select2('val', @model.get('category_ids'))
 
   render: =>
     $(@el).html(@template(@model.toJSON()))

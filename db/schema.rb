@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129194808) do
+ActiveRecord::Schema.define(version: 20140129204756) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(version: 20140129194808) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories_pages", id: false, force: true do |t|
+    t.integer "page_id"
+    t.integer "category_id"
+  end
+
+  add_index "categories_pages", ["category_id"], name: "index_categories_pages_on_category_id", using: :btree
+  add_index "categories_pages", ["page_id"], name: "index_categories_pages_on_page_id", using: :btree
 
   create_table "categories_products", id: false, force: true do |t|
     t.integer "product_id"

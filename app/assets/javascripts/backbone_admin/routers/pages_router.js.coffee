@@ -1,6 +1,7 @@
 class ShoppingFarm.Admin.Routers.PagesRouter extends Backbone.Router
   initialize: (options) ->
     @pages_collection = new ShoppingFarm.Admin.Collections.PagesCollection()
+    @categories_collection = new ShoppingFarm.Admin.Collections.CategoriesCollection()
 
   routes:
     "pages" : "pages"
@@ -9,8 +10,9 @@ class ShoppingFarm.Admin.Routers.PagesRouter extends Backbone.Router
     "pages/:id" : "show"
 
   new_page: ->
-    @new_view = new ShoppingFarm.Admin.Views.Pages.NewView({collection: @pages_collection})
+    @new_view = new ShoppingFarm.Admin.Views.Pages.NewView({collection: @pages_collection, categories_collection: @categories_collection})
     $("#container").html(@new_view.render().el)
+    @categories_collection.fetch()
 
   show: (id) ->    
     window.ShoppingFarm.Admin.admin_menu_toggle_active('pages')
@@ -27,8 +29,9 @@ class ShoppingFarm.Admin.Routers.PagesRouter extends Backbone.Router
     @model = new @pages_collection.model({id: id})
     @model.fetch(
       complete: =>  
-        @edit_view = new ShoppingFarm.Admin.Views.Pages.EditView({model: @model})
+        @edit_view = new ShoppingFarm.Admin.Views.Pages.EditView({model: @model, categories_collection: @categories_collection})
         $("#container").html(@edit_view.render().el)
+        @categories_collection.fetch()        
     )
 
     

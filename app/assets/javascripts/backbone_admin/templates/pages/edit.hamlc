@@ -4,6 +4,11 @@
     %input.form-control{id: "identificator", name: "identificator", placeholder: "", type: "text"}
     %span.help-block.hidden
   .form-group
+    %label Категории
+    %br
+    %input.select-style{id: "category_ids", name: "category_ids"}
+    %span.help-block.hidden
+  .form-group
     %label Заголовок
     .clearfix
     %input.form-control{id: 'title', name: 'title'}

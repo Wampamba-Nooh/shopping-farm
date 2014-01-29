@@ -5,4 +5,6 @@
   .btn-group.pull-right
     %a.btn.btn-primary.btn-xs{href: "#pages/edit/#{@id}"} 
       Редактировать
+    %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
+
     .clearfix

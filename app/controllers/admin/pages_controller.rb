@@ -49,7 +49,8 @@ module Admin
           :identificator, 
           :title,
           :full_content,
-          :short_content
+          :short_content,
+          :category_ids => []
         )
       end
   end

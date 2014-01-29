@@ -9,7 +9,8 @@ class ShoppingFarm.Admin.Models.Page extends Backbone.Model
     title: null
     short_content: null
     full_content: null
-
+    category_ids: null
+    
   urlRoot: '/admin/pages'
 
 class ShoppingFarm.Admin.Collections.PagesCollection extends Backbone.Collection
