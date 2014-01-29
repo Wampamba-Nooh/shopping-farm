@@ -5,6 +5,8 @@
 %td= @created_at
 %td
   .btn-group.pull-right
-    %button.btn.btn-primary.btn-xs.pull-right.edit{type: "button"} Редактировать
+    %a.btn.btn-primary.btn-xs.edit{href: "#"} 
+      Редактировать
     %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
+
     .clearfix
