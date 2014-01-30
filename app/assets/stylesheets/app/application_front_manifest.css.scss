@@ -70,6 +70,10 @@
 .service-block{
   .style {
   }
+  p{
+    display: block;
+    height: 175px;
+  }
   .stylish{
     background-color: #FFF;
     border: 3px solid #85A552;
@@ -89,5 +93,9 @@
       }
     }
   }
+}
+
+.products .service-block{
+  margin-bottom: 30px;
 }
 
