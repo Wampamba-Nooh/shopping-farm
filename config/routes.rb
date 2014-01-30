@@ -41,6 +41,7 @@ ShoppingFarm::Application.routes.draw do
   get "pages/news"
   get "pages/distributors"
   get "pages/products"
+  get "pages/products2"
   get "pages/show"
   get "pages/test"
   get "pages/about"

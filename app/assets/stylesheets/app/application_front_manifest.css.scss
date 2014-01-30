@@ -93,6 +93,15 @@
       }
     }
   }
+  &.min{
+    p{
+      display: block;
+      height: 85px;
+    }
+    .stylish{
+      background-color: #85A552;
+    }
+  }
 }
 
 .products .service-block{

@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
   def products
   end
+  def products2
+  end
   def show
   end
   def about
