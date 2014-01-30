@@ -1,10 +1,22 @@
 module Admin
 
   class CategoriesController < Admin::AdminApplicationController
-    before_action :set_category, only: [:show, :update, :destroy]
+    before_action :set_category, only: [:show, :update, :destroy, :pictures]
 
     def index
       @categories = Category.root
+    end
+
+    def pictures
+      @category_pictures = @category.category_pictures
+      
+      uploads_json = Jbuilder.new do |json|
+        json.array! @category_pictures.collect { |upload| upload.to_builder.attributes! }
+      end
+
+      respond_to do |format|
+        format.json { render json: uploads_json.target! }
+      end
     end
 
     def show

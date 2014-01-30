@@ -40,7 +40,7 @@ class ShoppingFarm.Admin.Views.Categories.IndexView extends Backbone.View
     @$("#tree").append(view.render().el)
 
   edit_category: (m) =>
-    edit_view = new ShoppingFarm.Admin.Views.Categories.EditView({model: m})
+    edit_view = new ShoppingFarm.Admin.Views.Categories.EditView({model: m, collection: @collection})
     $("#modal-body-content").html(edit_view.render().el)
     $('#admin-modal-dialog').modal('show')
 

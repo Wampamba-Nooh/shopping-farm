@@ -24,7 +24,11 @@ ShoppingFarm::Application.routes.draw do
       end
     end
     resources :dealer_profiles, only: [:show, :update, :index, :create, :destroy]
-    resources :categories
+    resources :categories do 
+      member do
+        get :pictures
+      end
+    end
     resources :pages, only: [:index, :show, :create, :update, :destroy]
   end
 

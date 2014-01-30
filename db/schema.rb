@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130124232) do
+ActiveRecord::Schema.define(version: 20140130153616) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 20140130124232) do
 
   add_index "categories_products", ["category_id"], name: "index_categories_products_on_category_id", using: :btree
   add_index "categories_products", ["product_id"], name: "index_categories_products_on_product_id", using: :btree
+
+  create_table "category_pictures", force: true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "category_translations", force: true do |t|
     t.integer  "category_id", null: false

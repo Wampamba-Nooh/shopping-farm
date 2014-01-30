@@ -4,7 +4,22 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
   defaults:
     identificator: null
     title: null
-
+  
+  constructor: (options) ->
+    super(options)
+    @category_pictures_collection = new ShoppingFarm.Admin.Collections.CategoryPicturesCollection()
+  
+  fetch_brand_pictures: () =>
+    @category_pictures_collection.fetch(
+      url: "/admin/categories/#{@.id}/pictures"
+    )
+  
+  update_pictures_with_category_id: () =>
+    @category_pictures_collection.each( (item) =>
+      item.set({category_id: @.id})
+      item.save()
+    )
+  
   idAttribute: 'id'
   
   relations: [{
