@@ -1,38 +1,99 @@
-#header.bg,.sort a.current_link{background-color:#000a75;}
-.service-block:hover{background-color:#000a75}
-section.social ul li a.facebook:hover{background:#000a75;}
-section.social ul li a.twitter:hover{background:#000a75;}
-section.social ul li a.google-plus:hover{background:#000a75;}
-.flex control-paging li a.flex-active{background:#000a75;}
-.da-thumbs li .main div{background-color:rgba(0,10,0,0.7);}
-.recent-blog .containt:hover{background-color:#000a75;}
-.flex-control-paging li a.flex-active{background-color:#000a75;}
-.flex-control-paging li a:hover{background-color:#000a75;}
-#bx-pager{border-top:2px solid #000a75;}
-#bx-pager a.active:before{border-top-color:#000a75;}
-.bx-wrapper .bx-prev:hover{background-color:#000a75}
-.bx-wrapper .bx-next:hover{background-color:#000a75}
-#footer .footer-widget ul.list li a:before{background-color:#000a75;}
-#footer .footer-widget ul.list li a:hover:before{background-color:#000a75;color:#000a75;}
-#footer .footer-widget ul.list li a:hover{color:#000a75;}
-.carousel .next:hover, .carousel .prev:hover,a.submit,.bottom-footer,.sf-menu li a:hover{background-color:#000a75;}
-.bx-wrapper li a span{color:#000a75;}#footer,#footer .footer-widget h4:before{border-top-color:#000a75;}
-.sf-menu li li:hover .icon span{color:#000a75;}.sf-menu a, .sf-menu a:visited{color:#000a75;}
-.sf-menu li a{color:#000a75;}.sf-menu .sfHover>a{color:#fff;background:#000a75;}
-.sf-menu li li{background:#000a75;}.stylish,div.comment-cout,.arrow-circle{background-color:#000a75;}
-.halfCircleBottom,.halfCircleright{border-color:#000a75;}
-div>a.read,.gallery.full-width .da-thumbs li .main div a.read{color:#000a75;}
-.nivo-controlNav a:hover,.nivo-controlNav a.active{background:#000a75;}
-.flex-caption.bottom .textp,.flex-caption.bottom .right .btcolor,.flex-caption.left .textp{background:#000a75;}
-.flex-caption.left .textp{color:#fff;}
-.flex-caption.left .btcolor{background:#000a75;}
-.flex-caption.bottom .textp:after{border-top-color:#000a75;}
-#send_message,#send{background:#000a75;}
-.sf-menu li a:hover:before{border-color: #000a75 #000a75 transparent transparent;}
-.sf-menu li a:hover:after{border-top:10px solid #000a75;}
-.circleright{border-top-color:#000a75;border-right-color:#000a75;border-bottom-color:#000a75;}
-a.active-button{background:#000a75;}div.node{background-color:#000a75;}
-.people span.post{color:#000a75;}.buttonred:hover,.ca-content-wrapper{background-color:#000a75;}
-.list li:hover span,span.drop,.post-info a span.icon-comment,.post-info a.post-read,ul.catagories li:hover a,ul.bullet-list li span,a.toggle_trigger span{color:#000a75;}
-.search input.submit,.mailchimp a,.blog-post:hover .post-contant,.widget-controls .flex-direction-nav li a:hover,.tags a:hover:after,.tags a:hover,ul.catagories li:hover span,.accordion a.current,.toggle_trigger.toggle_active,.tabs li a.current,.home-tab .tabs:after,.pricing_table_wdg ul.bestb li:last-child a,.pricing_table_wdg ul li:last-child:hover a{background-color:#000a75;}
-.pricing_table_wdg ul.bestb{border-color:#000a75;}
+
+#header.bg{
+background-color:#85a552;
+}
+#header.bg,.sort a.current_link{background-color:#85a552;}
+.service-block:hover{background-color:#85a552}
+section.social ul li a.facebook:hover{background:#85a552;}
+section.social ul li a.twitter:hover{background:#85a552;}
+section.social ul li a.google-plus:hover{background:#85a552;}
+.flex control-paging li a.flex-active{background:#85a552;}
+.da-thumbs li .main div{background-color:rgba(133,165,82,0.7);}
+.recent-blog .containt:hover{background-color:#85a552;}
+.flex-control-paging li a.flex-active{background-color:#85a552;}
+.flex-control-paging li a:hover{background-color:#85a552;}
+#bx-pager{border-top:2px solid #85a552;}
+#bx-pager a.active:before{border-top-color:#85a552;}
+.bx-wrapper .bx-prev:hover{background-color:#85a552}
+.bx-wrapper .bx-next:hover{background-color:#85a552}
+#footer .footer-widget ul.list li a:before{background-color:#85a552;}
+#footer .footer-widget ul.list li a:hover:before{background-color:#85a552;color:#85a552;}
+#footer .footer-widget ul.list li a:hover{color:#85a552;}
+.carousel .next:hover, .carousel .prev:hover,a.submit,.bottom-footer,.sf-menu li a:hover{background-color:#85a552;}
+.bx-wrapper li a span{color:#85a552;}
+#footer,#footer .footer-widget h4:before{border-top-color:#85a552;}
+.sf-menu li li:hover .icon span{color:#85a552;}
+.sf-menu a, .sf-menu a:visited{color:#85a552;}
+.sf-menu li a{color:#85a552;}.sf-menu .sfHover>a{color:#fff;background:#85a552;}
+.sf-menu li li{background:#85a552;}
+.stylish,div.comment-cout,.arrow-circle{background-color:#85a552;}
+.halfCircleBottom,.halfCircleright{border-color:#85a552;}
+div>a.read,.gallery.full-width .da-thumbs li .main div a.read{color:#85a552;}
+.nivo-controlNav a:hover,.nivo-controlNav a.active{background:#85a552;}
+.flex-caption.bottom .textp,.flex-caption.bottom .right .btcolor,.flex-caption.left .textp{background:#85a552;}
+.flex-caption.left .textp{color:#fff;}.flex-caption.left .btcolor{background:#85a552;}
+.flex-caption.bottom .textp:after{border-top-color:#85a552;}
+#send_message,#send{background:#85a552;}.sf-menu li a:hover:before{border-color: #85a552 #85a552 transparent transparent;}
+.sf-menu li a:hover:after{border-top:10px solid #85a552;}
+.circleright{border-top-color:#85a552;border-right-color:#85a552;border-bottom-color:#85a552;}
+a.active-button{background:#85a552;}
+div.node{background-color:#85a552;}
+.people span.post{color:#85a552;}
+.buttonred:hover,.ca-content-wrapper{background-color:#85a552;}
+.list li:hover span,span.drop,.post-info a span.icon-comment,.post-info a.post-read,ul.catagories li:hover a,ul.bullet-list li span,a.toggle_trigger span{color:#85a552;}
+.search input.submit,.mailchimp a,.blog-post:hover .post-contant,.widget-controls .flex-direction-nav li a:hover,.tags a:hover:after,.tags a:hover,ul.catagories li:hover span,.accordion a.current,.toggle_trigger.toggle_active,.tabs li a.current,.home-tab .tabs:after,.pricing_table_wdg ul.bestb li:last-child a,.pricing_table_wdg ul li:last-child:hover a{background-color:#85a552;}
+.pricing_table_wdg ul.bestb{border-color:#85a552;}
+/*****************************/
+
+div.flex-caption.left .textp{
+background:#85a552;
+color:#fff;
+}
+
+
+.flex-caption.bottom .textp{
+background:#85a552;
+color:#fff;
+}
+.flex-caption.bottom .textp:after{
+border-right:2px solid #85a552;
+}
+
+
+
+
+
+.flex-caption.bottom .right .btcolor{
+color:#fff;
+background:#85a552;
+
+}
+
+
+
+/************* caption left **************/
+
+
+.flex-caption.left .textp{
+background:#85a552;
+color:#fff;
+position:relative;
+}
+
+
+
+.flex-caption.left .textp h2 {
+text-shadow:0 2px 2px rgba(255,255,255,0.2);
+}
+
+
+
+.flex-caption.left .textp p{
+
+text-shadow:0 3px 2px rgba(255,255,255,0.2);
+}
+
+.flex-caption.left .btcolor {
+  background: none repeat scroll 0 0 #85a552;
+  color: #FFFFFF;
+}
