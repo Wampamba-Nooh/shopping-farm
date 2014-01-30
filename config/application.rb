@@ -8,16 +8,35 @@ Bundler.require(:default, Rails.env)
 
 module ShoppingFarm
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.generators do |g|
+        g.template_engine :haml
+    end
+    config.time_zone = 'Kyiv'
+    config.active_record.default_timezone = :local
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
+    
+    I18n.enforce_available_locales = false
+    config.i18n.default_locale = :ru
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    #config.active_record.whitelist_attributes = false
+    config.encoding = "utf-8"
+    config.filter_parameters += [:password]
 
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.active_support.escape_html_entities_in_json = true
+
+    #config.active_record.whitelist_attributes = true
+    config.assets.cache_store = :memory_store
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.2'
+    manifest_files = Dir["#{Rails.root.join('app', 'assets').to_s}/*/*_manifest.*"].map { |path| File.basename(path) }
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    
+    config.assets.precompile += manifest_files
+    config.assets.compress = true
+    config.assets.compile = true
+
   end
 end
