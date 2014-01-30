@@ -75,9 +75,9 @@ class ShoppingFarm.Admin.Views.Products.NewView extends Backbone.View
       multiple: true
       width: 300
       formatResult: (item) ->
-        return item.identificator
+        "#{item.title}"
       formatSelection: (item) ->
-        return item.identificator
+        return "#{item.title}"
     })
     @$("#category_ids").select2('val', @model.get('category_ids'))
 

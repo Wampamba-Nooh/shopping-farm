@@ -1,0 +1,578 @@
+-- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: shopping_farm_dev
+-- ------------------------------------------------------
+-- Server version	5.5.35-0ubuntu0.13.10.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admin_profiles`
+--
+
+DROP TABLE IF EXISTS `admin_profiles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `admin_profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admin_profiles`
+--
+
+LOCK TABLES `admin_profiles` WRITE;
+/*!40000 ALTER TABLE `admin_profiles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admin_profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `brand_pictures`
+--
+
+DROP TABLE IF EXISTS `brand_pictures`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `brand_pictures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `picture_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture_file_size` int(11) DEFAULT NULL,
+  `picture_updated_at` datetime DEFAULT NULL,
+  `brand_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `brand_pictures`
+--
+
+LOCK TABLES `brand_pictures` WRITE;
+/*!40000 ALTER TABLE `brand_pictures` DISABLE KEYS */;
+INSERT INTO `brand_pictures` VALUES (1,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:41:28',NULL,'2014-01-29 18:41:30','2014-01-29 18:41:30'),(2,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:43:51',NULL,'2014-01-29 18:43:53','2014-01-29 18:43:53'),(6,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:52:21',NULL,'2014-01-29 18:52:23','2014-01-29 18:52:23'),(8,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:53:02',NULL,'2014-01-29 18:53:04','2014-01-29 18:53:04'),(9,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:53:23',NULL,'2014-01-29 18:53:26','2014-01-29 18:53:26'),(10,'hhh.png','image/png',54689,'2014-01-29 18:53:28',NULL,'2014-01-29 18:53:31','2014-01-29 18:53:31'),(12,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:54:37',NULL,'2014-01-29 18:54:40','2014-01-29 18:54:40'),(17,'Deox.jpg','image/jpeg',13984,'2014-01-30 13:48:55',NULL,'2014-01-30 13:48:56','2014-01-30 13:48:56'),(18,'Deox.jpg','image/jpeg',13984,'2014-01-30 14:14:52',10,'2014-01-30 14:14:53','2014-01-30 14:14:55'),(19,'morbido.jpg','image/jpeg',11643,'2014-01-30 14:31:44',11,'2014-01-30 14:31:46','2014-01-30 14:32:13'),(20,'winnis_verde.jpg','image/jpeg',7715,'2014-01-30 14:33:26',12,'2014-01-30 14:33:27','2014-01-30 14:33:47');
+/*!40000 ALTER TABLE `brand_pictures` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `brand_translations`
+--
+
+DROP TABLE IF EXISTS `brand_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `brand_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `brand_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `short_description` text COLLATE utf8_unicode_ci,
+  `full_description` text COLLATE utf8_unicode_ci,
+  `title` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `index_brand_translations_on_brand_id` (`brand_id`),
+  KEY `index_brand_translations_on_locale` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `brand_translations`
+--
+
+LOCK TABLES `brand_translations` WRITE;
+/*!40000 ALTER TABLE `brand_translations` DISABLE KEYS */;
+INSERT INTO `brand_translations` VALUES (10,10,'en','2014-01-30 14:14:55','2014-01-30 14:14:55',NULL,NULL,'DEOX'),(11,11,'en','2014-01-30 14:32:13','2014-01-30 14:32:13',NULL,NULL,'Morbido'),(12,12,'en','2014-01-30 14:33:47','2014-01-30 14:33:47',NULL,NULL,'Winni’s');
+/*!40000 ALTER TABLE `brand_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `brands`
+--
+
+DROP TABLE IF EXISTS `brands`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `brands` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identificator` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `brands`
+--
+
+LOCK TABLES `brands` WRITE;
+/*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+INSERT INTO `brands` VALUES (10,'DEOX','2014-01-30 14:14:55','2014-01-30 14:14:55'),(11,'Morbido','2014-01-30 14:32:13','2014-01-30 14:32:13'),(12,'Winni’s','2014-01-30 14:33:47','2014-01-30 14:33:47');
+/*!40000 ALTER TABLE `brands` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `brands_categories`
+--
+
+DROP TABLE IF EXISTS `brands_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `brands_categories` (
+  `brand_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  KEY `index_brands_categories_on_brand_id` (`brand_id`),
+  KEY `index_brands_categories_on_category_id` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `brands_categories`
+--
+
+LOCK TABLES `brands_categories` WRITE;
+/*!40000 ALTER TABLE `brands_categories` DISABLE KEYS */;
+INSERT INTO `brands_categories` VALUES (10,14),(11,14),(12,14);
+/*!40000 ALTER TABLE `brands_categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identificator` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (13,'products',NULL,'2014-01-30 13:35:55','2014-01-30 13:35:55'),(14,'for_washing',28,'2014-01-30 13:36:46','2014-01-30 14:41:29'),(18,'body_care_cosmetics',28,'2014-01-30 13:38:36','2014-01-30 14:41:17'),(19,'for_cleaning_floors',28,'2014-01-30 13:39:20','2014-01-30 14:41:55'),(20,'for_washing_dishes',28,'2014-01-30 13:39:42','2014-01-30 14:41:49'),(21,'cleaners',28,'2014-01-30 13:40:08','2014-01-30 14:41:45'),(22,'for_dishwashers',28,'2014-01-30 13:40:52','2014-01-30 14:41:40'),(23,'air_freshener',28,'2014-01-30 13:41:38','2014-01-30 14:41:36'),(25,'powders',14,'2014-01-30 13:50:17','2014-01-30 14:40:51'),(26,'bleachers',14,'2014-01-30 13:50:29','2014-01-30 14:40:56'),(27,'rinses',14,'2014-01-30 13:50:45','2014-01-30 14:41:00'),(28,'madel',13,'2014-01-30 14:00:44','2014-01-30 14:41:07'),(29,'scala',13,'2014-01-30 14:08:31','2014-01-30 14:08:31'),(30,'bleachers',29,'2014-01-30 14:09:04','2014-01-30 14:09:04'),(31,'cleaners',29,'2014-01-30 14:09:20','2014-01-30 14:09:20'),(32,'air_freshener',29,'2014-01-30 14:09:42','2014-01-30 14:09:42'),(33,'for_cleaning_floors',29,'2014-01-30 14:09:59','2014-01-30 14:09:59'),(34,'for_washing_dishes',29,'2014-01-30 14:10:24','2014-01-30 14:10:24'),(35,'for_washing',29,'2014-01-30 14:11:00','2014-01-30 14:11:00'),(36,'ammorbidente',35,'2014-01-30 14:11:28','2014-01-30 14:11:28'),(37,'lavantrice_450g',35,'2014-01-30 14:11:54','2014-01-30 14:12:23'),(38,'lavantrice_750m',35,'2014-01-30 14:12:15','2014-01-30 14:12:15'),(39,'sapone',35,'2014-01-30 14:13:12','2014-01-30 14:13:12'),(40,'additional_funds',35,'2014-01-30 14:13:29','2014-01-30 14:13:29'),(41,'lavantrice_1l',14,'2014-01-30 14:46:11','2014-01-30 14:46:11');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories_pages`
+--
+
+DROP TABLE IF EXISTS `categories_pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories_pages` (
+  `page_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  KEY `index_categories_pages_on_page_id` (`page_id`),
+  KEY `index_categories_pages_on_category_id` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories_pages`
+--
+
+LOCK TABLES `categories_pages` WRITE;
+/*!40000 ALTER TABLE `categories_pages` DISABLE KEYS */;
+INSERT INTO `categories_pages` VALUES (2,11),(2,12),(4,11),(5,11);
+/*!40000 ALTER TABLE `categories_pages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories_products`
+--
+
+DROP TABLE IF EXISTS `categories_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories_products` (
+  `product_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  KEY `index_categories_products_on_product_id` (`product_id`),
+  KEY `index_categories_products_on_category_id` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories_products`
+--
+
+LOCK TABLES `categories_products` WRITE;
+/*!40000 ALTER TABLE `categories_products` DISABLE KEYS */;
+INSERT INTO `categories_products` VALUES (5,25);
+/*!40000 ALTER TABLE `categories_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `category_translations`
+--
+
+DROP TABLE IF EXISTS `category_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `category_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `title` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `index_category_translations_on_category_id` (`category_id`),
+  KEY `index_category_translations_on_locale` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category_translations`
+--
+
+LOCK TABLES `category_translations` WRITE;
+/*!40000 ALTER TABLE `category_translations` DISABLE KEYS */;
+INSERT INTO `category_translations` VALUES (10,13,'en','2014-01-30 13:35:55','2014-01-30 13:35:55','Продукты'),(11,14,'en','2014-01-30 13:36:46','2014-01-30 14:07:20','Средства для стирки '),(15,18,'en','2014-01-30 13:38:36','2014-01-30 13:38:36','Уход за телом косметика'),(16,19,'en','2014-01-30 13:39:20','2014-01-30 13:39:20','Средства для мойки полов'),(17,20,'en','2014-01-30 13:39:42','2014-01-30 13:39:42','Средства для мойки посуды'),(18,21,'en','2014-01-30 13:40:08','2014-01-30 13:40:08','Чистящие средства'),(19,22,'en','2014-01-30 13:40:52','2014-01-30 13:40:52','Средства для Посудомоечных Машин'),(20,23,'en','2014-01-30 13:41:38','2014-01-30 13:41:38','Освежитель воздуха'),(22,25,'en','2014-01-30 13:50:17','2014-01-30 14:07:28','Lavantrice Порошки 1,5кг/1,62кг/4кг/6,8кг/10кг'),(23,26,'en','2014-01-30 13:50:29','2014-01-30 13:50:29','Отбеливатели'),(24,27,'en','2014-01-30 13:50:45','2014-01-30 13:50:45','Ополаскиватели'),(25,28,'en','2014-01-30 14:00:44','2014-01-30 14:00:44','Madel'),(26,29,'en','2014-01-30 14:08:31','2014-01-30 14:08:31','Scala'),(27,30,'en','2014-01-30 14:09:04','2014-01-30 14:09:04','Отбеливатели'),(28,31,'en','2014-01-30 14:09:20','2014-01-30 14:09:20','Чистящие средства'),(29,32,'en','2014-01-30 14:09:42','2014-01-30 14:09:42','Освежитель воздуха'),(30,33,'en','2014-01-30 14:09:59','2014-01-30 14:09:59','Средства для мойки полов'),(31,34,'en','2014-01-30 14:10:24','2014-01-30 14:10:24','Средства для мойки посуды'),(32,35,'en','2014-01-30 14:11:00','2014-01-30 14:11:00','Средства для стирки'),(33,36,'en','2014-01-30 14:11:28','2014-01-30 14:11:28','Ammorbidente 2000ml/4000ml/500ml'),(34,37,'en','2014-01-30 14:11:54','2014-01-30 14:11:54','Lavantrice 450g/1.44kg/3.76kg/6.8kg/20kg'),(35,38,'en','2014-01-30 14:12:15','2014-01-30 14:12:15','Lavantrice 750ml / 1875ml'),(36,39,'en','2014-01-30 14:13:12','2014-01-30 14:13:12','Sapone'),(37,40,'en','2014-01-30 14:13:29','2014-01-30 14:13:29','Дополнительные средства'),(38,41,'en','2014-01-30 14:46:11','2014-01-30 14:46:11','Lavantrice Порошки 1л/750мл');
+/*!40000 ALTER TABLE `category_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ckeditor_assets`
+--
+
+DROP TABLE IF EXISTS `ckeditor_assets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ckeditor_assets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data_file_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `data_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data_file_size` int(11) DEFAULT NULL,
+  `assetable_id` int(11) DEFAULT NULL,
+  `assetable_type` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `type` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `width` int(11) DEFAULT NULL,
+  `height` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_ckeditor_assetable_type` (`assetable_type`,`type`,`assetable_id`),
+  KEY `idx_ckeditor_assetable` (`assetable_type`,`assetable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ckeditor_assets`
+--
+
+LOCK TABLES `ckeditor_assets` WRITE;
+/*!40000 ALTER TABLE `ckeditor_assets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ckeditor_assets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dealer_profile_translations`
+--
+
+DROP TABLE IF EXISTS `dealer_profile_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dealer_profile_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dealer_profile_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `contacts` text COLLATE utf8_unicode_ci,
+  `person_contacts` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `index_dealer_profile_translations_on_dealer_profile_id` (`dealer_profile_id`),
+  KEY `index_dealer_profile_translations_on_locale` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dealer_profile_translations`
+--
+
+LOCK TABLES `dealer_profile_translations` WRITE;
+/*!40000 ALTER TABLE `dealer_profile_translations` DISABLE KEYS */;
+INSERT INTO `dealer_profile_translations` VALUES (1,1,'en','2014-01-30 00:31:37','2014-01-30 00:31:37','ул. Десятинная 7. оф. 22','Юра '),(2,2,'en','2014-01-30 00:33:06','2014-01-30 00:33:06','ул. Ленина 19. оф. 33','Андрей');
+/*!40000 ALTER TABLE `dealer_profile_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dealer_profiles`
+--
+
+DROP TABLE IF EXISTS `dealer_profiles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dealer_profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `city_latitude` float DEFAULT NULL,
+  `city_longitude` float DEFAULT NULL,
+  `identificator` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone_number` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dealer_profiles`
+--
+
+LOCK TABLES `dealer_profiles` WRITE;
+/*!40000 ALTER TABLE `dealer_profiles` DISABLE KEYS */;
+INSERT INTO `dealer_profiles` VALUES (1,1,'2014-01-30 00:31:37','2014-01-30 01:00:37',50.4501,30.5234,'kiev','oficial','Киев, город Киев','+38087877887','kiev@quality-product.com.ua'),(2,2,'2014-01-30 00:33:06','2014-01-30 01:00:23',49.2331,28.4682,'vinnitsa','oficial','Винница, Винницкая область','+3807878787877','vinnitsa@quality-product.com.ua');
+/*!40000 ALTER TABLE `dealer_profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `page_translations`
+--
+
+DROP TABLE IF EXISTS `page_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `page_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `short_content` text COLLATE utf8_unicode_ci,
+  `full_content` text COLLATE utf8_unicode_ci,
+  `title` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `index_page_translations_on_page_id` (`page_id`),
+  KEY `index_page_translations_on_locale` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `page_translations`
+--
+
+LOCK TABLES `page_translations` WRITE;
+/*!40000 ALTER TABLE `page_translations` DISABLE KEYS */;
+INSERT INTO `page_translations` VALUES (2,2,'en','2014-01-29 20:02:34','2014-01-29 20:02:34','<p>lll</p>\n','<p>bbb</p>\n','vvv'),(3,3,'en','2014-01-29 20:57:57','2014-01-29 20:57:57','<p>d</p>\n','<p>f</p>\n','d'),(4,4,'en','2014-01-29 21:00:26','2014-01-29 21:00:26','<p>d</p>\n','','d'),(5,5,'en','2014-01-29 21:00:26','2014-01-29 21:00:26','<p>d</p>\n','','d');
+/*!40000 ALTER TABLE `page_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identificator` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pages`
+--
+
+LOCK TABLES `pages` WRITE;
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` VALUES (2,'mmm','2014-01-29 20:02:34','2014-01-29 20:02:34'),(3,'dd','2014-01-29 20:57:57','2014-01-29 20:57:57'),(4,'QWERY','2014-01-29 21:00:26','2014-01-29 21:00:26'),(5,'QWERY','2014-01-29 21:00:26','2014-01-29 21:00:26');
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_pictures`
+--
+
+DROP TABLE IF EXISTS `product_pictures`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_pictures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `picture_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture_file_size` int(11) DEFAULT NULL,
+  `picture_updated_at` datetime DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_pictures`
+--
+
+LOCK TABLES `product_pictures` WRITE;
+/*!40000 ALTER TABLE `product_pictures` DISABLE KEYS */;
+INSERT INTO `product_pictures` VALUES (6,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:35:34',NULL,'2014-01-29 18:35:36','2014-01-29 18:35:36'),(7,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:37:02',NULL,'2014-01-29 18:37:04','2014-01-29 18:37:04'),(8,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:38:16',NULL,'2014-01-29 18:38:18','2014-01-29 18:38:18'),(9,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:40:25',NULL,'2014-01-29 18:40:27','2014-01-29 18:40:27'),(10,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:41:17',NULL,'2014-01-29 18:41:19','2014-01-29 18:41:19'),(11,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-30 14:16:20',5,'2014-01-30 14:16:26','2014-01-30 14:16:30');
+/*!40000 ALTER TABLE `product_pictures` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_translations`
+--
+
+DROP TABLE IF EXISTS `product_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `short_description` text COLLATE utf8_unicode_ci,
+  `full_description` text COLLATE utf8_unicode_ci,
+  `title` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `index_product_translations_on_product_id` (`product_id`),
+  KEY `index_product_translations_on_locale` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_translations`
+--
+
+LOCK TABLES `product_translations` WRITE;
+/*!40000 ALTER TABLE `product_translations` DISABLE KEYS */;
+INSERT INTO `product_translations` VALUES (5,5,'en','2014-01-30 14:16:29','2014-01-30 14:16:29','<p>DEOX Deo Detersivo Lavatrice Sacco 1.62KG &nbsp;Пральний порошок &nbsp;білих та кольорових речей (5pz)</p>\n','<p>DEOX Deo Detersivo Lavatrice Sacco 1.62KG &nbsp;Пральний порошок &nbsp;білих та кольорових речей (5pz)</p>\n','DEOX Deo Detersivo Lavatrice Sacco 1.62KG  Пральний порошок  білих та кольорових речей (5pz)');
+/*!40000 ALTER TABLE `product_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `brand_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `identificator` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (5,'10','DEOX Deo Detersivo Lavatrice Sacco 1.62KG','2014-01-30 14:16:29','2014-01-30 14:16:29');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  UNIQUE KEY `unique_schema_migrations` (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schema_migrations`
+--
+
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+INSERT INTO `schema_migrations` VALUES ('20140110131752'),('20140110230539'),('20140110231201'),('20140114162156'),('20140114175330'),('20140114182515'),('20140116163012'),('20140127212501'),('20140127235554'),('20140129122417'),('20140129122502'),('20140129122738'),('20140129132513'),('20140129153348'),('20140129182128'),('20140129185816'),('20140129190717'),('20140129194808'),('20140129204756'),('20140130124232');
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `encrypted_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `reset_password_sent_at` datetime DEFAULT NULL,
+  `remember_created_at` datetime DEFAULT NULL,
+  `sign_in_count` int(11) NOT NULL DEFAULT '0',
+  `current_sign_in_at` datetime DEFAULT NULL,
+  `last_sign_in_at` datetime DEFAULT NULL,
+  `current_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `last_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `role` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_users_on_email` (`email`),
+  UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'kiev@quality-product.com.ua','$2a$10$ME1DNEa77pQrEY.UkDS7z.V1EnaDvvVpsf4OKgZnEqjzY40kZxbj6',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'2014-01-30 00:31:37','2014-01-30 00:33:11',''),(2,'vinnitsa@quality-product.com.ua','$2a$10$jw7MpMZD3YUck8I6ntcebeE/p46Kubbir4HX141B3O.UqpRUmo.uC',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'2014-01-30 00:33:06','2014-01-30 00:33:06','');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-01-30 16:54:01

@@ -8,5 +8,13 @@
     .clearfix
     %input.form-control{id: 'title', name: 'title'}
     %span.help-block.hidden
-    
+  .form-group
+    %label Родительска категория
+    %br
+    %input.select-style{id: "parent_id", name: "parent_id"}
+    %span.help-block.hidden
+  .form-group
+    %label Фотографии
+    #product-pictures
+
   %button.btn.btn-default{type: "submit"} Сохранить

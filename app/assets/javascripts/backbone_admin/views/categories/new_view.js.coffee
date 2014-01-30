@@ -17,7 +17,9 @@ class ShoppingFarm.Admin.Views.Categories.NewView extends Backbone.View
         
   constructor: (options) ->
     super(options)
-    
+
+    @picture_uploader = new ShoppingFarmFileUploader.Views.Uploader.IndexView({collection: @model.category_pictures_collection})
+
     Backbone.Validation.bind(this)
   
   save: (e) =>
@@ -29,6 +31,7 @@ class ShoppingFarm.Admin.Views.Categories.NewView extends Backbone.View
     if @model.isValid(true)
       @model.save(null,
         success: (category) =>
+          @model.update_pictures_with_category_id()
           $('#admin-modal-dialog').modal('hide')
           @collection.fetch()
         error: (category, jqXHR) =>
@@ -37,5 +40,6 @@ class ShoppingFarm.Admin.Views.Categories.NewView extends Backbone.View
   
   render: =>
     $(@el).html(@template())
+    @$("#product-pictures").html(@picture_uploader.render().el)
     @stickit()
     return this
