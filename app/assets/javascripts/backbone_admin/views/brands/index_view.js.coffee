@@ -8,6 +8,7 @@ class ShoppingFarm.Admin.Views.Brands.IndexView extends Backbone.View
  
   constructor: (options) ->
     super(options)
+    @options = options
     @collection.off('sync')
     @collection.on('sync', @addAll)
   
@@ -20,16 +21,17 @@ class ShoppingFarm.Admin.Views.Brands.IndexView extends Backbone.View
     view.on('edit', @edit_brand)
     @$("tbody").append(view.render().el)
 
-  edit_brand: (m) ->
-    edit_view = new ShoppingFarm.Admin.Views.Brands.EditView({model: m})
+  edit_brand: (m) =>
+    console.log(@options)
+    edit_view = new ShoppingFarm.Admin.Views.Brands.EditView({model: m, categories_collection: @options.categories_collection})
     $("#modal-body-content").html(edit_view.render().el)
     $('#admin-modal-dialog').modal('show')    
 
-  new_brand: (e) ->
+  new_brand: (e) =>
     e.preventDefault()
     e.stopPropagation()
 
-    new_view = new ShoppingFarm.Admin.Views.Brands.NewView({collection: @collection})
+    new_view = new ShoppingFarm.Admin.Views.Brands.NewView({collection: @collection, categories_collection: @options.categories_collection})
     $("#modal-body-content").html(new_view.render().el)
     $('#admin-modal-dialog').modal('show')
 

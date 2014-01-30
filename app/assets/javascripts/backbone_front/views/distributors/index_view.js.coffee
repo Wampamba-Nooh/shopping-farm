@@ -9,7 +9,18 @@ class ShoppingFarm.Front.Views.Distributors.IndexView extends Backbone.View
   show_distributor: (e) ->
     e.preventDefault()
     e.stopPropagation()
-    alert('@@@')
+
+    identificator = $(e.currentTarget).attr('id')
+    
+    @render_distributor(identificator)
+
+  render_distributor: (identificator) =>
+    $("#distributor-summary").empty()
+    distributors = @collection.where({identificator: identificator})
+    _.each(distributors, (d) ->
+      view = new ShoppingFarm.Front.Views.Distributors.ShowView({model: d})
+      $("#distributor-summary").append(view.render().el)
+    )
 
   initialize: () ->
   
@@ -17,8 +28,11 @@ class ShoppingFarm.Front.Views.Distributors.IndexView extends Backbone.View
     super(options)
     @options = options
 
-    #@collection.off('sync')
-    #@collection.on('sync', @addAll)
+    @collection.off('sync')
+    @collection.on('sync', @show_main_city)
+
+  show_main_city: () =>
+    @render_distributor('kiev')
 
   addAll: () =>
     @$("tbody").empty()

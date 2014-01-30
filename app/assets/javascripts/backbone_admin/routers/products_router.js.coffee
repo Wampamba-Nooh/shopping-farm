@@ -17,8 +17,7 @@ class ShoppingFarm.Admin.Routers.ProductsRouter extends Backbone.Router
           bootbox.alert("Не найдено ни одного бренда. Прежде чем создавать модели Вам необходимо добавить бренд.", () ->
             Backbone.history.navigate('brands', true);
           )
-        else 
-          console.log('ssssssssssss')
+        else
           new_view = new ShoppingFarm.Admin.Views.Products.NewView({brands_collection: @brands_collection, categories_collection: @categories_collection, collection: @products_collection})
           $("#container").html(new_view.render().el)
           @categories_collection.fetch()

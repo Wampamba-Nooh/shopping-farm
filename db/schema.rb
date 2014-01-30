@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129204756) do
+ActiveRecord::Schema.define(version: 20140130124232) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20140129204756) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "brands_categories", id: false, force: true do |t|
+    t.integer "brand_id"
+    t.integer "category_id"
+  end
+
+  add_index "brands_categories", ["brand_id"], name: "index_brands_categories_on_brand_id", using: :btree
+  add_index "brands_categories", ["category_id"], name: "index_brands_categories_on_category_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "identificator", null: false
@@ -159,6 +167,7 @@ ActiveRecord::Schema.define(version: 20140129204756) do
     t.datetime "updated_at"
     t.text     "short_description"
     t.text     "full_description"
+    t.text     "title"
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree

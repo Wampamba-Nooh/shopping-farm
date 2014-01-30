@@ -63,7 +63,8 @@ module Admin
           :identificator,
           :title, 
           :short_description, 
-          :full_description
+          :full_description,
+          :category_ids => []
         )
       end
   end
