@@ -167,7 +167,6 @@ ActiveRecord::Schema.define(version: 20140130124232) do
     t.datetime "updated_at"
     t.text     "short_description"
     t.text     "full_description"
-    t.text     "title"
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
