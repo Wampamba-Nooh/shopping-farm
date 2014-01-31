@@ -12,7 +12,6 @@ class PagesController < ApplicationController
   def about
   end
   def contacts
-    render layout: "contacts"
   end
   def test
     #render layout: false
