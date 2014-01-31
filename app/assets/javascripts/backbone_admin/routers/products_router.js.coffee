@@ -24,17 +24,20 @@ class ShoppingFarm.Admin.Routers.ProductsRouter extends Backbone.Router
     )
 
   edit: (id) ->
-    product = new @products_collection.model({id: id})
+    product = ShoppingFarm.Admin.Models.Product.findOrCreate(id)
+    if !product
+      product = new ShoppingFarm.Admin.Models.Product({id : id})
+    
     @brands_collection.fetch(
       complete: =>
         if @brands_collection.length == 0
           bootbox.alert("Не найдено ни одного бренда. Прежде чем создавать модели Вам необходимо добавить бренд.", () ->
             Backbone.history.navigate('brands', true);
-          );
+          )
         else
           product.fetch(
-            complete: =>
-              edit_view = new ShoppingFarm.Admin.Views.Products.EditView({brands_collection: @brands_collection, categories_collection: @categories_collection, model: product, collection: @products_collection})
+            success: =>
+              edit_view = new ShoppingFarm.Admin.Views.Products.EditView({brands_collection: @brands_collection, categories_collection: @categories_collection, model: product})
               $("#container").html(edit_view.render().el)
               @categories_collection.fetch()
           )
