@@ -47,8 +47,7 @@ class ShoppingFarm.Admin.Views.Categories.CategoryView extends Backbone.View
     )
 
     @model.get('products').each( (m) =>
-      console.log(m.toJSON())
-      @$("#node-#{@model.id}").append("<li><span class='glyphicon glyphicon-glass'>[продукт] #{m.get('title')}</span></li>") 
+      @$("#node-#{@model.id}").append("<li><span class='label label-primary'>ID:#{m.id} #{m.get('title')}</span><a href='#products/edit/#{m.id}'>edit</a></li>") 
     )
 
   render: ->
