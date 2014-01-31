@@ -1,4 +1,4 @@
-class ShoppingFarm.Admin.Models.Product extends Backbone.Model
+class ShoppingFarm.Admin.Models.Product extends Backbone.RelationalModel
   paramRoot: 'product'
   
   constructor: (options) ->

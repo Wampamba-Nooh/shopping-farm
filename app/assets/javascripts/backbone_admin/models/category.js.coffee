@@ -22,15 +22,27 @@ class ShoppingFarm.Admin.Models.Category extends Backbone.RelationalModel
   
   idAttribute: 'id'
   
-  relations: [{
-    type: Backbone.HasMany
-    key: 'children'
-    relatedModel: 'ShoppingFarm.Admin.Models.Category'
-    #reverseRelation: {
-    #  key: 'parent_id'
-    #  includeInJSON: 'parent_id'
-    #}
-  }]
+  relations: [
+    {
+      type: Backbone.HasMany
+      key: 'children'
+      relatedModel: 'ShoppingFarm.Admin.Models.Category'
+      #reverseRelation: {
+      #  key: 'parent_id'
+      #  includeInJSON: 'parent_id'
+      #}
+    }    
+    {
+      type: Backbone.HasMany
+      key: 'products'
+      relatedModel: 'ShoppingFarm.Admin.Models.Product'
+      #reverseRelation: {
+      #  key: 'parent_id'
+      #  includeInJSON: 'parent_id'
+      #}
+    }
+
+  ]
 
   validation: 
     identificator: 
