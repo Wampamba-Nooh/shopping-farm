@@ -1,7 +1,7 @@
 .container.products
   .row
     - @category.manufacturers.each do |manufacturer|
-      .span3
+      .span6
         .recent-blog
           .post
             .comment-cout
@@ -15,9 +15,13 @@
                   = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview100x100)
             .halfCircleright
             .containt
-              %h3= manufacturer.title
+              %h4= manufacturer.title
               /%p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
               /%a.icon-arrow-right.read{href: "http://unolution.com/en/#"}
+    .span6
+      .inner-heading
+      .txt
+        %h4= @category.title
   .clear
   %br
   %br

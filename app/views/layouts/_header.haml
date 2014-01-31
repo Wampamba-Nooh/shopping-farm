@@ -17,7 +17,7 @@
             %li
               = link_to "Новости", "/pages/news#news"
             %li.active
-              = link_to "Продукция", "/pages/products#products"
+              = link_to "Продукция", category_path(id: Category.find_by_identificator('products').id)
             %li
               = link_to "Дистрибьюторы", "/pages/distributors#distributors"
             %li
