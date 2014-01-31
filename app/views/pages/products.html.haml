@@ -16,10 +16,11 @@
                     /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
                     = image_tag category.category_pictures.first.picture.url(:preview100x100)
                 %a.halfCircleBottom
-              - if child.category_pictures.first
-                = image_tag child.category_pictures.first.picture.url(:preview100x100)
-              %h5= child.title
-              /%p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+              = link_to category_path(id: child.id) do
+                - if child.category_pictures.first
+                  = image_tag child.category_pictures.first.picture.url(:preview100x100)
+                %h5= child.title
+                /%p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
     .clearfix    
     %br
     %br
