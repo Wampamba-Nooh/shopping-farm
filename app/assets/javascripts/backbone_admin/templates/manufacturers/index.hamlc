@@ -1,0 +1,14 @@
+%h1.top Производители
+%a.new-manufacturer{href: "#", class: "btn btn-success"}
+  Создать
+%br
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th{style: "width: 30px;"} #
+      %th Identificator
+      %th Дата
+      %th 
+  %tbody
+ 

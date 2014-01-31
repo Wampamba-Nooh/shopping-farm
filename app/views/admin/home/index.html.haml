@@ -1,8 +1,12 @@
 .row
   .col-md-2
     %ul.nav.nav-pills.nav-stacked.left-admin-menu{style: "max-width: 300px;"}
+      %li
+        = link_to "Сайт", root_path
       %li.categories-link
         %a{href: "#categories"} Категории
+      %li.manufacturers-link
+        %a{href: "#manufacturers"} Производители
       %li.brands-link
         %a{href: "#brands"} Бренды
       %li.products-link

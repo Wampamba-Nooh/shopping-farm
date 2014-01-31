@@ -1,0 +1,12 @@
+%td= @id
+%td
+  %a{href: "#", class: "link accent"}
+    = @identificator
+%td= @created_at
+%td
+  .btn-group.pull-right
+    %a.btn.btn-primary.btn-xs.edit{href: "#"} 
+      Редактировать
+    %button.btn.btn-danger.btn-xs.pull-right.destroy{type: "button"} Удалить
+
+    .clearfix

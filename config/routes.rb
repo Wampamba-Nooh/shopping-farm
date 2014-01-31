@@ -16,6 +16,11 @@ ShoppingFarm::Application.routes.draw do
   get "category/:id", to: "front/categories#show", as: :category
 
   namespace :admin do
+    resources :manufacturers do 
+      member do
+        get :pictures
+      end
+    end
     resources :brands, only: [:show, :index, :create, :update, :destroy] do 
       member do
         get :pictures

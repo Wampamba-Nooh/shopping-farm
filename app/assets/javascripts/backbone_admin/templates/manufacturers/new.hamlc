@@ -1,0 +1,27 @@
+%form#manufacturer{role: "form"}
+  .form-group
+    %label Identificator
+    %input.form-control{id: "identificator", name: "identificator", placeholder: "например, Audi", type: "text"}
+    %span.help-block.hidden
+  .form-group
+    %label Категории
+    %br
+    %input.select-style{id: "category_ids", name: "category_ids"}
+    %span.help-block.hidden
+  .form-group
+    %label Фотографии
+    #product-pictures
+  .form-group
+    %label Заголовок
+    .clearfix
+    %input.form-control{id: 'title', name: 'title'}
+  .form-group
+    %label Короткое описание
+    .clearfix
+    %textarea{id: 'short_description', name: 'short_description'}
+  .form-group
+    %label Полное описание
+    .clearfix
+    %textarea{id: 'full_description', name: 'full_description'}
+
+  %button.btn.btn-default{type: "submit"} Создать

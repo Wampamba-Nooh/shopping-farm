@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130153616) do
+ActiveRecord::Schema.define(version: 20140131161022) do
 
   create_table "admin_profiles", force: true do |t|
     t.integer  "user_id"
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20140130153616) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories_manufacturers", id: false, force: true do |t|
+    t.integer "manufacturer_id"
+    t.integer "category_id"
+  end
+
+  add_index "categories_manufacturers", ["category_id"], name: "index_categories_manufacturers_on_category_id", using: :btree
+  add_index "categories_manufacturers", ["manufacturer_id"], name: "index_categories_manufacturers_on_manufacturer_id", using: :btree
 
   create_table "categories_pages", id: false, force: true do |t|
     t.integer "page_id"
@@ -141,6 +149,35 @@ ActiveRecord::Schema.define(version: 20140130153616) do
     t.string   "email",          null: false
   end
 
+  create_table "manufacturer_pictures", force: true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "manufacturer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "manufacturer_translations", force: true do |t|
+    t.integer  "manufacturer_id",   null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "short_description"
+    t.text     "full_description"
+    t.text     "title"
+  end
+
+  add_index "manufacturer_translations", ["locale"], name: "index_manufacturer_translations_on_locale", using: :btree
+  add_index "manufacturer_translations", ["manufacturer_id"], name: "index_manufacturer_translations_on_manufacturer_id", using: :btree
+
+  create_table "manufacturers", force: true do |t|
+    t.string   "identificator"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "page_translations", force: true do |t|
     t.integer  "page_id",       null: false
     t.string   "locale",        null: false
@@ -177,6 +214,7 @@ ActiveRecord::Schema.define(version: 20140130153616) do
     t.datetime "updated_at"
     t.text     "short_description"
     t.text     "full_description"
+    t.text     "title"
   end
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
