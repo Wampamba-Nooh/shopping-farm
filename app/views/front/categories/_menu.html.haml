@@ -1,0 +1,4 @@
+%ul.nav.nav-list
+  - Category.find_by_identificator('products').children.each do |child|
+    %li{class: "#{@category.is_part_of(child) ? 'active' : ''}"}
+      = link_to child.title, category_path(id: child.id)

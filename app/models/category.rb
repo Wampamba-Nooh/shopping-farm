@@ -9,9 +9,9 @@ class Category < ActiveRecord::Base
   translates :title
   
   def is_part_of(category)
-    #return true if category == self
-    #return parent.is_part_of(category) unless parent.nil?
-    #return false
+    return true if category.id == self.id
+    return parent.is_part_of(category) unless parent.nil?
+    return false
   end
 
   scope :root, lambda {

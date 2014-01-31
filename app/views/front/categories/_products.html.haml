@@ -4,7 +4,7 @@
     .span6
       .row
         - @category.manufacturers.each do |manufacturer|
-          .span6        
+          .span3
             .contact-box{style: "background: none;"}
               .arrow-circle{style: "background: url(#{manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)});background-repeat: no-repeat;background-position: 50%;background-color: white;"}
               .circleright
