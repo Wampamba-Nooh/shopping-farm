@@ -1,0 +1,29 @@
+.container.products
+  .row
+    .inner-heading
+      .txt
+        %h1 Продукция
+    .clear
+    %br
+    %br
+    .container.clearfix
+      .row
+        - @category.children.each do |child|
+          .service-block.span3{style: "border-radius: 5px;border: 1px solid #85a552;margin-bottom: 30px;height: 230px;background: white;"}
+            - child.manufacturers.each do |manufacturer|
+              .style
+                = link_to category_path(id: child.id), class: "stylish" do
+                  %span.icon
+                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                    = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview100x100)
+                %a.halfCircleBottom
+            .clear
+            %br
+            - if child.category_pictures.first
+              = image_tag child.category_pictures.first.picture.url(:preview100x100)
+            %h5= child.title
+            /%p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    .clearfix    
+    %br
+    %br
+    %br
