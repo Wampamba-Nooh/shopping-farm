@@ -1,26 +1,17 @@
 .container.products
+  %br  
   .row
-    - @category.manufacturers.each do |manufacturer|
-      .span6
-        .recent-blog
-          .post
-            .comment-cout
-              /%h5.date 20
-              /.clear
-              /%h6.month June
-              
-              .style
-                %span.icon
-                  /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-                  = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview100x100)
-            .halfCircleright
-            .containt
-              %h4= manufacturer.title
-              /%p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
-              /%a.icon-arrow-right.read{href: "http://unolution.com/en/#"}
     .span6
-      .inner-heading
-      .txt
+      .row
+        - @category.manufacturers.each do |manufacturer|
+          .span6        
+            .contact-box{style: "background: none;"}
+              .arrow-circle{style: "background: url(#{manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)});background-repeat: no-repeat;background-position: 50%;background-color: white;"}
+              .circleright
+              %h4{style: "font-family: Allan;"}= manufacturer.title
+    .span6
+      .right-heading
+        /.text
         %h4= @category.title
   .clear
   %br
