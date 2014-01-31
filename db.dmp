@@ -167,7 +167,7 @@ CREATE TABLE `categories` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,8 +176,33 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (13,'products',NULL,'2014-01-30 13:35:55','2014-01-31 01:15:55'),(14,'for_washing',28,'2014-01-30 13:36:46','2014-01-30 14:41:29'),(18,'body_care_cosmetics',28,'2014-01-30 13:38:36','2014-01-30 14:41:17'),(19,'for_cleaning_floors',28,'2014-01-30 13:39:20','2014-01-30 14:41:55'),(20,'for_washing_dishes',28,'2014-01-30 13:39:42','2014-01-30 14:41:49'),(21,'cleaners',28,'2014-01-30 13:40:08','2014-01-30 14:41:45'),(22,'for_dishwashers',28,'2014-01-30 13:40:52','2014-01-30 14:41:40'),(23,'air_freshener',28,'2014-01-30 13:41:38','2014-01-30 14:41:36'),(25,'powders',14,'2014-01-30 13:50:17','2014-01-30 14:40:51'),(26,'bleachers',14,'2014-01-30 13:50:29','2014-01-30 14:40:56'),(27,'rinses',14,'2014-01-30 13:50:45','2014-01-30 14:41:00'),(28,'madel',13,'2014-01-30 14:00:44','2014-01-31 01:16:11'),(29,'scala',13,'2014-01-30 14:08:31','2014-01-30 14:08:31'),(30,'bleachers',29,'2014-01-30 14:09:04','2014-01-30 14:09:04'),(31,'cleaners',29,'2014-01-30 14:09:20','2014-01-30 14:09:20'),(32,'air_freshener',29,'2014-01-30 14:09:42','2014-01-30 14:09:42'),(33,'for_cleaning_floors',29,'2014-01-30 14:09:59','2014-01-30 14:09:59'),(34,'for_washing_dishes',29,'2014-01-30 14:10:24','2014-01-30 14:10:24'),(35,'for_washing',29,'2014-01-30 14:11:00','2014-01-30 14:11:00'),(36,'ammorbidente',35,'2014-01-30 14:11:28','2014-01-30 14:11:28'),(37,'lavantrice_450g',35,'2014-01-30 14:11:54','2014-01-30 14:12:23'),(38,'lavantrice_750m',35,'2014-01-30 14:12:15','2014-01-30 14:12:15'),(39,'sapone',35,'2014-01-30 14:13:12','2014-01-30 14:13:12'),(40,'additional_funds',35,'2014-01-30 14:13:29','2014-01-30 14:13:29'),(41,'lavantrice_1l',14,'2014-01-30 14:46:11','2014-01-30 14:46:11');
+INSERT INTO `categories` VALUES (13,'products',NULL,'2014-01-30 13:35:55','2014-01-31 01:15:55'),(14,'for_washing',13,'2014-01-30 13:36:46','2014-01-31 17:31:57'),(18,'body_care_cosmetics',13,'2014-01-30 13:38:36','2014-01-31 17:32:04'),(19,'for_cleaning_floors',13,'2014-01-30 13:39:20','2014-01-31 17:32:10'),(20,'for_washing_dishes',13,'2014-01-30 13:39:42','2014-01-31 17:32:15'),(21,'cleaners',13,'2014-01-30 13:40:08','2014-01-31 17:32:20'),(22,'for_dishwashers',13,'2014-01-30 13:40:52','2014-01-31 17:32:26'),(23,'air_freshener',13,'2014-01-30 13:41:38','2014-01-31 17:32:31'),(25,'powders',14,'2014-01-30 13:50:17','2014-01-31 18:36:44'),(26,'bleachers',14,'2014-01-30 13:50:29','2014-01-31 18:36:59'),(27,'rinses',14,'2014-01-30 13:50:45','2014-01-31 18:37:12'),(30,'bleachers',13,'2014-01-30 14:09:04','2014-01-31 17:32:36'),(36,'ammorbidente',14,'2014-01-30 14:11:28','2014-01-31 18:39:32'),(37,'lavantrice_450g',14,'2014-01-30 14:11:54','2014-01-31 18:39:41'),(38,'lavantrice_750m',14,'2014-01-30 14:12:15','2014-01-31 18:40:40'),(39,'sapone',14,'2014-01-30 14:13:12','2014-01-31 18:40:58'),(40,'additional_funds',14,'2014-01-30 14:13:29','2014-01-31 18:41:14'),(41,'lavantrice_1l',14,'2014-01-30 14:46:11','2014-01-31 18:41:24'),(42,'SCALA-Дополнительные средства',14,'2014-01-31 18:41:38','2014-01-31 18:41:38');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories_manufacturers`
+--
+
+DROP TABLE IF EXISTS `categories_manufacturers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories_manufacturers` (
+  `manufacturer_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  KEY `index_categories_manufacturers_on_manufacturer_id` (`manufacturer_id`),
+  KEY `index_categories_manufacturers_on_category_id` (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories_manufacturers`
+--
+
+LOCK TABLES `categories_manufacturers` WRITE;
+/*!40000 ALTER TABLE `categories_manufacturers` DISABLE KEYS */;
+INSERT INTO `categories_manufacturers` VALUES (4,21),(4,19),(3,23),(3,20),(3,21),(3,18),(3,22),(3,30),(3,19),(3,14),(4,30),(4,23),(4,20),(3,25),(3,26),(3,27),(3,36),(3,37),(4,38),(4,40),(4,41),(4,39),(4,42),(4,14);
+/*!40000 ALTER TABLE `categories_manufacturers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -256,7 +281,7 @@ CREATE TABLE `category_pictures` (
 
 LOCK TABLES `category_pictures` WRITE;
 /*!40000 ALTER TABLE `category_pictures` DISABLE KEYS */;
-INSERT INTO `category_pictures` VALUES (2,'Deox.jpg','image/jpeg',13984,'2014-01-30 15:52:26',NULL,'2014-01-30 15:52:27','2014-01-30 15:52:27'),(4,'madel.gif','image/gif',11326,'2014-01-30 15:54:20',28,'2014-01-30 15:54:22','2014-01-30 15:54:25'),(6,'19_foto_sottocategoria.jpg','image/jpeg',5294,'2014-01-31 01:19:02',29,'2014-01-31 01:19:03','2014-01-31 01:19:05'),(8,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-31 02:09:07',14,'2014-01-31 02:09:13','2014-01-31 02:09:14'),(9,'080730_BAGNO_CREMA_YOGURT_MIELE_.jpg','image/jpeg',840229,'2014-01-31 02:09:37',18,'2014-01-31 02:09:40','2014-01-31 02:09:42'),(10,'DEOX_AMM._27_MIS._VERDE.jpg','image/jpeg',951791,'2014-01-31 02:09:53',19,'2014-01-31 02:09:57','2014-01-31 02:09:59'),(11,'WINNISLavatrice3Lt.jpg','image/jpeg',1139114,'2014-01-31 02:10:09',20,'2014-01-31 02:10:13','2014-01-31 02:10:15'),(12,'WINNIS_SGRASSATORE.jpg','image/jpeg',899710,'2014-01-31 02:10:26',21,'2014-01-31 02:10:35','2014-01-31 02:10:37'),(13,'WINNIS_PIATTI.jpg','image/jpeg',364762,'2014-01-31 02:12:57',22,'2014-01-31 02:12:59','2014-01-31 02:13:00'),(14,'CASASanyWActivBlu.jpg','image/jpeg',1527553,'2014-01-31 02:13:12',23,'2014-01-31 02:13:17','2014-01-31 02:13:19'),(15,'Сandeggina_Gentlile.jpg','image/jpeg',64439,'2014-01-31 02:14:10',30,'2014-01-31 02:14:12','2014-01-31 02:14:13'),(16,'scalasmacchiatorel1.jpg','image/jpeg',46267,'2014-01-31 02:14:25',31,'2014-01-31 02:14:27','2014-01-31 02:14:28'),(17,'fustino100lavaggipinoeuc_2.jpg','image/jpeg',150055,'2014-01-31 02:14:53',32,'2014-01-31 02:14:54','2014-01-31 02:14:56'),(18,'scala_candeggina_l_2_5_eucalipto_2013.jpg','image/jpeg',62953,'2014-01-31 02:15:07',33,'2014-01-31 02:15:09','2014-01-31 02:15:10'),(20,'scala_candeggina_1_classica_2013.jpg','image/jpeg',50907,'2014-01-31 02:15:31',34,'2014-01-31 02:15:32','2014-01-31 02:15:34'),(21,'scala-lavatrice---20-dosi.jpg','image/jpeg',116918,'2014-01-31 02:15:43',35,'2014-01-31 02:15:45','2014-01-31 02:15:46'),(22,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-31 02:52:18',25,'2014-01-31 02:52:24','2014-01-31 02:52:26'),(23,'DEOXLavatrice25BLU.jpg','image/jpeg',2056091,'2014-01-31 02:52:37',26,'2014-01-31 02:52:42','2014-01-31 02:52:44'),(24,'WINNISLavatrice3Lt.jpg','image/jpeg',1139114,'2014-01-31 02:53:06',27,'2014-01-31 02:53:10','2014-01-31 02:53:11'),(25,'DEOXLavatriceScatola.jpg','image/jpeg',1365887,'2014-01-31 02:53:27',41,'2014-01-31 02:53:30','2014-01-31 02:53:31');
+INSERT INTO `category_pictures` VALUES (2,'Deox.jpg','image/jpeg',13984,'2014-01-30 15:52:26',NULL,'2014-01-30 15:52:27','2014-01-30 15:52:27'),(8,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-31 02:09:07',14,'2014-01-31 02:09:13','2014-01-31 02:09:14'),(9,'080730_BAGNO_CREMA_YOGURT_MIELE_.jpg','image/jpeg',840229,'2014-01-31 02:09:37',18,'2014-01-31 02:09:40','2014-01-31 02:09:42'),(10,'DEOX_AMM._27_MIS._VERDE.jpg','image/jpeg',951791,'2014-01-31 02:09:53',19,'2014-01-31 02:09:57','2014-01-31 02:09:59'),(11,'WINNISLavatrice3Lt.jpg','image/jpeg',1139114,'2014-01-31 02:10:09',20,'2014-01-31 02:10:13','2014-01-31 02:10:15'),(12,'WINNIS_SGRASSATORE.jpg','image/jpeg',899710,'2014-01-31 02:10:26',21,'2014-01-31 02:10:35','2014-01-31 02:10:37'),(13,'WINNIS_PIATTI.jpg','image/jpeg',364762,'2014-01-31 02:12:57',22,'2014-01-31 02:12:59','2014-01-31 02:13:00'),(14,'CASASanyWActivBlu.jpg','image/jpeg',1527553,'2014-01-31 02:13:12',23,'2014-01-31 02:13:17','2014-01-31 02:13:19'),(15,'Сandeggina_Gentlile.jpg','image/jpeg',64439,'2014-01-31 02:14:10',30,'2014-01-31 02:14:12','2014-01-31 02:14:13'),(22,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-31 02:52:18',25,'2014-01-31 02:52:24','2014-01-31 02:52:26'),(23,'DEOXLavatrice25BLU.jpg','image/jpeg',2056091,'2014-01-31 02:52:37',26,'2014-01-31 02:52:42','2014-01-31 02:52:44'),(24,'WINNISLavatrice3Lt.jpg','image/jpeg',1139114,'2014-01-31 02:53:06',27,'2014-01-31 02:53:10','2014-01-31 02:53:11'),(25,'DEOXLavatriceScatola.jpg','image/jpeg',1365887,'2014-01-31 02:53:27',41,'2014-01-31 02:53:30','2014-01-31 02:53:31');
 /*!40000 ALTER TABLE `category_pictures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +302,7 @@ CREATE TABLE `category_translations` (
   PRIMARY KEY (`id`),
   KEY `index_category_translations_on_category_id` (`category_id`),
   KEY `index_category_translations_on_locale` (`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,7 +311,7 @@ CREATE TABLE `category_translations` (
 
 LOCK TABLES `category_translations` WRITE;
 /*!40000 ALTER TABLE `category_translations` DISABLE KEYS */;
-INSERT INTO `category_translations` VALUES (10,13,'en','2014-01-30 13:35:55','2014-01-30 13:35:55','Продукты'),(11,14,'en','2014-01-30 13:36:46','2014-01-30 14:07:20','Средства для стирки '),(15,18,'en','2014-01-30 13:38:36','2014-01-30 13:38:36','Уход за телом косметика'),(16,19,'en','2014-01-30 13:39:20','2014-01-30 13:39:20','Средства для мойки полов'),(17,20,'en','2014-01-30 13:39:42','2014-01-30 13:39:42','Средства для мойки посуды'),(18,21,'en','2014-01-30 13:40:08','2014-01-30 13:40:08','Чистящие средства'),(19,22,'en','2014-01-30 13:40:52','2014-01-30 13:40:52','Средства для Посудомоечных Машин'),(20,23,'en','2014-01-30 13:41:38','2014-01-30 13:41:38','Освежитель воздуха'),(22,25,'en','2014-01-30 13:50:17','2014-01-30 14:07:28','Lavantrice Порошки 1,5кг/1,62кг/4кг/6,8кг/10кг'),(23,26,'en','2014-01-30 13:50:29','2014-01-30 13:50:29','Отбеливатели'),(24,27,'en','2014-01-30 13:50:45','2014-01-30 13:50:45','Ополаскиватели'),(25,28,'en','2014-01-30 14:00:44','2014-01-30 17:02:35','Madel'),(26,29,'en','2014-01-30 14:08:31','2014-01-30 14:08:31','Scala'),(27,30,'en','2014-01-30 14:09:04','2014-01-30 14:09:04','Отбеливатели'),(28,31,'en','2014-01-30 14:09:20','2014-01-30 14:09:20','Чистящие средства'),(29,32,'en','2014-01-30 14:09:42','2014-01-30 14:09:42','Освежитель воздуха'),(30,33,'en','2014-01-30 14:09:59','2014-01-30 14:09:59','Средства для мойки полов'),(31,34,'en','2014-01-30 14:10:24','2014-01-30 14:10:24','Средства для мойки посуды'),(32,35,'en','2014-01-30 14:11:00','2014-01-30 14:11:00','Средства для стирки'),(33,36,'en','2014-01-30 14:11:28','2014-01-30 14:11:28','Ammorbidente 2000ml/4000ml/500ml'),(34,37,'en','2014-01-30 14:11:54','2014-01-30 14:11:54','Lavantrice 450g/1.44kg/3.76kg/6.8kg/20kg'),(35,38,'en','2014-01-30 14:12:15','2014-01-30 14:12:15','Lavantrice 750ml / 1875ml'),(36,39,'en','2014-01-30 14:13:12','2014-01-30 14:13:12','Sapone'),(37,40,'en','2014-01-30 14:13:29','2014-01-30 14:13:29','Дополнительные средства'),(38,41,'en','2014-01-30 14:46:11','2014-01-30 14:46:11','Lavantrice Порошки 1л/750мл'),(39,13,'ru','2014-01-31 01:15:55','2014-01-31 01:15:55','продукты'),(40,28,'ru','2014-01-31 01:16:03','2014-01-31 01:16:11','madel');
+INSERT INTO `category_translations` VALUES (10,13,'en','2014-01-30 13:35:55','2014-01-30 13:35:55','Продукты'),(11,14,'en','2014-01-30 13:36:46','2014-01-30 14:07:20','Средства для стирки '),(15,18,'en','2014-01-30 13:38:36','2014-01-30 13:38:36','Уход за телом косметика'),(16,19,'en','2014-01-30 13:39:20','2014-01-30 13:39:20','Средства для мойки полов'),(17,20,'en','2014-01-30 13:39:42','2014-01-30 13:39:42','Средства для мойки посуды'),(18,21,'en','2014-01-30 13:40:08','2014-01-30 13:40:08','Чистящие средства'),(19,22,'en','2014-01-30 13:40:52','2014-01-30 13:40:52','Средства для Посудомоечных Машин'),(20,23,'en','2014-01-30 13:41:38','2014-01-30 13:41:38','Освежитель воздуха'),(22,25,'en','2014-01-30 13:50:17','2014-01-31 18:36:44','MADEL Lavantrice Порошки 1,5кг/1,62кг/4кг/6,8кг/10кг'),(23,26,'en','2014-01-30 13:50:29','2014-01-31 18:36:59','MADEL Отбеливатели '),(24,27,'en','2014-01-30 13:50:45','2014-01-31 18:37:12','MADEL Ammorbidente Ополаскиватели'),(27,30,'en','2014-01-30 14:09:04','2014-01-30 14:09:04','Отбеливатели'),(33,36,'en','2014-01-30 14:11:28','2014-01-31 18:39:32','MADEL Lavantrice Порошки 1л/750мл'),(34,37,'en','2014-01-30 14:11:54','2014-01-31 18:39:41','MADEL Lavantrice Порошки 2л/3л/4л'),(35,38,'en','2014-01-30 14:12:15','2014-01-31 18:40:40','SCALA Ammorbidente 2000ml/4000ml/500ml'),(36,39,'en','2014-01-30 14:13:12','2014-01-31 18:40:58','SCALA Lavantrice 450g/1.44kg/3.76kg/6.8kg/20kg'),(37,40,'en','2014-01-30 14:13:29','2014-01-31 18:41:14','SCALA Lavantrice 750ml / 1875ml'),(38,41,'en','2014-01-30 14:46:11','2014-01-31 18:41:24','SCALA Sapone'),(39,13,'ru','2014-01-31 01:15:55','2014-01-31 01:15:55','продукты'),(41,42,'en','2014-01-31 18:41:38','2014-01-31 18:41:38','SCALA-Дополнительные средства');
 /*!40000 ALTER TABLE `category_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -386,6 +411,94 @@ LOCK TABLES `dealer_profiles` WRITE;
 /*!40000 ALTER TABLE `dealer_profiles` DISABLE KEYS */;
 INSERT INTO `dealer_profiles` VALUES (1,1,'2014-01-30 00:31:37','2014-01-30 01:00:37',50.4501,30.5234,'kiev','oficial','Киев, город Киев','+38087877887','kiev@quality-product.com.ua'),(2,2,'2014-01-30 00:33:06','2014-01-30 01:00:23',49.2331,28.4682,'vinnitsa','oficial','Винница, Винницкая область','+3807878787877','vinnitsa@quality-product.com.ua');
 /*!40000 ALTER TABLE `dealer_profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `manufacturer_pictures`
+--
+
+DROP TABLE IF EXISTS `manufacturer_pictures`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `manufacturer_pictures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `picture_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture_file_size` int(11) DEFAULT NULL,
+  `picture_updated_at` datetime DEFAULT NULL,
+  `manufacturer_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manufacturer_pictures`
+--
+
+LOCK TABLES `manufacturer_pictures` WRITE;
+/*!40000 ALTER TABLE `manufacturer_pictures` DISABLE KEYS */;
+INSERT INTO `manufacturer_pictures` VALUES (1,'080920_LOVE_MIELE_E_YOGURT.jpg','image/jpeg',309120,'2014-01-31 18:06:42',NULL,'2014-01-31 18:06:44','2014-01-31 18:06:44'),(2,'080940_ove_sapone_500_EROGATORE_latte.jpg','image/jpeg',750512,'2014-01-31 18:08:02',NULL,'2014-01-31 18:08:07','2014-01-31 18:08:07'),(6,'logo.png','image/png',21751,'2014-01-31 18:26:07',3,'2014-01-31 18:26:08','2014-01-31 18:27:19'),(7,'19_foto_sottocategoria.jpg','image/jpeg',5294,'2014-01-31 18:27:33',4,'2014-01-31 18:27:34','2014-01-31 18:28:04');
+/*!40000 ALTER TABLE `manufacturer_pictures` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `manufacturer_translations`
+--
+
+DROP TABLE IF EXISTS `manufacturer_translations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `manufacturer_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `manufacturer_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `short_description` text COLLATE utf8_unicode_ci,
+  `full_description` text COLLATE utf8_unicode_ci,
+  `title` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  KEY `index_manufacturer_translations_on_manufacturer_id` (`manufacturer_id`),
+  KEY `index_manufacturer_translations_on_locale` (`locale`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manufacturer_translations`
+--
+
+LOCK TABLES `manufacturer_translations` WRITE;
+/*!40000 ALTER TABLE `manufacturer_translations` DISABLE KEYS */;
+INSERT INTO `manufacturer_translations` VALUES (3,3,'en','2014-01-31 18:27:18','2014-01-31 18:27:18',NULL,NULL,'Madel'),(4,4,'en','2014-01-31 18:28:04','2014-01-31 18:28:04',NULL,NULL,'Scala');
+/*!40000 ALTER TABLE `manufacturer_translations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `manufacturers`
+--
+
+DROP TABLE IF EXISTS `manufacturers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `manufacturers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identificator` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manufacturers`
+--
+
+LOCK TABLES `manufacturers` WRITE;
+/*!40000 ALTER TABLE `manufacturers` DISABLE KEYS */;
+INSERT INTO `manufacturers` VALUES (3,'Madel','2014-01-31 18:27:18','2014-01-31 18:27:18'),(4,'Scala','2014-01-31 18:28:04','2014-01-31 18:28:04');
+/*!40000 ALTER TABLE `manufacturers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -554,7 +667,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20140110131752'),('20140110230539'),('20140110231201'),('20140114162156'),('20140114175330'),('20140114182515'),('20140116163012'),('20140127212501'),('20140127235554'),('20140129122417'),('20140129122502'),('20140129122738'),('20140129132513'),('20140129153348'),('20140129182128'),('20140129185816'),('20140129190717'),('20140129194808'),('20140129204756'),('20140130124232'),('20140130153616');
+INSERT INTO `schema_migrations` VALUES ('20140110131752'),('20140110230539'),('20140110231201'),('20140114162156'),('20140114175330'),('20140114182515'),('20140116163012'),('20140127212501'),('20140127235554'),('20140129122417'),('20140129122502'),('20140129122738'),('20140129132513'),('20140129153348'),('20140129182128'),('20140129185816'),('20140129190717'),('20140129194808'),('20140129204756'),('20140130124232'),('20140130153616'),('20140131154825'),('20140131155203'),('20140131155945'),('20140131161022');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -605,4 +718,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-01-31  3:05:02
+-- Dump completed on 2014-01-31 18:57:59
