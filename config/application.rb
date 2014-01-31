@@ -16,7 +16,7 @@ module ShoppingFarm
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
     
     I18n.enforce_available_locales = false
-    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :en
 
     #config.active_record.whitelist_attributes = false
     config.encoding = "utf-8"

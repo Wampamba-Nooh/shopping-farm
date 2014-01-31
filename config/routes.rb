@@ -10,7 +10,10 @@ ShoppingFarm::Application.routes.draw do
       post :auth, to: "auth/registrations#create"
       post '/auth/sign_in', to: "auth/sessions#create"
     end
+    resources :categories, only: [:show]
   end
+  
+  get "category/:id", to: "front/categories#show", as: :category
 
   namespace :admin do
     resources :brands, only: [:show, :index, :create, :update, :destroy] do 

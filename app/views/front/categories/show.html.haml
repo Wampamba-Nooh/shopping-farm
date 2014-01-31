@@ -1,0 +1,41 @@
+.container.products
+  .row
+    .inner-heading
+      .txt
+        %h1 Продукция
+    .clear
+    %br
+    %br
+    .container.clearfix
+      .row
+        - if @category.products.empty?
+          - @category.children.each do |child|
+            .service-block.span3{style: "border-radius: 5px;border: 1px solid #ccc;margin-bottom: 30px;height: 170px;background: white;"}
+              .style
+                = link_to category_path(id: child.id), class: "stylish" do
+                  %span.icon
+                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                    = image_tag @category.parent.category_pictures.first.picture.url(:preview100x100)
+                %a.halfCircleBottom
+              - if child.category_pictures.first
+                = image_tag child.category_pictures.first.picture.url(:preview100x100)
+              %h5= child.title
+              /%p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+        - else
+          - @category.products.each do |product|
+            .service-block.span3{style: "border-radius: 5px;border: 1px solid #ccc;margin-bottom: 30px;height: 470px;background: white;"}
+              .style
+                = link_to "#", class: "stylish" do
+                  %span.icon
+                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                    - if product.brand.brand_pictures.first
+                      = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
+                %a.halfCircleBottom
+              %h5= product.title
+              = image_tag product.product_pictures.first.picture.url(:preview200x200)
+              %br
+              = product.short_description.lstrip.html_safe
+    .clearfix    
+    %br
+    %br
+    %br

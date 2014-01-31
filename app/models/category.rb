@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
 
   belongs_to :parent, class_name: "Category"
   has_and_belongs_to_many :brands
+  has_and_belongs_to_many :products
   translates :title
   
   def is_part_of(category)
@@ -16,3 +17,4 @@ class Category < ActiveRecord::Base
     where("parent_id is null")
   }
 end
+

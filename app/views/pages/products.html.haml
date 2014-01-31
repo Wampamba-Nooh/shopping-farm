@@ -4,79 +4,23 @@
       .txt
         %h1 Продукция
     .clear
-    %br
-    %br
     .container.clearfix
       .row
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Deox
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo2.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Disin FEKTO
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo3.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Gran Bucato
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo4.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Love
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo5.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Winnis
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo6.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Sprizzo
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo7.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Smacchio Tutto
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        .service-block.span3
-          .style
-            %a.stylish{href: "#"}
-              %span.icon
-                %img{alt: "post one", src: "/img/wash/logo8.png", class: ""}
-            %a.halfCircleBottom
-          %h4 Puliraped
-          %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-        //
-        //
-        //
-    .clearfix
-    
+        - Category.find_by_identificator('products').children.each do |category|
+          - category.children.each do |child|
+
+            .service-block.span3{style: "border-radius: 5px;border: 1px solid #ccc;margin-bottom: 30px;height: 170px;background: white;"}
+              .style
+                = link_to category_path(id: child.id), class: "stylish" do
+                  %span.icon
+                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                    = image_tag category.category_pictures.first.picture.url(:preview100x100)
+                %a.halfCircleBottom
+              - if child.category_pictures.first
+                = image_tag child.category_pictures.first.picture.url(:preview100x100)
+              %h5= child.title
+              /%p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    .clearfix    
     %br
     %br
     %br
