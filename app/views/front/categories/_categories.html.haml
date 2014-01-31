@@ -1,11 +1,18 @@
 .container.products
-  .row
-    .inner-heading
-      .txt
-        %h3= @category.title
+  %br
+  .row  
+    .left-heading
+      .text
+        %span= @category.title
     .clear
     %br
     %br
+    /.inner-heading
+    /  .txt
+    /    %h3= @category.title
+    /.clear
+    /%br
+    /%br
     .container.clearfix
       .row
         - @category.children.each do |child|
