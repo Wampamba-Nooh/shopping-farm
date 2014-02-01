@@ -49,7 +49,7 @@ Table of Content :-
 
 /********** Global styling ***************/
 body{
-background:url(/img/pat1.jpg);
+background:url(/img/pat48.jpg);
 }
 
 li{list-style:none;}
@@ -79,7 +79,7 @@ color:#383838;
 
 
 #header.bg{
-  background:#c45946 url(/img/hbg.png) repeat-x 0 28px;
+/*  background:#c45946 url(/img/hbg.png) repeat-x 0 28px;*/
   width:100%;
   height:123px;
   float:left;
