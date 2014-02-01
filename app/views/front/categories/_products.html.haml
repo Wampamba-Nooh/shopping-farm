@@ -17,21 +17,24 @@
   %br
   %br
   .row
-    .container.clearfix
-      .row
-        - @category.products.each do |product|
-          .service-block.span3{style: "border-radius: 5px;border: 1px solid #ccc;margin-bottom: 30px;height: 470px;background: white;"}
-            .style
-              = link_to "#", class: "stylish" do
-                %span.icon
-                  /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-                  - if product.brand.brand_pictures.first
-                    = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
-              %a.halfCircleBottom
-            %h5= product.title
-            = image_tag product.product_pictures.first.picture.url(:preview200x200)
-            %br
-            = product.short_description.lstrip.html_safe
+    .span2
+      = render 'menu'
+    .span10
+      .container.clearfix
+        .row
+          - @category.products.each do |product|
+            .service-block.span3{style: "border-radius: 5px;border: 1px solid #ccc;margin-bottom: 30px;height: 470px;background: white;"}
+              .style
+                = link_to "#", class: "stylish" do
+                  %span.icon
+                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                    - if product.brand.brand_pictures.first
+                      = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
+                %a.halfCircleBottom
+              %h5= product.title
+              = image_tag product.product_pictures.first.picture.url(:preview200x200)
+              %br
+              = product.short_description.lstrip.html_safe
     .clearfix    
     %br
     %br

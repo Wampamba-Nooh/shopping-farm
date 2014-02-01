@@ -1,12 +1,28 @@
-%ul.nav.nav-list
+%ul.nav.nav-list.products-nav
   - Category.find_by_identificator('products').children.each do |child|
     %li{class: "#{@category.is_part_of(child) ? 'active' : ''}"}
+      - unless child.children.empty?
+        %span +
       = link_to category_path(id: child.id), style: "font-size: 0.9em;text-transform: uppercase; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 10px;" do
         = child.title
 
       - unless child.children.empty?
-        %ul.nav.nav-list{style: "display: none !important;"}
+        %ul.nav.nav-list
+          /{style: "display: none !important;"}
           - child.children.each do |child1|
-            %li{class: "#{@category.is_part_of(child1) ? 'active' : ''}"}
+            %li{class: "#{@category.is_part_of(child1) ? 'active' : ''}", style: "display: none;"}
               = link_to category_path(id: child1.id), style: "font-size: 0.9em; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 5px;" do
                 = child1.title
+
+:javascript
+  $('.products-nav li:has(ul)').addClass('parent_li');
+  $('.products-nav li.parent_li > span').on('click', function(e){
+    children = $(this).parent('li.parent_li').find(' > ul > li');
+    if (children.is(":visible")) {
+      children.hide('fast');
+      $(this).addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
+    }else{
+      children.show('fast');
+      $(this).addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+    }
+  });
