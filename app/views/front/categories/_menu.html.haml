@@ -1,16 +1,24 @@
+:css
+  .products-nav.nav-list>.active>a {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+    background-color: transparent;
+    border-bottom: 2px solid #A7A7A7;
+  }
+
 %ul.nav.nav-list.products-nav
   - Category.find_by_identificator('products').children.each do |child|
     %li{class: "#{@category.is_part_of(child) ? 'active' : ''}"}
       - unless child.children.empty?
         %span +
-      = link_to category_path(id: child.id), style: "font-size: 0.9em;text-transform: uppercase; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 10px;" do
+      = link_to category_path(id: child.id), style: "font-size: 0.9em;text-transform: uppercase; color: #656666;margin-bottom: 10px;" do
         = child.title
 
       - unless child.children.empty?
         %ul.nav.nav-list
           /{style: "display: none !important;"}
           - child.children.each do |child1|
-            %li{class: "#{@category.is_part_of(child1) ? 'active' : ''}", style: "display: none;"}
+            %li{class: "#{@category.is_part_of(child1) ? 'active' : ''}", style: "#{child.id == @category.id ? '' : 'display: none;'}"}
               = link_to category_path(id: child1.id), style: "font-size: 0.9em; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 5px;" do
                 = child1.title
 
