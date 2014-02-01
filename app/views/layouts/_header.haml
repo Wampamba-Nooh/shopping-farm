@@ -1,5 +1,7 @@
 //.scroll
-%header#header.clearfix.bg
+= render "layouts/subhead"
+.clearfix
+%header#header.clearfix.bg{style: "height: 80px;"}
   .container
     .row
       .span4
@@ -24,9 +26,15 @@
               = link_to "Контакты", "/pages/contacts"
       //
       .clearfix
-      = render "layouts/subhead"
-      .clearfix
 .clear
+
+.row{style: "min-height: 3px;background: #00a750;"}
+.clear
+.row{style: "min-height: 3px;background: #ffffff;"}
+.clear
+.row{style: "min-height: 3px;background: #E93940;"}
+.clear
+  
 .container
   %section.row
     .span12.socialpack
