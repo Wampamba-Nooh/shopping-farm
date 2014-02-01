@@ -1,11 +1,12 @@
 %ul.nav.nav-list
   - Category.find_by_identificator('products').children.each do |child|
     %li{class: "#{@category.is_part_of(child) ? 'active' : ''}"}
-      = link_to category_path(id: child.id), style: "text-transform: uppercase; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 10px;" do 
+      = link_to category_path(id: child.id), style: "font-size: 0.9em;text-transform: uppercase; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 10px;" do
         = child.title
 
-      /- unless child.children.empty?
-      /  %ul.nav-list
-      /    - child.children.each do |child1|
-      /      %li{class: "#{@category.is_part_of(child1) ? 'active' : ''}"}
-      /        = link_to child1.title, category_path(id: child1.id)
+      - unless child.children.empty?
+        %ul.nav.nav-list{style: "display: none !important;"}
+          - child.children.each do |child1|
+            %li{class: "#{@category.is_part_of(child1) ? 'active' : ''}"}
+              = link_to category_path(id: child1.id), style: "font-size: 0.9em; color: #656666;border-bottom: 0px solid #b9bbbe;margin-bottom: 5px;" do
+                = child1.title
