@@ -10,7 +10,7 @@
   - Category.find_by_identificator('products').children.each do |child|
     %li{class: "#{@category.is_part_of(child) ? 'active' : ''}"}
       - unless child.children.empty?
-        %span +
+        %span.glyphicon.glyphicon-plus-sign
       = link_to category_path(id: child.id), style: "font-size: 0.9em;text-transform: uppercase; color: #656666;margin-bottom: 10px;" do
         = child.title
 
