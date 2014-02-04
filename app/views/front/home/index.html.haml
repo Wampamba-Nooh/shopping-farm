@@ -1,19 +1,35 @@
-.container
-  .row
-    .big-heading
-      .slogan
-        %h4{style: "font-family: Allan;"}
-          Наша компания является официальным представителем итальянских торговых марок в Украине. Весь товар сертифицирован. Возможны доставки по всей Украине.
+/.container
+/  .row
+/    .big-heading
+/      .slogan
+/        %h4{style: "font-family: Allan;"}
+/          Наша компания является официальным представителем итальянских торговых марок в Украине. Весь товар сертифицирован. Возможны доставки по всей Украине.
 .clear
+%br
 .container
   .row
     / Place somewhere in the <body> of your page
-    #video_wrapper
-      .video_pattern
-      %video.video_background{autoplay: "true", loop: "loop", preload: "auto", volume: "0", muted: ""}
-        %source{src: "/videos/video.webm", type: "video/webm"}
-        %source{src: "/img/landing/video.mp4", type: "video/mp4"} 
-        Video not supported
+    /#video_wrapper
+    /  .video_pattern
+    /  %video.video_background{autoplay: "true", loop: "loop", preload: "auto", volume: "0", muted: ""}
+    /    %source{src: "/videos/video.webm", type: "video/webm"}
+    /    %source{src: "/img/landing/video.mp4", type: "video/mp4"} 
+    /    Video not supported
+    .span4
+      - Manufacturer.all.each do |manufacturer|
+        - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
+          = image_tag manufacturer_picture.picture.url(:preview80x80), alt: "post one", class: "img-polaroid img-rounded"
+          %h4.pull-right= manufacturer.title
+          %br
+          %br
+          %p
+            When developing any medium to large-scale web application, you often get to the point where an action by a user can cause a number of different models to change on the client and the server.You can try to keep up
+          %hr
+
+    .span8.pull-right
+      %object.pull-right{data: "http://madel.net/img/Images/animazione2_ING.swf", height: "383", type: "application/x-shockwave-flash", width: "544"}
+        %param{name: "data", value: "../../img/Images/animazione2_ING.swf"}/
+        %param{name: "src", value: "../../img/Images/animazione2_ING.swf"}/
 .clear
 %br
 %br
