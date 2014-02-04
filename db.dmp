@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.5.32, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: shopping_farm_dev
+-- Host: localhost    Database: quality_product_plus_dev
 -- ------------------------------------------------------
--- Server version	5.5.35-0ubuntu0.13.10.1
+-- Server version	5.5.32-0ubuntu0.12.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -57,7 +57,7 @@ CREATE TABLE `brand_pictures` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `brand_pictures` (
 
 LOCK TABLES `brand_pictures` WRITE;
 /*!40000 ALTER TABLE `brand_pictures` DISABLE KEYS */;
-INSERT INTO `brand_pictures` VALUES (1,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:41:28',NULL,'2014-01-29 18:41:30','2014-01-29 18:41:30'),(2,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:43:51',NULL,'2014-01-29 18:43:53','2014-01-29 18:43:53'),(6,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:52:21',NULL,'2014-01-29 18:52:23','2014-01-29 18:52:23'),(8,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:53:02',NULL,'2014-01-29 18:53:04','2014-01-29 18:53:04'),(9,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:53:23',NULL,'2014-01-29 18:53:26','2014-01-29 18:53:26'),(10,'hhh.png','image/png',54689,'2014-01-29 18:53:28',NULL,'2014-01-29 18:53:31','2014-01-29 18:53:31'),(12,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:54:37',NULL,'2014-01-29 18:54:40','2014-01-29 18:54:40'),(17,'Deox.jpg','image/jpeg',13984,'2014-01-30 13:48:55',NULL,'2014-01-30 13:48:56','2014-01-30 13:48:56'),(18,'Deox.jpg','image/jpeg',13984,'2014-01-30 14:14:52',10,'2014-01-30 14:14:53','2014-01-30 14:14:55'),(19,'morbido.jpg','image/jpeg',11643,'2014-01-30 14:31:44',11,'2014-01-30 14:31:46','2014-01-30 14:32:13'),(20,'winnis_verde.jpg','image/jpeg',7715,'2014-01-30 14:33:26',12,'2014-01-30 14:33:27','2014-01-30 14:33:47');
+INSERT INTO `brand_pictures` VALUES (1,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:41:28',NULL,'2014-01-29 18:41:30','2014-01-29 18:41:30'),(2,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:43:51',NULL,'2014-01-29 18:43:53','2014-01-29 18:43:53'),(6,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:52:21',NULL,'2014-01-29 18:52:23','2014-01-29 18:52:23'),(8,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:53:02',NULL,'2014-01-29 18:53:04','2014-01-29 18:53:04'),(9,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:53:23',NULL,'2014-01-29 18:53:26','2014-01-29 18:53:26'),(10,'hhh.png','image/png',54689,'2014-01-29 18:53:28',NULL,'2014-01-29 18:53:31','2014-01-29 18:53:31'),(12,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:54:37',NULL,'2014-01-29 18:54:40','2014-01-29 18:54:40'),(17,'Deox.jpg','image/jpeg',13984,'2014-01-30 13:48:55',NULL,'2014-01-30 13:48:56','2014-01-30 13:48:56'),(18,'Deox.jpg','image/jpeg',13984,'2014-01-30 14:14:52',10,'2014-01-30 14:14:53','2014-01-30 14:14:55'),(19,'morbido.jpg','image/jpeg',11643,'2014-01-30 14:31:44',11,'2014-01-30 14:31:46','2014-01-30 14:32:13'),(20,'winnis_verde.jpg','image/jpeg',7715,'2014-01-30 14:33:26',12,'2014-01-30 14:33:27','2014-01-30 14:33:47'),(21,'smacchiotutto.jpg','image/jpeg',35044,'2014-02-03 13:12:34',13,'2014-02-03 13:12:35','2014-02-03 13:15:20'),(22,'11409372_w200_h200_.jpg','image/jpeg',7325,'2014-02-03 14:21:38',14,'2014-02-03 14:21:38','2014-02-03 14:33:08'),(23,'Pulirapid_.jpg','image/jpeg',38605,'2014-02-03 14:34:23',15,'2014-02-03 14:34:23','2014-02-03 14:46:09'),(24,'disinfekto.gif','image/gif',15357,'2014-02-03 14:46:43',16,'2014-02-03 14:46:45','2014-02-03 14:57:09'),(25,'granbucato.jpg','image/jpeg',11983,'2014-02-03 14:57:36',17,'2014-02-03 14:57:36','2014-02-03 15:04:01'),(26,'Love.jpg','image/jpeg',29996,'2014-02-03 15:04:49',18,'2014-02-03 15:04:50','2014-02-03 15:10:51'),(27,'Безымянный.jpg','image/jpeg',332100,'2014-02-03 15:12:27',NULL,'2014-02-03 15:12:32','2014-02-03 15:12:32'),(28,'Скала_стікера_допис._готов_.pdf','application/pdf',592418,'2014-02-03 15:12:41',NULL,'2014-02-03 15:12:58','2014-02-03 15:12:58'),(29,'Безымянный.jpg','image/jpeg',332100,'2014-02-03 15:18:09',NULL,'2014-02-03 15:18:55','2014-02-03 15:18:55'),(31,'Скала_стікера_допис._готов_.pdf','application/pdf',592418,'2014-02-03 15:18:13',NULL,'2014-02-03 15:19:23','2014-02-03 15:19:23'),(32,'madel.gif','image/gif',11326,'2014-02-03 15:23:43',19,'2014-02-03 15:23:45','2014-02-03 15:29:34'),(33,'Sprizzo.jpg','image/jpeg',40864,'2014-02-03 15:31:09',20,'2014-02-03 15:31:09','2014-02-03 15:33:18'),(34,'19_foto_sottocategoria.jpg','image/jpeg',5294,'2014-02-03 15:33:38',21,'2014-02-03 15:33:39','2014-02-03 15:34:57'),(35,'mcbride.jpg','image/jpeg',54375,'2014-02-03 15:35:13',22,'2014-02-03 15:35:13','2014-02-03 15:37:51');
 /*!40000 ALTER TABLE `brand_pictures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `brand_translations` (
   PRIMARY KEY (`id`),
   KEY `index_brand_translations_on_brand_id` (`brand_id`),
   KEY `index_brand_translations_on_locale` (`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `brand_translations` (
 
 LOCK TABLES `brand_translations` WRITE;
 /*!40000 ALTER TABLE `brand_translations` DISABLE KEYS */;
-INSERT INTO `brand_translations` VALUES (10,10,'en','2014-01-30 14:14:55','2014-01-30 14:14:55',NULL,NULL,'DEOX'),(11,11,'en','2014-01-30 14:32:13','2014-01-30 14:32:13',NULL,NULL,'Morbido'),(12,12,'en','2014-01-30 14:33:47','2014-01-30 14:33:47',NULL,NULL,'Winni’s');
+INSERT INTO `brand_translations` VALUES (10,10,'en','2014-01-30 14:14:55','2014-01-30 14:14:55',NULL,NULL,'DEOX'),(11,11,'en','2014-01-30 14:32:13','2014-01-30 14:32:13',NULL,NULL,'Morbido'),(12,12,'en','2014-01-30 14:33:47','2014-01-30 14:33:47',NULL,NULL,'Winni’s'),(13,13,'en','2014-02-03 13:15:20','2014-02-03 13:15:20','SMACCHIO TUTTO - Ваш надійний помічник у боротьбі з плямами','SMACCHIO TUTTO - Плямовивідники\nВаш надійний помічник у боротьбі з плямами\nЛінія продуктів для видалення складних плям з одночасним ','SMACCHIO TUTTO - Плямовивідники'),(14,14,'en','2014-02-03 14:33:08','2014-02-03 14:33:08','Полная линейка средств для стирки',NULL,'SOFFICE - Средства для стирки'),(15,15,'en','2014-02-03 14:46:09','2014-02-03 14:46:09','PULIRAPID -  эффективен даже при самых стойких загрязнениях в тоже время щадящий к самым покрытиям',NULL,'Линейка средств для чистки в доме'),(16,16,'en','2014-02-03 14:57:08','2014-02-03 14:57:08','DISINFEKTO - полная линия дезинфицирующих средств для стирки, уборки и личной гигиены.',NULL,'DISINFEKTO - дезинфецирующие средства'),(17,17,'en','2014-02-03 15:04:00','2014-02-03 15:04:00','GRAN BUCATO -  Професеональные средства для стирки',NULL,'GRAN BUCATO - Професеональные средства для стирки'),(18,18,'en','2014-02-03 15:10:51','2014-02-03 15:10:51','LOVE - средства личной гигиены',NULL,'LOVE - средства личной гигиены'),(19,19,'en','2014-02-03 15:29:34','2014-02-03 15:29:34',NULL,NULL,'Madel - полная линейка бытовой химии '),(20,20,'en','2014-02-03 15:33:17','2014-02-03 15:33:17',NULL,NULL,'SPRIZZO PIATTI - средства для мойки посуды'),(21,21,'en','2014-02-03 15:34:57','2014-02-03 15:34:57',NULL,NULL,'Scala - полная линейка средств бытовой химии '),(22,22,'en','2014-02-03 15:37:51','2014-02-03 15:37:51',NULL,NULL,'McBride - мировой бренд бытовой химии');
 /*!40000 ALTER TABLE `brand_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +115,7 @@ CREATE TABLE `brands` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` VALUES (10,'DEOX','2014-01-30 14:14:55','2014-01-30 14:14:55'),(11,'Morbido','2014-01-30 14:32:13','2014-01-30 14:32:13'),(12,'Winni’s','2014-01-30 14:33:47','2014-01-30 14:33:47');
+INSERT INTO `brands` VALUES (10,'DEOX','2014-01-30 14:14:55','2014-01-30 14:14:55'),(11,'Morbido','2014-01-30 14:32:13','2014-01-30 14:32:13'),(12,'Winni’s','2014-01-30 14:33:47','2014-01-30 14:33:47'),(13,'SMACCHIO TUTTO ','2014-02-03 13:15:20','2014-02-03 13:15:20'),(14,'SOFFICE','2014-02-03 14:33:08','2014-02-03 14:33:08'),(15,'PULIRAPID','2014-02-03 14:46:09','2014-02-03 14:46:09'),(16,'DISINFEKTO','2014-02-03 14:57:08','2014-02-03 14:57:08'),(17,'GRAN BUCATO','2014-02-03 15:04:00','2014-02-03 15:04:00'),(18,'LOVE','2014-02-03 15:10:51','2014-02-03 15:10:51'),(19,'Madel','2014-02-03 15:29:34','2014-02-03 15:29:34'),(20,'SPRIZZO PIATTI ','2014-02-03 15:33:17','2014-02-03 15:33:17'),(21,'Scala','2014-02-03 15:34:57','2014-02-03 15:34:57'),(22,'McBride','2014-02-03 15:37:51','2014-02-03 15:37:51');
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +149,7 @@ CREATE TABLE `brands_categories` (
 
 LOCK TABLES `brands_categories` WRITE;
 /*!40000 ALTER TABLE `brands_categories` DISABLE KEYS */;
-INSERT INTO `brands_categories` VALUES (10,14),(11,14),(12,14);
+INSERT INTO `brands_categories` VALUES (10,14),(11,14),(12,14),(13,13),(14,14),(15,21),(16,13),(17,14),(18,18),(19,13),(20,20),(21,13),(22,13);
 /*!40000 ALTER TABLE `brands_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,7 +167,7 @@ CREATE TABLE `categories` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (13,'products',NULL,'2014-01-30 13:35:55','2014-01-31 01:15:55'),(14,'for_washing',13,'2014-01-30 13:36:46','2014-01-31 17:31:57'),(18,'body_care_cosmetics',13,'2014-01-30 13:38:36','2014-01-31 17:32:04'),(19,'for_cleaning_floors',13,'2014-01-30 13:39:20','2014-01-31 17:32:10'),(20,'for_washing_dishes',13,'2014-01-30 13:39:42','2014-01-31 17:32:15'),(21,'cleaners',13,'2014-01-30 13:40:08','2014-01-31 17:32:20'),(22,'for_dishwashers',13,'2014-01-30 13:40:52','2014-01-31 17:32:26'),(23,'air_freshener',13,'2014-01-30 13:41:38','2014-01-31 17:32:31'),(25,'powders',14,'2014-01-30 13:50:17','2014-01-31 18:36:44'),(26,'bleachers',14,'2014-01-30 13:50:29','2014-01-31 18:36:59'),(27,'rinses',14,'2014-01-30 13:50:45','2014-01-31 18:37:12'),(30,'bleachers',13,'2014-01-30 14:09:04','2014-01-31 17:32:36'),(36,'ammorbidente',14,'2014-01-30 14:11:28','2014-01-31 18:39:32'),(37,'lavantrice_450g',14,'2014-01-30 14:11:54','2014-01-31 18:39:41'),(38,'lavantrice_750m',14,'2014-01-30 14:12:15','2014-01-31 18:40:40'),(39,'sapone',14,'2014-01-30 14:13:12','2014-01-31 18:40:58'),(40,'additional_funds',14,'2014-01-30 14:13:29','2014-01-31 18:41:14'),(41,'lavantrice_1l',14,'2014-01-30 14:46:11','2014-01-31 18:41:24'),(42,'SCALA-Дополнительные средства',14,'2014-01-31 18:41:38','2014-01-31 18:41:38');
+INSERT INTO `categories` VALUES (13,'products',NULL,'2014-01-30 13:35:55','2014-01-31 01:15:55'),(14,'for_washing',13,'2014-01-30 13:36:46','2014-01-31 17:31:57'),(18,'body_care_cosmetics',13,'2014-01-30 13:38:36','2014-01-31 17:32:04'),(19,'for_cleaning_floors',13,'2014-01-30 13:39:20','2014-01-31 17:32:10'),(20,'for_washing_dishes',13,'2014-01-30 13:39:42','2014-01-31 17:32:15'),(21,'cleaners',13,'2014-01-30 13:40:08','2014-01-31 17:32:20'),(22,'for_dishwashers',13,'2014-01-30 13:40:52','2014-01-31 17:32:26'),(23,'air_freshener',13,'2014-01-30 13:41:38','2014-01-31 17:32:31'),(25,'powders',14,'2014-01-30 13:50:17','2014-01-31 18:36:44'),(26,'bleachers',14,'2014-01-30 13:50:29','2014-01-31 18:36:59'),(27,'rinses',14,'2014-01-30 13:50:45','2014-01-31 18:37:12'),(30,'bleachers',13,'2014-01-30 14:09:04','2014-01-31 17:32:36'),(36,'ammorbidente',14,'2014-01-30 14:11:28','2014-01-31 18:39:32'),(37,'lavantrice_450g',14,'2014-01-30 14:11:54','2014-01-31 18:39:41'),(38,'lavantrice_750m',14,'2014-01-30 14:12:15','2014-01-31 18:40:40'),(39,'sapone',14,'2014-01-30 14:13:12','2014-01-31 18:40:58'),(40,'additional_funds',14,'2014-01-30 14:13:29','2014-01-31 18:41:14'),(41,'lavantrice_1l',14,'2014-01-30 14:46:11','2014-01-31 18:41:24'),(42,'SCALA-Дополнительные средства',14,'2014-01-31 18:41:38','2014-01-31 18:41:38'),(43,'capsuls_for_washing',14,'2014-02-04 18:05:35','2014-02-04 18:05:35');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +201,7 @@ CREATE TABLE `categories_manufacturers` (
 
 LOCK TABLES `categories_manufacturers` WRITE;
 /*!40000 ALTER TABLE `categories_manufacturers` DISABLE KEYS */;
-INSERT INTO `categories_manufacturers` VALUES (4,21),(4,19),(3,23),(3,20),(3,21),(3,18),(3,22),(3,30),(3,19),(3,14),(4,30),(4,23),(4,20),(3,25),(3,26),(3,27),(3,36),(3,37),(4,38),(4,40),(4,41),(4,39),(4,42),(4,14);
+INSERT INTO `categories_manufacturers` VALUES (4,21),(4,19),(3,23),(3,20),(3,21),(3,18),(3,22),(3,30),(3,19),(3,14),(4,30),(4,23),(4,20),(3,25),(3,26),(3,27),(3,36),(3,37),(4,38),(4,40),(4,41),(4,39),(4,42),(4,14),(5,43),(5,14),(5,18),(5,19),(5,20),(5,21),(5,22),(5,23),(5,30);
 /*!40000 ALTER TABLE `categories_manufacturers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +226,6 @@ CREATE TABLE `categories_pages` (
 
 LOCK TABLES `categories_pages` WRITE;
 /*!40000 ALTER TABLE `categories_pages` DISABLE KEYS */;
-INSERT INTO `categories_pages` VALUES (2,11),(2,12),(4,11),(5,11);
 /*!40000 ALTER TABLE `categories_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,7 +250,7 @@ CREATE TABLE `categories_products` (
 
 LOCK TABLES `categories_products` WRITE;
 /*!40000 ALTER TABLE `categories_products` DISABLE KEYS */;
-INSERT INTO `categories_products` VALUES (5,25),(6,25);
+INSERT INTO `categories_products` VALUES (5,25),(6,27),(7,27),(8,27),(10,27),(11,27),(12,27),(13,27),(14,27),(15,27),(16,36),(17,26),(18,37),(19,21),(20,18),(21,25),(22,18),(23,21),(24,20),(25,39),(26,14),(27,38),(28,22);
 /*!40000 ALTER TABLE `categories_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +301,7 @@ CREATE TABLE `category_translations` (
   PRIMARY KEY (`id`),
   KEY `index_category_translations_on_category_id` (`category_id`),
   KEY `index_category_translations_on_locale` (`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +310,7 @@ CREATE TABLE `category_translations` (
 
 LOCK TABLES `category_translations` WRITE;
 /*!40000 ALTER TABLE `category_translations` DISABLE KEYS */;
-INSERT INTO `category_translations` VALUES (10,13,'en','2014-01-30 13:35:55','2014-01-30 13:35:55','Продукты'),(11,14,'en','2014-01-30 13:36:46','2014-01-30 14:07:20','Средства для стирки '),(15,18,'en','2014-01-30 13:38:36','2014-01-30 13:38:36','Уход за телом косметика'),(16,19,'en','2014-01-30 13:39:20','2014-01-30 13:39:20','Средства для мойки полов'),(17,20,'en','2014-01-30 13:39:42','2014-01-30 13:39:42','Средства для мойки посуды'),(18,21,'en','2014-01-30 13:40:08','2014-01-30 13:40:08','Чистящие средства'),(19,22,'en','2014-01-30 13:40:52','2014-01-30 13:40:52','Средства для Посудомоечных Машин'),(20,23,'en','2014-01-30 13:41:38','2014-01-30 13:41:38','Освежитель воздуха'),(22,25,'en','2014-01-30 13:50:17','2014-01-31 18:36:44','MADEL Lavantrice Порошки 1,5кг/1,62кг/4кг/6,8кг/10кг'),(23,26,'en','2014-01-30 13:50:29','2014-01-31 18:36:59','MADEL Отбеливатели '),(24,27,'en','2014-01-30 13:50:45','2014-01-31 18:37:12','MADEL Ammorbidente Ополаскиватели'),(27,30,'en','2014-01-30 14:09:04','2014-01-30 14:09:04','Отбеливатели'),(33,36,'en','2014-01-30 14:11:28','2014-01-31 18:39:32','MADEL Lavantrice Порошки 1л/750мл'),(34,37,'en','2014-01-30 14:11:54','2014-01-31 18:39:41','MADEL Lavantrice Порошки 2л/3л/4л'),(35,38,'en','2014-01-30 14:12:15','2014-01-31 18:40:40','SCALA Ammorbidente 2000ml/4000ml/500ml'),(36,39,'en','2014-01-30 14:13:12','2014-01-31 18:40:58','SCALA Lavantrice 450g/1.44kg/3.76kg/6.8kg/20kg'),(37,40,'en','2014-01-30 14:13:29','2014-01-31 18:41:14','SCALA Lavantrice 750ml / 1875ml'),(38,41,'en','2014-01-30 14:46:11','2014-01-31 18:41:24','SCALA Sapone'),(39,13,'ru','2014-01-31 01:15:55','2014-01-31 01:15:55','продукты'),(41,42,'en','2014-01-31 18:41:38','2014-01-31 18:41:38','SCALA-Дополнительные средства');
+INSERT INTO `category_translations` VALUES (10,13,'en','2014-01-30 13:35:55','2014-01-30 13:35:55','Продукты'),(11,14,'en','2014-01-30 13:36:46','2014-01-30 14:07:20','Средства для стирки '),(15,18,'en','2014-01-30 13:38:36','2014-01-30 13:38:36','Уход за телом косметика'),(16,19,'en','2014-01-30 13:39:20','2014-01-30 13:39:20','Средства для мойки полов'),(17,20,'en','2014-01-30 13:39:42','2014-01-30 13:39:42','Средства для мойки посуды'),(18,21,'en','2014-01-30 13:40:08','2014-01-30 13:40:08','Чистящие средства'),(19,22,'en','2014-01-30 13:40:52','2014-01-30 13:40:52','Средства для Посудомоечных Машин'),(20,23,'en','2014-01-30 13:41:38','2014-01-30 13:41:38','Освежитель воздуха'),(22,25,'en','2014-01-30 13:50:17','2014-01-31 18:36:44','MADEL Lavantrice Порошки 1,5кг/1,62кг/4кг/6,8кг/10кг'),(23,26,'en','2014-01-30 13:50:29','2014-01-31 18:36:59','MADEL Отбеливатели '),(24,27,'en','2014-01-30 13:50:45','2014-01-31 18:37:12','MADEL Ammorbidente Ополаскиватели'),(27,30,'en','2014-01-30 14:09:04','2014-01-30 14:09:04','Отбеливатели'),(33,36,'en','2014-01-30 14:11:28','2014-01-31 18:39:32','MADEL Lavantrice Порошки 1л/750мл'),(34,37,'en','2014-01-30 14:11:54','2014-01-31 18:39:41','MADEL Lavantrice Порошки 2л/3л/4л'),(35,38,'en','2014-01-30 14:12:15','2014-01-31 18:40:40','SCALA Ammorbidente 2000ml/4000ml/500ml'),(36,39,'en','2014-01-30 14:13:12','2014-01-31 18:40:58','SCALA Lavantrice 450g/1.44kg/3.76kg/6.8kg/20kg'),(37,40,'en','2014-01-30 14:13:29','2014-01-31 18:41:14','SCALA Lavantrice 750ml / 1875ml'),(38,41,'en','2014-01-30 14:46:11','2014-01-31 18:41:24','SCALA Sapone'),(39,13,'ru','2014-01-31 01:15:55','2014-01-31 01:15:55','продукты'),(41,42,'en','2014-01-31 18:41:38','2014-01-31 18:41:38','SCALA-Дополнительные средства'),(42,43,'en','2014-02-04 18:05:35','2014-02-04 18:05:35','Капсулы для стирки');
 /*!40000 ALTER TABLE `category_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -430,7 +429,7 @@ CREATE TABLE `manufacturer_pictures` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -439,7 +438,7 @@ CREATE TABLE `manufacturer_pictures` (
 
 LOCK TABLES `manufacturer_pictures` WRITE;
 /*!40000 ALTER TABLE `manufacturer_pictures` DISABLE KEYS */;
-INSERT INTO `manufacturer_pictures` VALUES (1,'080920_LOVE_MIELE_E_YOGURT.jpg','image/jpeg',309120,'2014-01-31 18:06:42',NULL,'2014-01-31 18:06:44','2014-01-31 18:06:44'),(2,'080940_ove_sapone_500_EROGATORE_latte.jpg','image/jpeg',750512,'2014-01-31 18:08:02',NULL,'2014-01-31 18:08:07','2014-01-31 18:08:07'),(6,'logo.png','image/png',21751,'2014-01-31 18:26:07',3,'2014-01-31 18:26:08','2014-01-31 18:27:19'),(7,'19_foto_sottocategoria.jpg','image/jpeg',5294,'2014-01-31 18:27:33',4,'2014-01-31 18:27:34','2014-01-31 18:28:04');
+INSERT INTO `manufacturer_pictures` VALUES (1,'080920_LOVE_MIELE_E_YOGURT.jpg','image/jpeg',309120,'2014-01-31 18:06:42',NULL,'2014-01-31 18:06:44','2014-01-31 18:06:44'),(2,'080940_ove_sapone_500_EROGATORE_latte.jpg','image/jpeg',750512,'2014-01-31 18:08:02',NULL,'2014-01-31 18:08:07','2014-01-31 18:08:07'),(7,'19_foto_sottocategoria.jpg','image/jpeg',5294,'2014-01-31 18:27:33',4,'2014-01-31 18:27:34','2014-01-31 18:28:04'),(8,'madel.gif','image/gif',11326,'2014-01-31 23:47:55',3,'2014-01-31 23:47:57','2014-01-31 23:48:00'),(9,'mcbride.jpg','image/jpeg',54375,'2014-02-04 18:01:31',5,'2014-02-04 18:01:32','2014-02-04 18:03:09');
 /*!40000 ALTER TABLE `manufacturer_pictures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -462,7 +461,7 @@ CREATE TABLE `manufacturer_translations` (
   PRIMARY KEY (`id`),
   KEY `index_manufacturer_translations_on_manufacturer_id` (`manufacturer_id`),
   KEY `index_manufacturer_translations_on_locale` (`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -471,7 +470,7 @@ CREATE TABLE `manufacturer_translations` (
 
 LOCK TABLES `manufacturer_translations` WRITE;
 /*!40000 ALTER TABLE `manufacturer_translations` DISABLE KEYS */;
-INSERT INTO `manufacturer_translations` VALUES (3,3,'en','2014-01-31 18:27:18','2014-01-31 18:27:18',NULL,NULL,'Madel'),(4,4,'en','2014-01-31 18:28:04','2014-01-31 18:28:04',NULL,NULL,'Scala');
+INSERT INTO `manufacturer_translations` VALUES (3,3,'en','2014-01-31 18:27:18','2014-02-04 04:02:07','            When developing any medium to large-scale web application, you often get to the point where an action by a user can cause a number of different models to change on the client and the\n',NULL,'Madel'),(4,4,'en','2014-01-31 18:28:04','2014-02-04 04:02:13','            When developing any medium to large-scale web application, you often get to the point where an action by a user can cause a number of different models to change on the client and the\n',NULL,'Scala'),(5,5,'en','2014-02-04 17:59:42','2014-02-04 18:03:09','Макбрайд является ведущим поставщиком бытовой химии и косметики ничего личное Мерек для крупнейших розничных сетей в Европе.',NULL,'McBride');
 /*!40000 ALTER TABLE `manufacturer_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -488,7 +487,7 @@ CREATE TABLE `manufacturers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -497,7 +496,7 @@ CREATE TABLE `manufacturers` (
 
 LOCK TABLES `manufacturers` WRITE;
 /*!40000 ALTER TABLE `manufacturers` DISABLE KEYS */;
-INSERT INTO `manufacturers` VALUES (3,'Madel','2014-01-31 18:27:18','2014-01-31 18:27:18'),(4,'Scala','2014-01-31 18:28:04','2014-01-31 18:28:04');
+INSERT INTO `manufacturers` VALUES (3,'Madel','2014-01-31 18:27:18','2014-02-04 04:02:07'),(4,'Scala','2014-01-31 18:28:04','2014-02-04 04:02:13'),(5,'McBride','2014-02-04 17:59:42','2014-02-04 18:03:09');
 /*!40000 ALTER TABLE `manufacturers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -529,7 +528,6 @@ CREATE TABLE `page_translations` (
 
 LOCK TABLES `page_translations` WRITE;
 /*!40000 ALTER TABLE `page_translations` DISABLE KEYS */;
-INSERT INTO `page_translations` VALUES (2,2,'en','2014-01-29 20:02:34','2014-01-29 20:02:34','<p>lll</p>\n','<p>bbb</p>\n','vvv'),(3,3,'en','2014-01-29 20:57:57','2014-01-29 20:57:57','<p>d</p>\n','<p>f</p>\n','d'),(4,4,'en','2014-01-29 21:00:26','2014-01-29 21:00:26','<p>d</p>\n','','d'),(5,5,'en','2014-01-29 21:00:26','2014-01-29 21:00:26','<p>d</p>\n','','d');
 /*!40000 ALTER TABLE `page_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -555,7 +553,6 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (2,'mmm','2014-01-29 20:02:34','2014-01-29 20:02:34'),(3,'dd','2014-01-29 20:57:57','2014-01-29 20:57:57'),(4,'QWERY','2014-01-29 21:00:26','2014-01-29 21:00:26'),(5,'QWERY','2014-01-29 21:00:26','2014-01-29 21:00:26');
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -576,7 +573,7 @@ CREATE TABLE `product_pictures` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -585,7 +582,7 @@ CREATE TABLE `product_pictures` (
 
 LOCK TABLES `product_pictures` WRITE;
 /*!40000 ALTER TABLE `product_pictures` DISABLE KEYS */;
-INSERT INTO `product_pictures` VALUES (6,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:35:34',NULL,'2014-01-29 18:35:36','2014-01-29 18:35:36'),(7,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:37:02',NULL,'2014-01-29 18:37:04','2014-01-29 18:37:04'),(8,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:38:16',NULL,'2014-01-29 18:38:18','2014-01-29 18:38:18'),(9,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:40:25',NULL,'2014-01-29 18:40:27','2014-01-29 18:40:27'),(10,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:41:17',NULL,'2014-01-29 18:41:19','2014-01-29 18:41:19'),(11,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-30 14:16:20',5,'2014-01-30 14:16:26','2014-01-30 14:16:30'),(12,'WINNISLavatrice3Lt.jpg','image/jpeg',1139114,'2014-01-31 02:59:33',6,'2014-01-31 02:59:37','2014-01-31 03:00:23');
+INSERT INTO `product_pictures` VALUES (6,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:35:34',NULL,'2014-01-29 18:35:36','2014-01-29 18:35:36'),(7,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:37:02',NULL,'2014-01-29 18:37:04','2014-01-29 18:37:04'),(8,'hhh4.jpg','image/jpeg',93426,'2014-01-29 18:38:16',NULL,'2014-01-29 18:38:18','2014-01-29 18:38:18'),(9,'hhh2.jpg','image/jpeg',348448,'2014-01-29 18:40:25',NULL,'2014-01-29 18:40:27','2014-01-29 18:40:27'),(10,'hhh1.jpg','image/jpeg',71444,'2014-01-29 18:41:17',NULL,'2014-01-29 18:41:19','2014-01-29 18:41:19'),(11,'DEOXDeodetersivoSacco.jpg','image/jpeg',1651647,'2014-01-30 14:16:20',5,'2014-01-30 14:16:26','2014-01-30 14:16:30'),(13,'MORBIDO_750_.FIORI_PESCO_E_AGRUMI_.jpg','image/jpeg',1202177,'2014-02-03 09:24:27',6,'2014-02-03 09:24:32','2014-02-03 09:27:02'),(14,'MORBIDO_750_.IRIS_FELCE_BIANCA_.jpg','image/jpeg',1198844,'2014-02-04 13:52:06',NULL,'2014-02-04 13:52:10','2014-02-04 13:52:10'),(15,'MORBIDO_750_.IRIS_FELCE_BIANCA_.jpg','image/jpeg',1198844,'2014-02-04 15:09:09',7,'2014-02-04 15:09:13','2014-02-04 15:17:42'),(16,'MORBIDO_750_.MUSCHIO_BIANCO_.jpg','image/jpeg',408115,'2014-02-04 15:18:00',8,'2014-02-04 15:18:02','2014-02-04 15:20:57'),(18,'MORBIDO_15L._MUSCHIO_BIANCO_.jpg','image/jpeg',936868,'2014-02-04 15:25:21',9,'2014-02-04 15:25:24','2014-02-04 15:28:52'),(20,'MORBIDO_15L.LAVANDA_.jpg','image/jpeg',1179281,'2014-02-04 15:30:54',10,'2014-02-04 15:30:58','2014-02-04 15:32:55'),(21,'MORBIDO_15L.IRIS_FELCE_BIANCA_.jpg','image/jpeg',1253515,'2014-02-04 15:33:36',11,'2014-02-04 15:33:41','2014-02-04 15:40:19'),(22,'MORBIDO_15L._MUSCHIO_BIANCO_.jpg','image/jpeg',936868,'2014-02-04 15:41:27',NULL,'2014-02-04 15:41:31','2014-02-04 15:41:31'),(23,'MORBIDO_15L._MUSCHIO_BIANCO_.jpg','image/jpeg',936868,'2014-02-04 15:44:19',12,'2014-02-04 15:44:22','2014-02-04 15:47:16'),(24,'MORBIDO_4L._IRIS_FELCE_BIANCA.jpg','image/jpeg',1294992,'2014-02-04 16:31:26',13,'2014-02-04 16:31:30','2014-02-04 16:35:23'),(25,'MORBIDO_4L._LAVANDA_.jpg','image/jpeg',1145887,'2014-02-04 16:37:19',14,'2014-02-04 16:37:23','2014-02-04 16:39:43'),(26,'MORBIDO_4L._MUSCHIO_BIANCO_.jpg','image/jpeg',1260039,'2014-02-04 16:41:09',15,'2014-02-04 16:41:13','2014-02-04 16:42:32'),(27,'WINNISLana750ml.jpg','image/jpeg',848747,'2014-02-04 16:48:59',16,'2014-02-04 16:49:02','2014-02-04 16:51:54'),(28,'SMACCHIOTUTTOConcentrato.jpg','image/jpeg',1232155,'2014-02-04 16:52:59',17,'2014-02-04 16:53:03','2014-02-04 16:57:00'),(29,'SOFFICE_LAVATRICE_MARSIGLIA_3000_ml.jpg','image/jpeg',113840,'2014-02-04 17:00:14',18,'2014-02-04 17:00:14','2014-02-04 17:05:52'),(30,'2011_PULIRAPID_CLASSICA_DA_USARE.jpg','image/jpeg',1116856,'2014-02-04 17:07:22',19,'2014-02-04 17:07:26','2014-02-04 17:09:32'),(31,'disinfekto.jpg','image/jpeg',574568,'2014-02-04 17:16:35',20,'2014-02-04 17:16:37','2014-02-04 17:19:37'),(32,'GRANBUCATOLavatrice.jpg','image/jpeg',1582357,'2014-02-04 17:20:20',21,'2014-02-04 17:20:24','2014-02-04 17:21:50'),(33,'081040_love_sapone_latte_EROGATORE_1000.jpg','image/jpeg',920917,'2014-02-04 17:22:14',22,'2014-02-04 17:22:19','2014-02-04 17:24:07'),(34,'CASASturaFacile.jpg','image/jpeg',1430634,'2014-02-04 17:26:42',23,'2014-02-04 17:26:47','2014-02-04 17:30:06'),(35,'SPRIZZOLemonCedro.jpg','image/jpeg',848939,'2014-02-04 17:30:56',24,'2014-02-04 17:31:00','2014-02-04 17:32:52'),(36,'fustino100lavaggipinoeuc_2.jpg','image/jpeg',150055,'2014-02-04 17:33:35',25,'2014-02-04 17:33:37','2014-02-04 17:37:46'),(37,'Уплон_капсули.jpg','image/jpeg',32943,'2014-02-04 17:38:15',26,'2014-02-04 17:38:16','2014-02-04 17:41:42'),(38,'fresco_benesser_2000.jpg','image/jpeg',19269,'2014-02-04 17:48:16',27,'2014-02-04 17:48:17','2014-02-04 17:50:16'),(39,'winnis-gel-lavastoviglie-.png','image/png',34857,'2014-02-04 17:51:21',28,'2014-02-04 17:51:22','2014-02-04 17:53:44');
 /*!40000 ALTER TABLE `product_pictures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -608,7 +605,7 @@ CREATE TABLE `product_translations` (
   PRIMARY KEY (`id`),
   KEY `index_product_translations_on_product_id` (`product_id`),
   KEY `index_product_translations_on_locale` (`locale`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -617,7 +614,7 @@ CREATE TABLE `product_translations` (
 
 LOCK TABLES `product_translations` WRITE;
 /*!40000 ALTER TABLE `product_translations` DISABLE KEYS */;
-INSERT INTO `product_translations` VALUES (5,5,'en','2014-01-30 14:16:29','2014-01-30 14:16:29','<p>DEOX Deo Detersivo Lavatrice Sacco 1.62KG &nbsp;Пральний порошок &nbsp;білих та кольорових речей (5pz)</p>\n','<p>DEOX Deo Detersivo Lavatrice Sacco 1.62KG &nbsp;Пральний порошок &nbsp;білих та кольорових речей (5pz)</p>\n','DEOX Deo Detersivo Lavatrice Sacco 1.62KG  Пральний порошок  білих та кольорових речей (5pz)'),(6,6,'en','2014-01-31 03:00:23','2014-01-31 03:00:23','<p>Soffice Lavatrice sacco 2,7 kg &nbsp;(27 стирок) &nbsp;Універ. пральний порошок білих і колор. речей</p>\n','','Soffice Lavatrice sacco 2,7 kg  (27 стирок)  Універ. пральний порошок білих і колор. речей');
+INSERT INTO `product_translations` VALUES (5,5,'en','2014-01-30 14:16:29','2014-02-04 15:05:00','<p>DEOX Deo Detersivo Lavatrice Sacco 1.62KG &nbsp;Пральний порошок &nbsp;білих та кольорових речей&nbsp;</p>\n','<p>DEOX Deo Detersivo Lavatrice Sacco 1.62KG &nbsp;</p>\n\n<p>Порошок стиральный Deox Deodetersivo Sacco для регулярной стирки белых и цветных вещей. Удаляет загрязнения придавая вещам приятный аромат на протяжении длительного времени.</p>\n','DEOX Deo Detersivo Lavatrice Sacco 1.62KG  '),(6,6,'en','2014-01-31 03:00:23','2014-02-04 15:55:00','<p>Смягчитель для белья, 4-х кратной концентрации с ароматом цитрусовых и персика.</p>\n','<p>Концентрированный смягчитель для белья&nbsp;с ароматом персика и цитрусових. Его формула, принята ТМ Woolmark, проникает в волокна,&nbsp;предоставляя белью мягкость, приятный аромат и легкость стирки. СРЕДСТВО ПРОШЛО ДЕРМАТОЛОГИЧЕСКИЕ ИСПЫТАНИЯ. Использование (1 колпачок = 38 мл): 2/3 колпачка (28 мл) налейте в камеру для стирки 4,5 кг белья в стиральной машине. 2/5 колпачка (15 мл) хорошо разведите в 10 литрах воды для ручной стирки.</p>\n','MORBIDO\' AMM. CONC. VITALITY 750 ml.'),(7,7,'en','2014-02-04 15:17:42','2014-02-04 15:56:08','<p>Смягчитель для стирки белья 4-х кратной концентрации с ароматом ириса и папоротника.</p>\n','<p>MORBIDO&#39; AMM. CONC. SENSATION BLU IRIS &amp; FELCE BIANCA 750 ml.&nbsp;</p>\n\n<p>Смягчитель для стирки белья 4-х кратной концентрации с ароматом ириса и папоротника.Его формула, принята ТМ Woolmark, проникает в волокна,&nbsp;предоставляя белью мягкость, приятный аромат и легкость стирки. СРЕДСТВО ПРОШЛО ДЕРМАТОЛОГИЧЕСКИЕ ИСПЫТАНИЯ. Использование (1 колпачок = 38 мл): 2/3 колпачка (28 мл) налейте в камеру для стирки 4,5 кг белья в стиральной машине. 2/5 колпачка (15 мл) хорошо разведите в 10 литрах воды для ручной стирки.</p>\n','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA 750 ml.'),(8,8,'en','2014-02-04 15:20:56','2014-02-04 16:28:06','<p>Смягчитель для стирки белья, 4-х кратной концентрации с ароматом белого мускуса</p>\n','<p>MORBIDO&#39; AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO 750 ML&nbsp;</p>\n\n<p>Смягчитель для стирки белья, 4-х кратной концентрации с ароматом белого мускуса.&nbsp;Его формула, принята ТМ Woolmark, проникает в волокна,&nbsp;предоставляя белью мягкость, приятный аромат и легкость стирки. СРЕДСТВО ПРОШЛО ДЕРМАТОЛОГИЧЕСКИЕ ИСПЫТАНИЯ. Использование (1 колпачок = 38 мл): 2/3 колпачка (28 мл) налейте в камеру для стирки 4,5 кг белья в стиральной машине. 2/5 колпачка (15 мл) хорошо разведите в 10 литрах воды для ручной стирки.</p>\n','MORBIDO\' AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO 750 ML'),(9,9,'en','2014-02-04 15:28:52','2014-02-04 16:28:34','<p>Смягчитель для белья с ароматом белого мускуса&nbsp;</p>\n','<p>Смягчитель для белья с ароматом белого мускуса.&nbsp;Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.&nbsp;</p>\n','MORBIDO\' AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO 1,5 L.'),(10,10,'en','2014-02-04 15:32:55','2014-02-04 16:09:20','<p><span style=\"line-height:1.6em\">Смягчитель для белья&nbsp;c ароматом лаванды&nbsp;</span></p>\n','<p>Смягчитель для белья&nbsp;c ароматом лаванды.&nbsp;<span style=\"line-height:1.6em\">Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.</span></p>\n','MORBIDO\' AMM. CONC. RELAX VIOLA LAVANDA 1,5 L.'),(11,11,'en','2014-02-04 15:40:19','2014-02-04 16:10:12','<p><span style=\"line-height:1.6em\">Смягчитель для белья c ароматом цветов ириса и белого папоротника</span></p>\n','<p>Смягчитель для белья c ароматом цветов ириса и белого папоротника.&nbsp;<span style=\"line-height:1.6em\">Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.</span></p>\n','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA 1,5 L.'),(12,12,'en','2014-02-04 15:47:16','2014-02-04 16:29:07','<p>Смягчитель для белья c ароматом белого мускуса</p>\n','<p>Смягчитель для белья c ароматом белого мускуса.&nbsp;Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.</p>\n','MORBIDO\' AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO 1.5 L.'),(13,13,'en','2014-02-04 16:35:23','2014-02-04 16:36:26','<p>Смягчитель для белья c ароматом цветов ириса и белого папоротника.</p>\n','<p>Смягчитель для белья c ароматом цветов ириса и белого папоротника.&nbsp;Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.</p>\n','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA  4 L.'),(14,14,'en','2014-02-04 16:39:43','2014-02-04 16:40:19','<p>Смягчитель для белья&nbsp;c ароматом лаванды.&nbsp;</p>\n','<p>Смягчитель для белья&nbsp;c ароматом лаванды.&nbsp;Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.</p>\n','MORBIDO\' AMM. CONC. RELAX VIOLA LAVANDA 4 L.'),(15,15,'en','2014-02-04 16:42:32','2014-02-04 16:42:59','<p>Смягчитель для белья c ароматом цветов ириса и белого папоротника.</p>\n','<p>Смягчитель для белья c ароматом цветов ириса и белого папоротника.&nbsp;Глубоко проникает в волокна тканей, придает белью мягкость, приятный запах и облегчает глажку.</p>\n','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA  4 L.'),(16,16,'en','2014-02-04 16:51:54','2014-02-04 16:51:54','<p>Жидкий порошок предназначен для стирки шерсти и деликатных тканей.&nbsp;</p>\n','<p>Жидкий порошок предназначен для стирки шерсти и деликатных тканей. Его натуральная формула также идеально подходит для ухода за нижним бельем и шелковой одеждой.</p>\n','WINNI’S LANA E DELICATI 750 ml.'),(17,17,'en','2014-02-04 16:57:00','2014-02-04 16:57:00','<p>Пятновыводитель&nbsp;</p>\n','<p>Концентрированный пятновыводитель, который подходит для удаления разных видов пятен с белых и цветных вещей. Не содержит хлор.</p>\n','SMACCHIO TUTTO 250 ml '),(18,18,'en','2014-02-04 17:05:52','2014-02-04 17:05:52','<p><strong>&nbsp;</strong>Жидкий стиральный порошок с натуральным мылом &laquo;Марсель&raquo;.</p>\n','<p><strong>&nbsp;</strong>Жидкий стиральный порошок с натуральным мылом &laquo;Марсель&raquo;. Подходит для стирки цветных и белых вещей, для машинной и ручной стирки.</p>\n','SOFFICE LAVATRICE MARSIGLIA 3 L.'),(19,19,'en','2014-02-04 17:09:32','2014-02-04 17:09:32','<p>Чистящее средство для удаления известкового налета, ржавчины, а также и остатков других моющих средств со всех бытовых поверхностей.</p>\n','<p>Чистящее средство для удаления известкового налета, ржавчины, а также и остатков других моющих средств со всех бытовых поверхностей.</p>\n','PULIRAPID ANTICALCARE 500 ml'),(20,20,'en','2014-02-04 17:19:36','2014-02-04 17:19:36','<p>Содержит антибактериальные ингредиенты и похожий к коже уровень Ph.&nbsp;</p>\n','<p>Содержит антибактериальные ингредиенты и похожий к коже уровень Ph.&nbsp; Делает кожу мягкой. Имеет приятный запах.</p>\n','DISINFEKTO SAPONE 500 ml.'),(21,21,'en','2014-02-04 17:21:50','2014-02-04 17:21:50','<p>Стиральный порошок без фосфатов с концентрированной формулой и мылом &laquo;Марсель&raquo;.</p>\n','<p>Стиральный порошок без фосфатов с концентрированной формулой и мылом &laquo;Марсель&raquo;.</p>\n','GRAN BUCATO POLVERE LAVATRICE 4 kg.'),(22,22,'en','2014-02-04 17:24:07','2014-02-04 17:24:07','<p>Экстракт молока, в содержании этого жидкого мыла, позволяет сохранить нежность Ваших рук, не сушит кожу. Рекомендовано косметологами!</p>\n','<p>Экстракт молока, в содержании этого жидкого мыла, позволяет сохранить нежность Ваших рук, не сушит кожу. Рекомендовано косметологами!</p>\n','LOVE SAPONE LIQUIDO LATTE 1 L.'),(23,23,'en','2014-02-04 17:30:06','2014-02-04 17:30:06','<p>Средство для очистки труб&nbsp;</p>\n','<p>Средство для очистки труб. Эффективно прочищает сложные загрязнения.&nbsp;</p>\n','STURA FACILE 1 L.'),(24,24,'en','2014-02-04 17:32:52','2014-02-04 17:32:52','<p>Средство для мытья посуды.&nbsp;</p>\n','<p>Средство для мытья посуды с концентрированной формулой позволяет легко избавиться от жира и сильных засохших загрязнений.</p>\n','SPRIZZO PIATTI LEMON CEDRO 400 ml.'),(25,25,'en','2014-02-04 17:37:46','2014-02-04 17:37:46','<p>Стиральный порошок.</p>\n','<p>Стиральный порошок.&nbsp;Формула порошка разработана с активными ингредиентами и ферментами, которые борятся cо стойкими загрязнениями при низких температурах.</p>\n','SCALA LAVATRICE EUCALIPTO 6,8 KG '),(26,26,'en','2014-02-04 17:41:42','2014-02-04 17:41:42','<p><strong>Капсулы для стирки&nbsp;<em>Yplon</em></strong><span style=\"color:rgb(102, 102, 102); font-family:lucida sans unicode,lucida grande,arial,sans-serif; font-size:12px\">&nbsp;универсальные как для цветной одежды, так и для белого белья.&nbsp;</span></p>\n','<p><strong>Капсулы для стирки&nbsp;<em>Yplon</em></strong><span style=\"color:rgb(102, 102, 102); font-family:lucida sans unicode,lucida grande,arial,sans-serif; font-size:12px\">&nbsp;универсальные как для цветной одежды, так и для белого белья. Капсула расстворяется уже при 30 градусах.&nbsp;</span><u>Без фосфатов</u><span style=\"color:rgb(102, 102, 102); font-family:lucida sans unicode,lucida grande,arial,sans-serif; font-size:12px\">. Отлично выдаляет загрязнения и пятна благодаря оптическим отбеливателям.</span></p>\n',' Yplon'),(27,27,'en','2014-02-04 17:50:16','2014-02-04 17:50:16','<p>Кондиционер для белья</p>\n','<p>Смягчает все вещи после стирки, что облегчает глажку. Средство прошло дерматологические испытания.</p>\n','SCALA AMMORBIDENTE FRESCO BENESSERE 2 L '),(28,28,'en','2014-02-04 17:53:44','2014-02-04 17:53:44','<p>Гель для посудомоечных машин.&nbsp;</p>\n','<p>Гель для посудомоечных машин. Его натуральная формула очищает и обезжиривает даже самую грязную посуду уже при низких температурах.</p>\n','WINNIS GEL LAVAST.  750 ml.');
 /*!40000 ALTER TABLE `product_translations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -635,7 +632,7 @@ CREATE TABLE `products` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -644,7 +641,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (5,'10','DEOX Deo Detersivo Lavatrice Sacco 1.62KG','2014-01-30 14:16:29','2014-01-30 14:16:29'),(6,'11','jj','2014-01-31 03:00:23','2014-01-31 03:00:23');
+INSERT INTO `products` VALUES (5,'10','DEOX Deo Detersivo Lavatrice Sacco 1.62KG','2014-01-30 14:16:29','2014-02-04 15:05:00'),(6,'11','MORBIDO\' AMM. CONC. VITALITY ARANCIONE FIORI PESCO E AGRUMI 750 ml.','2014-01-31 03:00:23','2014-02-04 15:55:00'),(7,'11','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA ','2014-02-04 15:17:42','2014-02-04 15:56:08'),(8,'11','MORBIDO\' AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO','2014-02-04 15:20:56','2014-02-04 16:28:06'),(9,'11','MORBIDO\' AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO ','2014-02-04 15:28:52','2014-02-04 16:28:34'),(10,'11','MORBIDO\' AMM. CONC. RELAX VIOLA LAVANDA','2014-02-04 15:32:55','2014-02-04 16:09:20'),(11,'11','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA','2014-02-04 15:40:19','2014-02-04 16:10:12'),(12,'11','MORBIDO\' AMM. CONC. EMOTION BIANCO MUSCHIO BIANCO 1.5 L.','2014-02-04 15:47:16','2014-02-04 16:29:07'),(13,'11','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA  4 L.','2014-02-04 16:35:23','2014-02-04 16:36:26'),(14,'11','MORBIDO\' AMM. CONC. RELAX VIOLA LAVANDA 4 L.','2014-02-04 16:39:43','2014-02-04 16:40:19'),(15,'11','MORBIDO\' AMM. CONC. SENSATION BLU IRIS & FELCE BIANCA  4 L.','2014-02-04 16:42:32','2014-02-04 16:42:59'),(16,'12','WINNI’S LANA E DELICATI 750 ml.','2014-02-04 16:51:54','2014-02-04 16:51:54'),(17,'13','SMACCHIO TUTTO 250 ml ','2014-02-04 16:57:00','2014-02-04 16:57:00'),(18,'14','SOFFICE LAVATRICE MARSIGLIA 3 L.','2014-02-04 17:05:52','2014-02-04 17:05:52'),(19,'15','PULIRAPID ANTICALCARE 500 ml','2014-02-04 17:09:32','2014-02-04 17:09:32'),(20,'16','DISINFEKTO SAPONE 500 ml.','2014-02-04 17:19:36','2014-02-04 17:19:36'),(21,'17','GRAN BUCATO POLVERE LAVATRICE 4 kg.','2014-02-04 17:21:50','2014-02-04 17:21:50'),(22,'18','LOVE SAPONE LIQUIDO LATTE 1 L.','2014-02-04 17:24:07','2014-02-04 17:24:07'),(23,'19','STURA FACILE 1 L.','2014-02-04 17:30:06','2014-02-04 17:30:06'),(24,'20','SPRIZZO PIATTI LEMON CEDRO 400 ml.','2014-02-04 17:32:52','2014-02-04 17:32:52'),(25,'21','SCALA LAVATRICE EUCALIPTO 6,8 KG ','2014-02-04 17:37:46','2014-02-04 17:37:46'),(26,'22',' Yplon','2014-02-04 17:41:42','2014-02-04 17:41:42'),(27,'21','SCALA AMMORBIDENTE FRESCO BENESSERE 2 L ','2014-02-04 17:50:16','2014-02-04 17:50:16'),(28,'12','WINNIS GEL LAVAST.  750 ml.','2014-02-04 17:53:44','2014-02-04 17:53:44');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -718,4 +715,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-01-31 18:57:59
+-- Dump completed on 2014-02-04 19:21:33
