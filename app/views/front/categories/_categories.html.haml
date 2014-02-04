@@ -17,8 +17,9 @@
                     = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview100x100)
               .clearfix
               %br
-              - if child.category_pictures.first
-                = image_tag child.category_pictures.first.picture.url(:preview100x100)
+              - child.category_pictures.each do |category_picture|
+                = image_tag category_picture.picture.url(:preview100x100)
+              .clearfix
               %h5= child.title
   .clearfix    
   %br
