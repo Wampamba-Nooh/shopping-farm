@@ -1,41 +1,48 @@
+%br
+%br
 .container.products
-  %br  
   .row
-    .span6
-      .row
-        - @category.manufacturers.each do |manufacturer|
-          .span3
-            .contact-box{style: "background: none;"}
-              .arrow-circle{style: "background: url(#{manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)});background-repeat: no-repeat;background-position: 50%;background-color: white;"}
-              .circleright
-              %h4{style: "font-family: Allan;"}= manufacturer.title
-    .span6
-      .right-heading
-        /.text
-        %h4= @category.title
-  .clear
-  %br
-  %br
-  .row
-    .span2
+    .col-xs-3
+      //
+      - @category.manufacturers.each do |manufacturer|
+        .span3
+          .contact-box{style: "background: none;"}
+            .arrow-circle{style: "background: url(#{manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)});background-repeat: no-repeat;background-position: 50%;background-color: white;"}
+            .circleright
+            %h4{style: "font-family: Allan;"}= manufacturer.title
+      //
       = render 'menu'
-    .span10
-      .container.clearfix
-        .row
-          - @category.products.each do |product|
-            .service-block.span3{style: "border-radius: 5px;border: 1px solid #ccc;margin-bottom: 30px;height: 470px;background: white;"}
-              .style
-                = link_to "#", class: "stylish" do
-                  %span.icon
-                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-                    - if product.brand.brand_pictures.first
-                      = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
-                %a.halfCircleBottom
-              %h5= product.title
+    .col-xs-9
+      %h4= @category.title
+      .clearfix
+      .row
+        - @category.products.each do |product|
+          .service-block.col-xs-3
+            .thumbnail{"data-target" => "#myModal", "data-toggle" => "modal"}
+              = link_to "#", class: "stylish" do
+                %span.icon
+                  /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                  - if product.brand.brand_pictures.first
+                    = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
               = image_tag product.product_pictures.first.picture.url(:preview200x200)
-              %br
+              .clearfix
+              %h5= product.title
               = product.short_description.lstrip.html_safe
     .clearfix    
     %br
     %br
     %br
+
+//
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title.text-center SMACCHIO TUTTO 250 ml
+      .modal-body
+        .text-center
+          %img{alt: "Smacchiotuttoconcentrato", src: "/media/uploads/product_pictures/28/pictures/preview200x200/SMACCHIOTUTTOConcentrato.jpg?1391525579"}/
+          .clearfix
+          %p Пятновыводитель
+          %br

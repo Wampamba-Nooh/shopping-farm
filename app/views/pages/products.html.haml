@@ -2,7 +2,7 @@
   .row
     .inner-heading
       .txt
-        %h1 Продукция
+        %h1 Продукция11
     .clear
     .container.clearfix
       .row
@@ -12,9 +12,7 @@
               .style
                 = link_to category_path(id: child.id), class: "stylish" do
                   %span.icon
-                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
                     = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview100x100)
-                %a.halfCircleBottom
             .clear
             %br
             = link_to category_path(id: child.id), style: "color: #383838;" do

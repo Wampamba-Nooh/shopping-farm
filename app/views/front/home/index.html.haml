@@ -15,7 +15,7 @@
     /    %source{src: "/videos/video.webm", type: "video/webm"}
     /    %source{src: "/img/landing/video.mp4", type: "video/mp4"} 
     /    Video not supported
-    .span4
+    .col-xs-6
       - Manufacturer.all.each do |manufacturer|
         - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
           = image_tag manufacturer_picture.picture.url(:preview80x80), alt: "post one", class: "img-polaroid img-rounded"
@@ -25,116 +25,107 @@
           %p= manufacturer.short_description
           %hr
 
-    .span8.pull-right
-      %object.pull-right{data: "/swf/animazione2_ING.swf", height: "383", type: "application/x-shockwave-flash", width: "544"}
+    .col-xs-6
+      %object.pull-right{data: "/swf/animazione2_ING.swf", height: "383", type: "application/x-shockwave-flash", width: "544", style: "margin-top: 35px;"}
         /%param{name: "data", value: "../../img/Images/animazione2_ING.swf"}/
         /%param{name: "src", value: "../../img/Images/animazione2_ING.swf"}/
 .clear
 %br
-%br
-%br
 .container.clearfix
   .row
-    .service-block.span3
+    .service-block.col-xs-3
       .style
         %a.stylish{href: "#"}
           %span.icon
             %img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} Deox
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.span3
+      %h4 Deox
+      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    .service-block.col-xs-3
       .style
         %a.stylish{href: "#"}
           %span.icon
             %img{alt: "post one", src: "/img/wash/logo2.png", class: ""}
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} Disin FEKTO
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.span3
+      %h4 Disin FEKTO
+      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    .service-block.col-xs-3
       .style
         %a.stylish{href: "#"}
           %span.icon
             %img{alt: "post one", src: "/img/wash/logo3.png", class: ""}
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} Gran Bucato
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.span3
+      %h4 Gran Bucato
+      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    .service-block.col-xs-3
       .style
         %a.stylish{href: "#"}
           %span.icon
             %img{alt: "post one", src: "/img/wash/logo4.png", class: ""}
-        %a.halfCircleBottom
-      %h4{style: "font-family: Allan;"} Love
-      %p{style: "font-family: Allan;"} Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+      %h4 Love
+      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+.clearfix
+#sert.white
+  .container
+    %h1.text-center Сертификаты
+    %hr
+    #carousel-example-generic.carousel.slide.carousel-products{"data-ride" => "carousel"}
+      / Indicators
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+        %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+      / Wrapper for slides
+      .carousel-inner
+        .item.active
+          .row.thumbs-list
+            .col-lg-2.text-center
+              =link_to "/img/s/avea/Avea,_ 14-позицый.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/avea/Avea,_Шампунь.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/avea/Sanepid_A_Avea.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/avea/Sepro_A_Avea.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/декл відповідн SCALA 293-13.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/декл відповідн SCALA 294-13.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+        .item
+          .row.thumbs-list
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/CЕС висновок 12600.PDF", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/Scalla Sertific 2013 001.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/Scalla Sertific 2013 002.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/Scalla Sertific 2013 94863-13 001.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/Scalla Sertific 2013 94863-13.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+            .col-lg-2.text-center
+              =link_to "/img/s/scala/Scalla Sertific 2013.pdf", target: "_blank" do
+                %img.brand-ico{src: "/img/s/thumb.png"}
+      / Controls
+      %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic"}
+        ‹
+      %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic"}
+        ›
+      .clearfix
+      %br
+      %br
 .clearfix
 %br
 .container
   .row
-    .span6
-      .left-heading
-        .text
-          %span Сертификаты
-  .clear
-  %br
-    
-  .row
-    .span12
-      #myCarousel.carousel.slide
-        //%ol.carousel-indicators
-        //  %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-        //  %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-        / Carousel items
-        .carousel-inner
-          .active.item
-            .row.thumbs-list
-              .span2.text-center
-                =link_to "/img/s/avea/Avea,_ 14-позицый.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/avea/Avea,_Шампунь.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/avea/Sanepid_A_Avea.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/avea/Sepro_A_Avea.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/декл відповідн SCALA 293-13.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/декл відповідн SCALA 294-13.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-          .item
-            .row.thumbs-list
-              .span2.text-center
-                =link_to "/img/s/scala/CЕС висновок 12600.PDF", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/Scalla Sertific 2013 001.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/Scalla Sertific 2013 002.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/Scalla Sertific 2013 94863-13 001.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/Scalla Sertific 2013 94863-13.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-              .span2.text-center
-                =link_to "/img/s/scala/Scalla Sertific 2013.pdf", target: "_blank" do
-                  %img.brand-ico{src: "/img/s/thumb.png"}
-                  
-        / Carousel nav
-        %a.carousel-control.left{"data-slide" => "prev", href: "#myCarousel"} ‹
-        %a.carousel-control.right{"data-slide" => "next", href: "#myCarousel"} ›
-.clearfix
-%br
-.container
-  .row
-    .span6
+    .col-xs-6
       .left-heading
         .text
           %span Последнии новости
@@ -145,40 +136,40 @@
             %h5.date 20
             .clear
             %h6.month June
-          .halfCircleright
           .containt
             %h4 Aliquam lorem lacus, auctor quis.
             %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
             %a.icon-arrow-right.read{href: "#"}
+            .clearfix
         .post
           .comment-cout
             %h5.date 20
             .clear
             %h6.month June
-          .halfCircleright
           .containt
             %h4 Aliquam lorem lacus, auctor quis.
             %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
             %a.icon-arrow-right.read{href: "#"}
+            .clearfix
         .post
           .comment-cout
             %h5.date 20
             .clear
             %h6.month June
-          .halfCircleright
           .containt
             %h4 Aliquam lorem lacus, auctor quis.
             %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
             %a.icon-arrow-right.read{href: "#"}
-    .span6.testimonial
+            .clearfix
+    .col-xs-6.testimonial
       %br
       %br
-      %br
-      .bx-wrapper
+      .contact-widget
         %br
-        %blockquote{style: "padding: 15px;"}
-          %h3 Низкие цены широкий ассортимент продукции.
-          %p
-            " Компания "Якісний продукт плюс" с радостью предложит Вам исключительно высококачественные товары, большой и разнообразный ассортимент и главное – доступные цены. Вся продукция сертифицирована и соответствует ГОСТ и ТУ."
-
+        .bx-wrapper
+          %br/
+          %blockquote{style: "padding: 15px;"}
+            %h3 Низкие цены широкий ассортимент продукции.
+            %p
+              " Компания "Якісний продукт плюс" с радостью предложит Вам исключительно высококачественные товары, большой и разнообразный ассортимент и главное – доступные цены. Вся продукция сертифицирована и соответствует ГОСТ и ТУ."
 .clearfix

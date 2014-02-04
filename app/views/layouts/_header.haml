@@ -1,52 +1,36 @@
 //.scroll
 = render "layouts/subhead"
-.clearfix
-%header#header.clearfix.bg{style: "height: 80px; background-color:white;"}
+//
+%nav.navbar.navbar-default{role: "navigation"}
+  //.container-fluid
   .container
-    .row
-      .span4
-        %h3{style: "font-family: Allan;"}
-          %a.logo{href: "/"} Якісний продукт плюс
-        %span.slogan 
-          //Добро пожаловать!
-      %section.span8
-        %nav
-          %ul.sf-menu.l_tinynav1.sf-js-enabled.sf-shadow
-            //%li
-            //  = link_to "Главная", "/"
-            %li
-              = link_to "О компании", "/pages/about"
-            %li
-              = link_to "Новости", "/pages/news#news"
-            %li.active
-              = link_to "Продукция", category_path(id: Category.find_by_identificator('products').id)
-            %li
-              = link_to "Дистрибьюторы", "/pages/distributors#distributors"
-            %li
-              = link_to "Контакты", "/pages/contacts"
-      //
-      .clearfix
-.clear
-
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: "/"} Якісний продукт плюс
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to "О компании", "/pages/about"
+        %li
+          = link_to "Новости", "/pages/news#news"
+        %li
+          = link_to "Продукция", category_path(id: Category.find_by_identificator('products').id)
+        %li
+          = link_to "Дистрибьюторы", "/pages/distributors#distributors"
+        %li
+          = link_to "Контакты", "/pages/contacts"
+    / /.navbar-collapse
+  / /.container-fluid
+//
 .row{style: "min-height: 2px;background: #00a750;"}
 .clear
 .row{style: "min-height: 3px;background: #ffffff;"}
 .clear
 .row{style: "min-height: 2px;background: #E93940;"}
 .clear
-  
-.container
-  %section.row
-    .span12.socialpack
-      //%section.social
-      //  %ul
-      //    %li
-      //      %a.facebook{href: "http://unolution.com/en/#"}
-      //        %span.icon-facebook
-      //    %li
-      //      %a.twitter{href: "http://unolution.com/en/#"}
-      //        %span.icon-twitter
-      //    %li
-      //      %a.google-plus{href: "http://unolution.com/en/#"}
-      //        %span.icon-google-plus
-      .clearfix

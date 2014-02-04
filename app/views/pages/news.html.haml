@@ -1,57 +1,70 @@
 .container
   .row
-    .inner-heading
-      .txt
-        %h1 Новости
-    .clear
-    %section.blog.span8
-      %article.blog-post
-        //%img{alt: "post one", src: "/img/product1.jpg"}
-        .post-contant
-          .comment
-            .comment-cout
-              %h5.date 20
-              .clear
-              %h6.month June
-            .halfCircleright
-          %h3 Scala
-          %p – бренд бытовой химии, запущенный еще в 1980 году. Вся продукция ориентирована на потребителей, которые ищут высококачественные инновационные продукты для уборки всего дома.
-          %p Основное направление бренда - так называемый "Чистый проект", маркетинговая стратегия, позволяющая занять каждую ячейку коммунально-бытового сектора.
-          %p Соотношение качества и цены – это главный приоритет бренда Scala.
-        .clear
-        //.post-info
-        //  %a.post-read{href: "#"} Детально
-      %article.blog-post
-        //%img{alt: "post one", src: "/img/product2.jpg"}
-        .post-contant
-          .comment
-            .comment-cout
-              %h5.date 20
-              .clear
-              %h6.month June
-            .halfCircleright
-          %h3 MADEL S.p.A 
-          %p– компания бытовой химии, товары которой известны в Италии и странах Европы своим высоким качеством и удобством в использовании. Основная цель бренда – создание продукции на экологически чистой основе. 
-          %p Главная задача быть на стороне потребителей, упрощая их жизнь и делая уборку более приятной.
-          %p В Украине инновационные товары MADEL S.p.A доступны по вменяемым и не "кусающимся" ценам.
-          %p Защита окружающей среды - один из основных принципов компании 
-          %p MADEL S.p.A. Главное доказательство этого - линия Winni's, товары которой разработаны исключительно из ресурсов растительного происхождения. Они не вредят экологии и полностью растворяются в окружающей среде.
-          %p Благодаря такой политике торговой марке присвоили UNI EN ISO 2000:9001 еще в 2000 году. MADEL S.p.A. также является членом МАПМ и Assocasa Unipro.
-        .clear
-      .clearfix
+    .col-xs-6
+      .inner-heading
+        .txt
+          %h1 Последнии новости
+      .recent-blog
+        .post
+          .comment-cout
+            %h5.date 20
+            .clear
+            %h6.month June
+          .containt
+            %h4 Aliquam lorem lacus, auctor quis.
+            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+            %a.icon-arrow-right.read{href: "#"}
+            .clearfix
+        .post
+          .comment-cout
+            %h5.date 15
+            .clear
+            %h6.month June
+          .containt
+            %h4 Aliquam lorem lacus, auctor quis.
+            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+            %a.icon-arrow-right.read{href: "#"}
+            .clearfix
+        .post
+          .comment-cout
+            %h5.date 11
+            .clear
+            %h6.month June
+          .containt
+            %h4 Aliquam lorem lacus, auctor quis.
+            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+            %a.icon-arrow-right.read{href: "#"}
+            .clearfix
+        //
+        .post
+          .comment-cout
+            %h5.date 11
+            .clear
+            %h6.month June
+          .containt
+            %h4 Aliquam lorem lacus, auctor quis.
+            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+            %a.icon-arrow-right.read{href: "#"}
+            .clearfix
+        //
+        .post
+          .comment-cout
+            %h5.date 11
+            .clear
+            %h6.month June
+          .containt
+            %h4 Aliquam lorem lacus, auctor quis.
+            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
+            %a.icon-arrow-right.read{href: "#"}
+            .clearfix
+        //
+    .col-xs-6.testimonial
       %br
-    %aside#sidebar.span4
-      .sidebar-widget
-        .simple-text
-          %h4 Широкий ассортимент
-          %p Компания "Якісний продукт плюс" с радостью предложит Вам исключительно высококачественные товары, большой и разнообразный ассортимент и главное – доступные цены. Вся продукция сертифицирована и соответствует ГОСТ и ТУ.
-      .sidebar-widget
-        .mailchimp
-          %a{href: "http://eepurl.com/vGsWT"} ПОДПИШИТЕСЬ НА НАШИ НОВОСТИ
-      .sidebar-widget
-        .widget-slider
-          %h4 Рекомендации
-          .widget
-            %img{alt: "post one", src: "/img/product3.jpg", class: "img-polaroid"}
-          .clearfix
-          %br
+      %br
+      %br
+      .bx-wrapper
+        %br
+        %blockquote{style: "padding: 15px;"}
+          %h3 Низкие цены широкий ассортимент продукции.
+          %p
+            " Компания "Якісний продукт плюс" с радостью предложит Вам исключительно высококачественные товары, большой и разнообразный ассортимент и главное – доступные цены. Вся продукция сертифицирована и соответствует ГОСТ и ТУ."

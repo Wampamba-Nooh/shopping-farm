@@ -1,5 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require app/bootstrap
+//= require twitter/bootstrap
 //= require backbone_front/shopping_farm
 

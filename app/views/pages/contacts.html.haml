@@ -1,11 +1,11 @@
 .container
   .row
-    .inner-heading
-      .txt
-        %h1 Контакты
-    %section.blog.span8
+    %section.blog.col-xs-7
+      .inner-heading
+        .txt
+          %h1 Контакты
       .clearfix
-      %h4{style: "font-family: Allan;"} Вы можете связаться с нами
+      %h4 Вы можете связаться с нами
       .clear
       Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару, мы всегда готовы предоставить любую информацию, которая поможет сделать покупку. Получить консультацию можно по телефону или через форму обратной связи.
       //
@@ -24,20 +24,17 @@
         %a{href: "mailto:#"} first.last@example.com
       .clear
       %br
-      %h4{style: "font-family: Allan;"} Задайте нам вопрос
-      .clear
-      %p{style: "font-family: Allan;"} Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
-      %form#footermsg{action: "http://unolution.com/en/js/send.php"}
-        %textarea#footmessage{name: "message"} Написать...
-        .clear
-        %a#send{href: "http://unolution.com/en/#"} Отправить
-      #mail_s
-        %span Email has been sent Successfully
-      #mail_f
-        %span Server Error Try again
-    %aside#sidebar.span4
-      .sidebar-widget
-        %div 
+    %aside#sidebar.col-xs-5
+      %br
+      %br
+      .contact-widget
+        %h4 Задайте нам вопрос
+        %p Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
+        %form#footermsg{action: "http://un.com/en/js/send.php"}
+          %textarea#footmessage{name: "message"} Написать...
+          .clearfix
+          %br
+          %a#send{href: "#", class: "btn btn-success"} Отправить
 
 //
 .clearfix
