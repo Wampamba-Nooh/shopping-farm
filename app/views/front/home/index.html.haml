@@ -16,7 +16,7 @@
     /    %source{src: "/img/landing/video.mp4", type: "video/mp4"} 
     /    Video not supported
     .span4
-      - Manufacturer.all.each do |manufacturer|
+      - Manufacturer.all.limit(9).each do |manufacturer|
         - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
           = image_tag manufacturer_picture.picture.url(:preview80x80), alt: "post one", class: "img-polaroid img-rounded"
           %h4.pull-right= manufacturer.title
