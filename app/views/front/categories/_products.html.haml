@@ -17,7 +17,7 @@
       .clearfix
       .row
         - @category.products.each do |product|
-          .service-block.col-xs-3
+          .service-block.col-xs-4
             .thumbnail{"data-target" => "#myModal", "data-toggle" => "modal"}
               = link_to "#", class: "stylish" do
                 %span.icon

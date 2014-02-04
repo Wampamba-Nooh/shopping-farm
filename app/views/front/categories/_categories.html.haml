@@ -8,7 +8,7 @@
       %h4= @category.title
       .row
         - @category.children.each do |child|
-          .service-block.col-xs-3
+          .service-block.col-xs-4
             .thumbnail
               - child.manufacturers.each do |manufacturer|
                 = link_to category_path(id: child.id), class: "stylish" do

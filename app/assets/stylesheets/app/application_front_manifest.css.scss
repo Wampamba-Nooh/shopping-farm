@@ -5,6 +5,10 @@ body{
   padding-top: 10px;
 }
 
+.container{
+  max-width: 960px;
+}
+
 .navbar-default{
   margin-bottom: 0px;
 }
@@ -24,10 +28,10 @@ body{
   top: -15px;
   position: relative;
   .span1 {
-    width: 50px;
+    width: 52px;
     display: inline-block;
     float: none !important;
-    margin: 0px 22px;
+    margin: 0px 18px;
     img{
       max-width: 100%;
       border: 1px solid rgba(207, 207, 207, 0.61);
@@ -35,6 +39,8 @@ body{
       -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.0);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.0);
       border-radius: 27px;
+      padding: 4px;
+      max-height: 34px;
     }
   }
 }

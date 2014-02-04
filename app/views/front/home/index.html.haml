@@ -15,7 +15,7 @@
     /    %source{src: "/videos/video.webm", type: "video/webm"}
     /    %source{src: "/img/landing/video.mp4", type: "video/mp4"} 
     /    Video not supported
-    .col-xs-6
+    .col-xs-5
       - Manufacturer.all.each do |manufacturer|
         - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
           = image_tag manufacturer_picture.picture.url(:preview80x80), alt: "post one", class: "img-polaroid img-rounded"
@@ -25,8 +25,10 @@
           %p= manufacturer.short_description
           %hr
 
-    .col-xs-6
-      %object.pull-right{data: "/swf/animazione2_ING.swf", height: "383", type: "application/x-shockwave-flash", width: "544", style: "margin-top: 35px;"}
+    .col-xs-7
+      %br
+      %br
+      %object.pull-right{data: "/swf/animazione2_ING.swf", height: "383", type: "application/x-shockwave-flash", width: "544", style: "margin-top: 35px; max-width: 100%;"}
         /%param{name: "data", value: "../../img/Images/animazione2_ING.swf"}/
         /%param{name: "src", value: "../../img/Images/animazione2_ING.swf"}/
 .clear
