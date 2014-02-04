@@ -2,15 +2,15 @@
 %br
 .container.products
   .row
+    - @category.manufacturers.each do |manufacturer|
+      .col-xs-2
+        = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview50x50)
+        %h4.pull-right{style: "font-family: Allan;"}= manufacturer.title
+  .clearfix
+  %br  
+  %br  
+  .row
     .col-xs-3
-      //
-      - @category.manufacturers.each do |manufacturer|
-        .span3
-          .contact-box{style: "background: none;"}
-            .arrow-circle{style: "background: url(#{manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)});background-repeat: no-repeat;background-position: 50%;background-color: white;"}
-            .circleright
-            %h4{style: "font-family: Allan;"}= manufacturer.title
-      //
       = render 'menu'
     .col-xs-9
       %h4= @category.title
@@ -24,10 +24,10 @@
                   /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
                   - if product.brand.brand_pictures.first
                     = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
-              %h5= product.title
               - product.product_pictures.each do |product_picture|
                 = image_tag product_picture.picture.url(:preview200x200)
               .clearfix
+              %h5= product.title
               = product.short_description.lstrip.html_safe
           .modal.fade{id: "product-dialog-#{product.id}", "aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
             .modal-dialog
