@@ -3,9 +3,10 @@
 .container.products
   .row
     - @category.manufacturers.each do |manufacturer|
-      .col-xs-2
-        = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview50x50)
-        %h4.pull-right{style: "font-family: Allan;"}= manufacturer.title
+      - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
+        .col-xs-2
+          = image_tag manufacturer_picture.picture.url(:preview50x50)
+          %h4.pull-right{style: "font-family: Allan;"}= manufacturer.title
   .clearfix
   %br  
   %br  

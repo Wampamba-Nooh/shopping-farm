@@ -10,7 +10,7 @@
   - Category.find_by_identificator('products').children.each do |child|
     %li{class: "#{@category.is_part_of(child) ? 'active' : ''}"}
       - unless child.children.empty?
-        %span.glyphicon.glyphicon-plus-sign
+        %span.glyphicon.glyphicon-plus
       = link_to category_path(id: child.id), style: "font-size: 0.9em;text-transform: uppercase; color: #656666;margin-bottom: 10px;" do
         = child.title
 
@@ -28,9 +28,9 @@
     children = $(this).parent('li.parent_li').find(' > ul > li');
     if (children.is(":visible")) {
       children.hide('fast');
-      $(this).addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
+      $(this).addClass('glyphicon-plus').removeClass('glyphicon-minus');
     }else{
       children.show('fast');
-      $(this).addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+      $(this).addClass('glyphicon-minus').removeClass('glyphicon-plus');
     }
   });
