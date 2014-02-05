@@ -93,16 +93,30 @@ body{
   }
 }
 
+.stylish {
+  border-radius: 50% 50% 50% 50%;
+  //display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  width: 60px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  z-index: 9;
+  background-color: #FFF;
+  border: 2px solid #85A552;
+  margin: 0 auto;
+  img{
+    max-width: 90%;
+    border-radius: 50px;
+  }
+}
+
 .service-block{
   .style {
   }
   p{
     display: block;
-    height: 60px;
-    overflow: hidden;
-  }
-  img{
-    max-height: 200px;
   }
   .stylish{
     background-color: #FFF;
@@ -139,14 +153,30 @@ body{
   
 }
 
-.products .service-block{
+.products .service-block, .categories .service-block{
   padding: 5px;
   margin-bottom: 20px;
+  p{
+    display: block;
+    height: 60px;
+    overflow: hidden;
+  }
+  .wr-img{
+    display: inline-block;
+    height: 200px;
+    width: 100%;
+    vertical-align: middle;
+    img{
+      max-height: 200px;
+    } 
+  }
   .thumbnail{
     margin-bottom: 0px;
     min-height: 365px;
     h5{
       font-weight: 900;
+      height: 30px;
+      overflow: hidden;
     }
   }
   &:hover{
@@ -155,6 +185,12 @@ body{
     .thumbnail{
       border: 1px solid #85A552;
     }
+  }
+}
+
+.categories .service-block{
+  .thumbnail{
+    min-height: 220px;
   }
 }
 
@@ -366,6 +402,43 @@ body{
   z-index: 7;
   position: relative;
   color: #fff;
+}
+
+.brand-list{
+  //.wr{
+  //  display: table-cell;
+  //  height: 40px;
+  //  //border: 1px solid green;
+  //  vertical-align: top;
+  //  font-size: 16px;
+  //  img{
+  //    margin-right: 5px;
+  //  }
+  //}
+  .title{
+    font-size: 14px;
+    font-weight: 900;
+  }
+  .stylish {
+    border-radius: 50% 50% 50% 50%;
+    color: #666;
+    display: inline-block;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 9;
+    background-color: #FFF;
+    border: 2px solid #85A552;
+    img {
+      max-width: 90%;
+      border-radius: 50px;
+      vertical-align: middle;
+    }
+  }
 }
 
 

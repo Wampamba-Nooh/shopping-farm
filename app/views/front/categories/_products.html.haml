@@ -1,12 +1,15 @@
 %br
 %br
 .container.products
-  .row
+  .row.brand-list
     - @category.manufacturers.each do |manufacturer|
       - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
         .col-xs-2
-          = image_tag manufacturer_picture.picture.url(:preview50x50)
-          %h4.pull-right{style: "font-family: Allan;"}= manufacturer.title
+          .wr
+            .stylish
+              .icon
+                = image_tag manufacturer_picture.picture.url(:preview50x50)
+            %span.title= manufacturer.title
   .clearfix
   %br  
   %br  
@@ -26,7 +29,8 @@
                   - if product.brand.brand_pictures.first
                     = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
               - product.product_pictures.each do |product_picture|
-                = image_tag product_picture.picture.url(:preview200x200)
+                .wr-img
+                  = image_tag product_picture.picture.url(:preview200x200)
               .clearfix
               %h5= product.title
               = product.short_description.lstrip.html_safe
@@ -38,34 +42,27 @@
                   /.pull-left
                   /  - @category.manufacturers.each do |manufacturer|
                   /    = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)
-                  %h4#myModalLabel.modal-title.text-center= @category.title
+                  %h4#myModalLabel.modal-title= @category.title
                 .modal-body
-                  .text-center
-                    .row
-                      .col-md-4
-                        .stylish
-                          %span.icon
-                            /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-                            - if product.brand.brand_pictures.first
-                              = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
-                      .col-md-8
-                        %h3= product.title
-                    .clearfix
-                    %br
-                    %br
-                    .row
-                      .col-md-5
-                        - product.product_pictures.each do |product_picture|
-                          = image_tag product_picture.picture.url(:preview200x200)
-                      .col-md-7
-                        %br
-                        %br
-                        = product.full_description.lstrip.html_safe
-                    %hr
-                    .pull-left
-                      Артикул:
-                      = product.identificator
-                    .clearfix
+                  .row
+                    .col-md-4.text-center
+                      .stylish
+                        %span.icon
+                          /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                          - if product.brand.brand_pictures.first
+                            = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
+                      %br
+                      - product.product_pictures.each do |product_picture|
+                        = image_tag product_picture.picture.url(:preview200x200)
+                    .col-md-8
+                      %br
+                      %h3= product.title
+                      = product.full_description.lstrip.html_safe
+                  %hr
+                  .pull-left
+                    Артикул:
+                    = product.identificator
+                  .clearfix
     .clearfix    
     %br
     %br
