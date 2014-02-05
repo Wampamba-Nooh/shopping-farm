@@ -215,6 +215,24 @@ body{
   filter: alpha(opacity=50);
 }
 
+.carousel-inner{
+  .thumbs-list{
+    margin-top: 10px;
+  }
+  .service-block{
+    padding: 10px;
+    h4{
+      line-height: 18px;
+      height: 18px;
+      overflow: hidden;
+    }
+    p{
+      height: 100px;
+      overflow: hidden
+    }
+  }
+}
+
 .bx-wrapper {
   position: relative;
   padding: 0;
