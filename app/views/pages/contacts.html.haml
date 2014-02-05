@@ -1,14 +1,17 @@
 .container
   .row
-    %section.blog.col-xs-7
+    %section.blog.col-xs-12
       .inner-heading
         .txt
           %h3 Контакты
       .clearfix
+    %section.blog.col-xs-7
       %h4 Вы можете связаться с нами
       .clear
       Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару, мы всегда готовы предоставить любую информацию, которая поможет сделать покупку. Получить консультацию можно по телефону или через форму обратной связи.
       //
+      .clearfix
+      %br
       %address
         %strong Twitter, Inc.
         %br/
@@ -25,15 +28,19 @@
       .clear
       %br
     %aside#sidebar.col-xs-5
-      %br
-      %br
-      .contact-widget
+      #contact.contact-widget
         %h4 Задайте нам вопрос
         %p Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
-        %form#footermsg{action: "http://un.com/en/js/send.php"}
-          %textarea#footmessage{name: "message"} Написать...
+        %form
+          .form-group
+            //%label Имя
+            %input.form-control{placeholder: "Имя", type: "text"}/
+          .form-group
+            //%label Email
+            %input.form-control{placeholder: "Email", type: "email"}/
+          .form-group
+            %textarea.form-control{rows: "3", placeholder: "Написать..."}
           .clearfix
-          %br
           %a#send{href: "#", class: "btn btn-success"} Отправить
 
 //

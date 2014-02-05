@@ -196,8 +196,8 @@ body{
 
 .carousel-control {
   position: absolute;
-  top: 40%;
-  left: 15px;
+  top: 35%;
+  left: 0px;
   width: 40px;
   height: 40px;
   margin-top: -5px;
@@ -335,12 +335,10 @@ body{
   }
 }
 
-.contact-widget textarea {
-  //background: url(/img/contact.png);
-  color: #606060;
-  margin-top: 15px;
-  min-width: 270px;
-  border-radius: 0;
+.thumbs-list{
+  img{
+    max-width: 100%;
+  }
 }
 
 #footer {
