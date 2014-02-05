@@ -104,7 +104,8 @@ body{
     background-color: #FFF;
     border: 2px solid #85A552;
     position: relative;
-    bottom: -5px;
+    top: -30px;
+    margin-bottom: -30px;
     left: -3px;
     .icon{
       position: absolute;
@@ -136,6 +137,7 @@ body{
 
 .products .service-block{
   padding: 5px;
+  margin-bottom: 20px;
   .thumbnail{
     margin-bottom: 0px;
     min-height: 245px;
