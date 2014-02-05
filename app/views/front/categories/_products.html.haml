@@ -28,8 +28,8 @@
                   /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
                   - if product.brand.brand_pictures.first
                     = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
-              - product.product_pictures.each do |product_picture|
-                .wr-img
+              .wr-img
+                - product.product_pictures.each do |product_picture|
                   = image_tag product_picture.picture.url(:preview200x200)
               .clearfix
               %h5= product.title
