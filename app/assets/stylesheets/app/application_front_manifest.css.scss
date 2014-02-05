@@ -98,7 +98,11 @@ body{
   }
   p{
     display: block;
-    height: 125px;
+    height: 60px;
+    overflow: hidden;
+  }
+  img{
+    max-height: 200px;
   }
   .stylish{
     background-color: #FFF;
@@ -140,7 +144,7 @@ body{
   margin-bottom: 20px;
   .thumbnail{
     margin-bottom: 0px;
-    min-height: 245px;
+    min-height: 365px;
     h5{
       font-weight: 900;
     }
