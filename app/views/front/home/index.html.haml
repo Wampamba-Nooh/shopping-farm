@@ -33,35 +33,34 @@
 %br
 .container.clearfix
   %h1.text-center Бренды
-  .row
-    .service-block.col-xs-3
-      .style
-        %a.stylish{href: "#"}
-          %span.icon
-            %img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-      %h4 Deox
-      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.col-xs-3
-      .style
-        %a.stylish{href: "#"}
-          %span.icon
-            %img{alt: "post one", src: "/img/wash/logo2.png", class: ""}
-      %h4 Disin FEKTO
-      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.col-xs-3
-      .style
-        %a.stylish{href: "#"}
-          %span.icon
-            %img{alt: "post one", src: "/img/wash/logo3.png", class: ""}
-      %h4 Gran Bucato
-      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
-    .service-block.col-xs-3
-      .style
-        %a.stylish{href: "#"}
-          %span.icon
-            %img{alt: "post one", src: "/img/wash/logo4.png", class: ""}
-      %h4 Love
-      %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+  %hr
+  #carousel-brands-generic.carousel.slide.carousel-products{"data-ride" => "carousel"}
+    / Indicators
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#carousel-brands-generic"}
+      %li{"data-slide-to" => "1", "data-target" => "#carousel-brands-generic"}
+    / Wrapper for slides
+    .carousel-inner
+      - Brand.all.each_slice(4).with_index do |brands, idx|
+        .item{class: "#{idx > 0 ? '' : 'active'}"}
+          .row.thumbs-list
+            - brands.each do |brand|
+              .col-lg-3.text-center.service-block
+                .style
+                  %a.stylish{href: "#"}
+                    %span.icon
+                      - brand.brand_pictures.each do |brand_picture|
+                        = image_tag brand_picture.picture.url(:preview100x100), alt: "post one"
+                %h4= brand.title
+                %p Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat. Fusce cursus libero nec nibh fringilla sed dictum lorem mattis.
+    %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-brands-generic"}
+      ‹
+    %a.right.carousel-control{"data-slide" => "next", href: "#carousel-brands-generic"}
+      ›
+    .clearfix
+    %br
+    %br
+
 .clearfix
 #sert.white
   .container
