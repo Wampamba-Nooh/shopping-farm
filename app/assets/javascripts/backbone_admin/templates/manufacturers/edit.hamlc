@@ -18,10 +18,10 @@
   .form-group
     %label Короткое описание
     .clearfix
-    %textarea{id: 'short_description', name: 'short_description'}
+    %textarea.form-control{id: 'short_description', name: 'short_description'}
   .form-group
     %label Полное описание
     .clearfix
-    %textarea{id: 'full_description', name: 'full_description'}
+    %textarea.form-control{id: 'full_description', name: 'full_description'}
 
   %button.btn.btn-default{type: "submit"} Сохранить
