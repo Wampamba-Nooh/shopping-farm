@@ -1,9 +1,10 @@
 %td= @id
-%td
+%td{style: "width: 60px;"}
   %a.preview{href: "#", class: "link accent"}
     = @identificator
+%td{style: "width: 200px;"}= @title
 %td
-  = @brand.identificator
+  %strong= @brand.identificator
 %td= @created_at
 %td
   .btn-group.pull-right
