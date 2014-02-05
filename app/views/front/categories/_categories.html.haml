@@ -13,12 +13,14 @@
               - child.manufacturers.each do |manufacturer|
                 = link_to category_path(id: child.id), class: "stylish" do
                   %span.icon
-                    /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
-                    = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview100x100)
+                    - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
+                      /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                      = image_tag manufacturer_picture.picture.url(:preview100x100)
               .clearfix
               %br
-              - if child.category_pictures.first
-                = image_tag child.category_pictures.first.picture.url(:preview100x100)
+              - child.category_pictures.each do |category_picture|
+                = image_tag category_picture.picture.url(:preview100x100)
+              .clearfix
               %h5= child.title
   .clearfix    
   %br

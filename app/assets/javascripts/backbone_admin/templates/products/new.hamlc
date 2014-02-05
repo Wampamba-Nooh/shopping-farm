@@ -6,7 +6,7 @@
     %span.help-block.hidden
   .form-group
     %label Identificator
-    %input.form-control{id: "identificator", name: "identificator", placeholder: "например, Q7 2014", type: "text"}
+    %input.form-control{id: "identificator", name: "identificator", type: "text"}
     %span.help-block.hidden
   .form-group
     %label Категории

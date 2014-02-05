@@ -2,15 +2,16 @@
 %br
 .container.products
   .row
+    - @category.manufacturers.each do |manufacturer|
+      - manufacturer.manufacturer_pictures.each do |manufacturer_picture|
+        .col-xs-2
+          = image_tag manufacturer_picture.picture.url(:preview50x50)
+          %h4.pull-right{style: "font-family: Allan;"}= manufacturer.title
+  .clearfix
+  %br  
+  %br  
+  .row
     .col-xs-3
-      //
-      - @category.manufacturers.each do |manufacturer|
-        .span3
-          .contact-box{style: "background: none;"}
-            .arrow-circle{style: "background: url(#{manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)});background-repeat: no-repeat;background-position: 50%;background-color: white;"}
-            .circleright
-            %h4{style: "font-family: Allan;"}= manufacturer.title
-      //
       = render 'menu'
     .col-xs-9
       %h4= @category.title
@@ -18,31 +19,56 @@
       .row
         - @category.products.each do |product|
           .service-block.col-xs-4
-            .thumbnail{"data-target" => "#myModal", "data-toggle" => "modal"}
+            .thumbnail{"data-target" => "#product-dialog-#{product.id}", "data-toggle" => "modal"}
               = link_to "#", class: "stylish" do
                 %span.icon
                   /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
                   - if product.brand.brand_pictures.first
                     = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
-              = image_tag product.product_pictures.first.picture.url(:preview200x200)
+              - product.product_pictures.each do |product_picture|
+                = image_tag product_picture.picture.url(:preview200x200)
               .clearfix
               %h5= product.title
               = product.short_description.lstrip.html_safe
+          .modal.fade{id: "product-dialog-#{product.id}", "aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+                  /.pull-left
+                  /  - @category.manufacturers.each do |manufacturer|
+                  /    = image_tag manufacturer.manufacturer_pictures.first.picture.url(:preview50x50, timestamp: false)
+                  %h4#myModalLabel.modal-title.text-center= @category.title
+                .modal-body
+                  .text-center
+                    .row
+                      .col-md-4
+                        .stylish
+                          %span.icon
+                            /%img{alt: "post one", src: "/img/wash/logo1.png", class: ""}
+                            - if product.brand.brand_pictures.first
+                              = image_tag product.brand.brand_pictures.first.picture.url(:preview100x100)
+                      .col-md-8
+                        %h3= product.title
+                    .clearfix
+                    %br
+                    %br
+                    .row
+                      .col-md-5
+                        - product.product_pictures.each do |product_picture|
+                          = image_tag product_picture.picture.url(:preview200x200)
+                      .col-md-7
+                        %br
+                        %br
+                        = product.full_description.lstrip.html_safe
+                    %hr
+                    .pull-left
+                      Артикул:
+                      = product.identificator
+                    .clearfix
     .clearfix    
     %br
     %br
     %br
 
 //
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title.text-center SMACCHIO TUTTO 250 ml
-      .modal-body
-        .text-center
-          %img{alt: "Smacchiotuttoconcentrato", src: "/media/uploads/product_pictures/28/pictures/preview200x200/SMACCHIOTUTTOConcentrato.jpg?1391525579"}/
-          .clearfix
-          %p Пятновыводитель
-          %br

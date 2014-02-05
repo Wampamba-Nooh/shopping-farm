@@ -10,12 +10,12 @@ class ShoppingFarm.Admin.Views.Products.NewView extends Backbone.View
       observe: 'identificator'
       setOptions:
         validate: true   
-    '[name=short_description]': 
-      observe: 'short_description'
-      setOptions:
-        validate: true       
     '[name=title]': 
       observe: 'title'
+      setOptions:
+        validate: true      
+    '[name=short_description]': 
+      observe: 'short_description'
       setOptions:
         validate: true   
     '[name=full_description]': 
@@ -40,6 +40,7 @@ class ShoppingFarm.Admin.Views.Products.NewView extends Backbone.View
         
     @options.categories_collection.off('sync')
     @options.categories_collection.on('sync', @init_categories_select2)
+    Backbone.Validation.bind(this)
   
   save: (e) ->
     e.preventDefault()

@@ -14,14 +14,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{href: "/"} Якісний продукт плюс
+      /%a.navbar-brand{href: "/"} ЯКІСНИЙ ПРОДУКТ ПЛЮС
+      %a.navbar-brand{href: "/"} Quality Product
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li
           = link_to "О компании", "/pages/about"
         %li
-          = link_to "Новости", "/pages/news#news"
+          = link_to "Новости", "/pages/news"
         %li
           = link_to "Продукция", category_path(id: Category.find_by_identificator('products').id)
         %li
