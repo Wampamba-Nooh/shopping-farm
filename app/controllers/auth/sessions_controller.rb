@@ -1,11 +1,7 @@
 module Auth 
   
   class SessionsController < Devise::SessionsController
-    
-    def new
-      redirect_to root_path  
-    end
-    
+        
     def create
       self.resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
       sign_in(resource_name, resource)
