@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title QPP Admin
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    = stylesheet_link_tag    "application_front_manifest", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    = yield
