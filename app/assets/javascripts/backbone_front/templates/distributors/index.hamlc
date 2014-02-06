@@ -117,7 +117,7 @@
 
   %a.city-wrapper{id: "khmelnitskiy", "xlink:href" => "#"}
     %text{x: "190", y: "175"} Хмельницкий
-    %ellipse{cx: "210", cy: "180", fill: "black", rx: "4", ry: "4"}
+    %ellipse{cx: "210", cy: "180", fill: "black", rx: "2", ry: "2"}
 
   %a.city-wrapper{id: "vinnitsa", "xlink:href" => "#"}
     %text{x: "254", y: "218"} Винница
