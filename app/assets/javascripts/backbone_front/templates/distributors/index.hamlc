@@ -97,7 +97,7 @@
   
   %a.city-wrapper{id: "kiev", "xlink:href" => "#"}
     %text{x: "370", y: "124"} Киев
-    %ellipse{cx: "362", cy: "120", fill: "black", rx: "4", ry: "4", stroke: "white", "stroke-width" => "2"}
+    %ellipse{cx: "362", cy: "120", fill: "white", rx: "4", ry: "4", stroke: "white", "stroke-width" => "2"}
 
   /%a.city-wrapper{"xlink:href" => "#"}
   /  %text{x: "80", y: "136"} Львів
@@ -117,7 +117,7 @@
 
   %a.city-wrapper{id: "khmelnitskiy", "xlink:href" => "#"}
     %text{x: "190", y: "175"} Хмельницкий
-    %ellipse{cx: "210", cy: "180", fill: "white", rx: "2", ry: "2"}
+    %ellipse{cx: "210", cy: "180", fill: "black", rx: "2", ry: "2"}
 
   %a.city-wrapper{id: "vinnitsa", "xlink:href" => "#"}
     %text{x: "254", y: "218"} Винница
