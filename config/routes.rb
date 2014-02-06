@@ -6,6 +6,7 @@ ShoppingFarm::Application.routes.draw do
   
   namespace :front do
     resources :dealer_profiles, only: [:index, :show]
+    resources :brands, only: [:show]
     devise_scope :user do
       post :auth, to: "auth/registrations#create"
       post '/auth/sign_in', to: "auth/sessions#create"
@@ -14,6 +15,7 @@ ShoppingFarm::Application.routes.draw do
   end
   
   get "category/:id", to: "front/categories#show", as: :category
+  get "brand/:id", to: "front/brands#show", as: :brand
 
   namespace :admin do
     resources :manufacturers do 

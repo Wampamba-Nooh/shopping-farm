@@ -2,7 +2,7 @@
   .row
     - Brand.all.limit(10).each do |brand|
       .span1
-        =link_to "#" do
+        =link_to brand_path(brand) do
           - brand.brand_pictures.each do |brand_pictere|
             = image_tag brand_pictere.picture.url(:preview80x80), alt: "post one", class: "img-polaroid img-rounded"
     .clearfix
