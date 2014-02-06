@@ -48,7 +48,7 @@
               .col-lg-3
                 .text-center.service-block
                   .style
-                    %a.stylish{href: "#"}
+                    = link_to brand_path(id: brand.id), class: "stylish" do
                       %span.icon
                         - brand.brand_pictures.each do |brand_picture|
                           = image_tag brand_picture.picture.url(:preview100x100), alt: "post one"
