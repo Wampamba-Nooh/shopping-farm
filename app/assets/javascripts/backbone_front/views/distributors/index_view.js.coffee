@@ -32,7 +32,7 @@ class ShoppingFarm.Front.Views.Distributors.IndexView extends Backbone.View
     @collection.on('sync', @show_main_city)
 
   show_main_city: () =>
-    @render_distributor('kiev')
+    @render_distributor('khmelnitskiy')
 
   addAll: () =>
     @$("tbody").empty()
