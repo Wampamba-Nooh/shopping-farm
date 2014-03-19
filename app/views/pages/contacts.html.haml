@@ -31,7 +31,7 @@
       #contact.contact-widget
         %h4 Задайте нам вопрос
         %p Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
-        %form
+        = form_tag("/search", method: "post") do
           .form-group
             //%label Имя
             %input.form-control{placeholder: "Имя", type: "text"}/
@@ -41,7 +41,9 @@
           .form-group
             %textarea.form-control{rows: "3", placeholder: "Написать..."}
           .clearfix
-          %a#send{href: "#", class: "btn btn-default"} Отправить
+
+          = submit_tag("Отправить", class: "btn btn-default")
+          /%a#send{href: "#", class: "btn btn-default"} Отправить
 
 //
 .clearfix

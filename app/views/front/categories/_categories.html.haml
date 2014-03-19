@@ -18,10 +18,11 @@
                       = image_tag manufacturer_picture.picture.url(:preview100x100)
               .clearfix
               %br
-              - child.category_pictures.each do |category_picture|
-                = image_tag category_picture.picture.url(:preview100x100)
-              .clearfix
-              %h5= child.title
+              = link_to category_path(id: child.id), style: "color: #333333;" do
+                - child.category_pictures.each do |category_picture|
+                  = image_tag category_picture.picture.url(:preview100x100)
+                .clearfix
+                %h5= child.title
   .clearfix    
   %br
   %br
