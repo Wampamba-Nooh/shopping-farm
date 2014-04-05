@@ -2,12 +2,12 @@
 %br
 .container.products
   .row
-    %section.blog.col-xs-8
+    %section.blog.col-xs-3
       .pull-left
         - if @brand.brand_pictures.first
           = image_tag @brand.brand_pictures.first.picture.url(:preview100x100)
       %h4= @brand.title
-    %aside#sidebar.col-xs-4
+    %aside#sidebar.col-xs-9
       = @brand.full_description
   .clearfix
   %br
