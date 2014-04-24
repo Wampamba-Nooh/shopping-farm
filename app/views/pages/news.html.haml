@@ -5,18 +5,18 @@
         .txt
           %h3 Последнии новости
       .recent-blog
-        - Category.find_by_identificator('news').pages.order("created_at DESC").limit(3).each do |page|
+        - Category.find_by_identificator('news').pages.order("created_at DESC").each do |page|
           = link_to "/pages/#{page.id}" do
             .post
               .comment-cout
                 %h5.date= page.created_at.day
                 .clear
-                %h6.month= page.created_at.month
+                %h6.month= page.created_at.to_date.strftime("%b")
               .containt
-                %h4= page.title
+                %h4{style: "color: #444;"}= page.title
                 - unless page.short_content.blank?
-                  %p= page.short_content.html_safe
-                /%a.icon-arrow-right.read{href: "#"}
+                  %span{style: "color: #444;"}
+                    = page.short_content.html_safe
                 .clearfix
     .col-xs-6.testimonial
       %br
