@@ -1,49 +1,41 @@
-#products.white
-  .container
-    .row
-      .col-lg-3
-        %ul.nav.nav-pills.nav-stacked{style: "margin-top: 100px;"}
-          %li
-            %a{href: "#"} Зубная паста
-          %li
-            %a{href: "#"} Все для детей
-          %li
-            %a{href: "#"} Гель для душа
-          %li
-            %a{href: "#"} Зубная щетка
-          %li
-            %a{href: "#"} Косметика
-          %li
-            %a{href: "#"} Мыло
-          %li
-            %a{href: "#"} Ополаскиватели
-          %li
-            %a{href: "#"} Освежители воздуха
-          %li
-            %a{href: "#"} Пятновыводитель
-          %li
-            %a{href: "#"} Средства для бритья
-          %li.active
-            %a{href: "#"} Средства для посуды
-          %li
-            %a{href: "#"} Стиральный порошок
-          %li
-            %a{href: "#"} Хозяйственные принадлежности
-          %li
-            %a{href: "#"} Шампунь  
-      .col-lg-9
-        %br
-        %h1.text-center Средства для посуды
-        %hr
-        %br
-        .clearfix
-        .col-sm-5
-          %img{src: "/img/landing/product1.jpg"}
-        .col-sm-7
-          %br
-          %h3 SCALA Bucato a mano Freschezza blù
-          %p Бытовая химия из Европы, Высококачественный ассортимент продукции. WINNI'S, SMACCHIOTUTTO, DEOX, MORBIDO, DISINFEKTO, PULIRAPID и другии
-
-%br
-%br
-%br
+.container
+  %br
+  .row
+    .col-xs-6
+      /.inner-heading
+      /  .txt
+      /    %h3 Последнии новости
+      .recent-blog       
+        .post
+          .comment-cout
+            %h5.date= @page.created_at.day
+            .clear
+            %h6.month= @page.created_at.to_date.strftime("%b")
+          .containt
+            %h4= @page.title
+            - unless @page.full_content.blank?
+              %p= @page.full_content.html_safe
+            /%a.icon-arrow-right.read{href: "#"}
+            .clearfix
+    
+  %hr
+  .row
+    .col-xs-6
+      .inner-heading
+        .txt
+          %h3 Последнии новости
+      .recent-blog
+        - Category.find_by_identificator('news').pages.order("created_at DESC").limit(3).each do |page|
+          = link_to "/pages/#{page.id}" do
+            .post
+              .comment-cout
+                %h5.date= page.created_at.day
+                .clear
+                %h6.month= page.created_at.to_date.strftime("%b")
+              .containt
+                %h4{style: "color: #444;"}= page.title
+                - unless page.short_content.blank?
+                  %span{style: "color: #444;"}
+                    = page.short_content.html_safe
+                /%a.icon-arrow-right.read{href: "#"}
+                .clearfix

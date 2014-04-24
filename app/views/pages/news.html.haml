@@ -5,59 +5,19 @@
         .txt
           %h3 Последнии новости
       .recent-blog
-        .post
-          .comment-cout
-            %h5.date 20
-            .clear
-            %h6.month June
-          .containt
-            %h4 Aliquam lorem lacus, auctor quis.
-            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
-            %a.icon-arrow-right.read{href: "#"}
-            .clearfix
-        .post
-          .comment-cout
-            %h5.date 15
-            .clear
-            %h6.month June
-          .containt
-            %h4 Aliquam lorem lacus, auctor quis.
-            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
-            %a.icon-arrow-right.read{href: "#"}
-            .clearfix
-        .post
-          .comment-cout
-            %h5.date 11
-            .clear
-            %h6.month June
-          .containt
-            %h4 Aliquam lorem lacus, auctor quis.
-            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
-            %a.icon-arrow-right.read{href: "#"}
-            .clearfix
-        //
-        .post
-          .comment-cout
-            %h5.date 11
-            .clear
-            %h6.month June
-          .containt
-            %h4 Aliquam lorem lacus, auctor quis.
-            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
-            %a.icon-arrow-right.read{href: "#"}
-            .clearfix
-        //
-        .post
-          .comment-cout
-            %h5.date 11
-            .clear
-            %h6.month June
-          .containt
-            %h4 Aliquam lorem lacus, auctor quis.
-            %p Fusce congue eleifend ante, quis rutrum augue euismod id. Vivamus vitae erat sed sapien.
-            %a.icon-arrow-right.read{href: "#"}
-            .clearfix
-        //
+        - Category.find_by_identificator('news').pages.order("created_at DESC").limit(3).each do |page|
+          = link_to "/pages/#{page.id}" do
+            .post
+              .comment-cout
+                %h5.date= page.created_at.day
+                .clear
+                %h6.month= page.created_at.month
+              .containt
+                %h4= page.title
+                - unless page.short_content.blank?
+                  %p= page.short_content.html_safe
+                /%a.icon-arrow-right.read{href: "#"}
+                .clearfix
     .col-xs-6.testimonial
       %br
       %br

@@ -57,6 +57,7 @@ ShoppingFarm::Application.routes.draw do
   get "pages/about"
   get "pages/contacts"
 
+  get "pages/:id", to: "pages#show"
   ##################################################
   get "pages/:name", to: "pages#page_by_name", as: :page_by_name
   post :mail_js_error, to: "errors#mail_js_error"

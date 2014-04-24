@@ -649,7 +649,7 @@ margin-top:25px;
 float:left;
 }
 
-.recent-blog .post{
+.recent-blog a .post{
 float:left;
 position:relative;
 }
@@ -675,6 +675,7 @@ margin:0;
 
 .comment-cout h6{
 line-height:10px;
+
 }
 
 .comment-cout .date{
@@ -688,7 +689,7 @@ font-size:10px;
 }
 
 
-.recent-blog .containt {
+.recent-blog a .containt {
   float: left;
   margin-left:25px;
  padding:10px 10px 10px 50px;
@@ -702,23 +703,24 @@ font-size:10px;
 }
 
 
-.recent-blog .containt a.read{
+.recent-blog a .containt a.read{
 position:absolute;
 right:0;
 bottom:10px;
 display:none;
 }
 
-.recent-blog .containt:hover{
+.recent-blog a .containt:hover{
 background:#be5541;
 color:#fff;
 }
 
-.recent-blog .containt:hover h4{
-color:#fff;
+.recent-blog a .containt h4{
+color: #000000;
+
 }
 
-.recent-blog .containt:hover a.read{
+.recent-blog a .containt:hover a.read{
 display:block;
 }
    
