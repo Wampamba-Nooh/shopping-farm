@@ -7,7 +7,7 @@ module Front
 
       respond_to do |format|
         if @feedback.save
-          FeedbackMailer.send_feedback({email: @feedback.email, feedback: @feedback}).deliver
+          FeedbackMailer.send_feedback({email: "info@qpp.com.ua", feedback: @feedback}).deliver
           format.json { head :no_content }
         else
           format.json { render json: @brand.errors, status: :unprocessable_entity }
