@@ -7,6 +7,8 @@ ShoppingFarm::Application.routes.draw do
   namespace :front do
     resources :dealer_profiles, only: [:index, :show]
     resources :brands, only: [:show]
+    resources :feedbacks, only: [:create]
+    
     devise_scope :user do
       post :auth, to: "auth/registrations#create"
       post '/auth/sign_in', to: "auth/sessions#create"

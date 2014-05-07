@@ -31,15 +31,13 @@
       #contact.contact-widget
         %h4 Задайте нам вопрос
         %p Если у Вас есть вопросы, или Вы хотите проконсультироваться по какому-то конкретному товару
-        = form_tag("/search", method: "post") do
+        = form_tag("/front/feedbacks", method: "post", class: 'sh-feedback-form') do
           .form-group
-            //%label Имя
-            %input.form-control{placeholder: "Имя", type: "text"}/
+            %input.form-control{placeholder: "Имя", type: "text", name: 'feedback[name]'}
           .form-group
-            //%label Email
-            %input.form-control{placeholder: "Email", type: "email"}/
+            %input.form-control{placeholder: "Email", type: "email", name: 'feedback[email]'}
           .form-group
-            %textarea.form-control{rows: "3", placeholder: "Написать..."}
+            %textarea.form-control{rows: "3", placeholder: "Написать...", name: 'feedback[message]'}
           .clearfix
 
           = submit_tag("Отправить", class: "btn btn-default")

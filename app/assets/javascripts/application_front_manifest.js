@@ -2,4 +2,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require backbone_front/shopping_farm
-
+//= require jquery.validate
+//= require feedback

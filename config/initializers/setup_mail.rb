@@ -1,9 +1,7 @@
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
-  :port                 => 587,
-  :domain               => "artt.com.ua",
-  :user_name            => "a@artt.com.ua",
-  :password             => "k9tnkfqt",
-  :authentication       => "plain",
-  :enable_starttls_auto => true
+  :port      => 587,
+  :address   => "smtp.mandrillapp.com",
+  :user_name => "a@artt.com.ua",
+  :password  => "zc_vcwdX5Nva768RKW3Ymg"
 }
